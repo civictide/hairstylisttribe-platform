@@ -1,0 +1,505 @@
+<title>Hairstylist Tribe Diagnostic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Beauty Business Diagnostic · one calm column; one question per screen; the report reads like a consultant's memo.
+   Hairstylist Tribe: forest green, warm cream, gold. */
+:root {
+  --bg: oklch(0.978 0.006 85); --surface: oklch(0.993 0.003 85); --ink: oklch(0.15 0.019 165); --ink-2: oklch(0.302 0.022 160); --ink-3: oklch(0.485 0.018 157);
+  --line: oklch(0.888 0.012 84); --line-2: oklch(0.928 0.01 84);
+  --accent: oklch(0.328 0.06 165); --accent-ink: oklch(0.978 0.006 85); --accent-soft: oklch(0.962 0.022 160);
+  --gold: oklch(0.7 0.116 82); --gold-ink: oklch(0.15 0.019 165); --gold-text: oklch(0.512 0.092 78); --gold-light: oklch(0.78 0.112 84);
+  --hero: oklch(0.168 0.033 167); --hero-ink: oklch(0.978 0.006 85); --hero-ink-2: oklch(0.978 0.006 85 / 0.72); --hero-line: oklch(0.978 0.006 85 / 0.15);
+  --fix: oklch(0.52 0.13 40); --fix-soft: oklch(0.95 0.03 50); --improve: oklch(0.512 0.092 78); --improve-soft: oklch(0.946 0.04 90); --healthy: oklch(0.468 0.082 163); --healthy-soft: oklch(0.912 0.036 160); --na: oklch(0.742 0.014 155);
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --radius: 8px; --col: 640px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: oklch(0.168 0.033 167); --surface: oklch(0.214 0.04 166); --ink: oklch(0.978 0.006 85); --ink-2: oklch(0.852 0.012 153); --ink-3: oklch(0.742 0.014 155);
+  --line: oklch(0.328 0.04 165); --line-2: oklch(0.268 0.04 166);
+  --accent: oklch(0.6 0.086 162); --accent-ink: oklch(0.15 0.019 165); --accent-soft: oklch(0.268 0.05 166);
+  --gold-text: oklch(0.78 0.112 84); --hero: oklch(0.15 0.025 167);
+  --fix: oklch(0.72 0.12 45); --fix-soft: oklch(0.3 0.06 40); --improve: oklch(0.78 0.112 84); --improve-soft: oklch(0.32 0.05 80); --healthy: oklch(0.732 0.076 161); --healthy-soft: oklch(0.268 0.05 166); --na: oklch(0.485 0.018 157);
+  color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: oklch(0.168 0.033 167); --surface: oklch(0.214 0.04 166); --ink: oklch(0.978 0.006 85); --ink-2: oklch(0.852 0.012 153); --ink-3: oklch(0.742 0.014 155);
+  --line: oklch(0.328 0.04 165); --line-2: oklch(0.268 0.04 166);
+  --accent: oklch(0.6 0.086 162); --accent-ink: oklch(0.15 0.019 165); --accent-soft: oklch(0.268 0.05 166);
+  --gold-text: oklch(0.78 0.112 84); --hero: oklch(0.15 0.025 167);
+  --fix: oklch(0.72 0.12 45); --fix-soft: oklch(0.3 0.06 40); --improve: oklch(0.78 0.112 84); --improve-soft: oklch(0.32 0.05 80); --healthy: oklch(0.732 0.076 161); --healthy-soft: oklch(0.268 0.05 166); --na: oklch(0.485 0.018 157);
+  color-scheme: dark; }
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 17px/1.55 var(--font-body); -webkit-font-smoothing: antialiased; }
+button, input, select { font: inherit; color: inherit; }
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+h1, h2, h3, p { margin: 0; }
+
+.preview-banner { background: var(--accent-soft); color: var(--ink); font-size: 14px; line-height: 1.45; padding: 10px 16px; display: flex; flex-wrap: wrap; gap: 6px 12px; justify-content: center; align-items: center; text-align: center; }
+.preview-banner select { font-size: 14px; border: 1px solid var(--line); background: var(--surface); border-radius: 6px; padding: 4px 8px; max-width: 100%; }
+
+.topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--hero); color: var(--hero-ink); border-bottom: 1px solid var(--hero-line); }
+.topbar-inner { max-width: var(--col); margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.brand { display: flex; align-items: center; gap: 10px; font: 400 19px/1 var(--font-display); color: var(--hero-ink); }
+.brand-mark { width: 16px; height: 12px; background: linear-gradient(var(--gold) 0 0) 0 0 / 100% 2px no-repeat, linear-gradient(var(--gold) 0 0) 0 5px / 100% 2px no-repeat, linear-gradient(var(--gold) 0 0) 0 10px / 100% 2px no-repeat; }
+.progress-label { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--hero-ink-2); }
+.progress-step { font: 500 12px/1 var(--font-mono); color: var(--gold-light); font-variant-numeric: tabular-nums; }
+.progress { height: 3px; background: var(--hero); }
+.progress span { display: block; height: 100%; background: var(--gold); transition: width .35s ease; }
+
+.wrap { max-width: var(--col); margin: 0 auto; padding: 28px 20px 64px; display: flex; flex-direction: column; gap: 20px; }
+.eyebrow { font: 400 12px/1.3 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--gold-text); display: flex; align-items: center; gap: 12px; }
+.eyebrow::before { content: ''; width: 28px; height: 1px; background: currentColor; flex: none; }
+.display { font: 400 clamp(34px, 7.5vw, 52px)/1.08 var(--font-display); letter-spacing: -0.01em; text-wrap: balance; }
+.lede { font-size: 19px; line-height: 1.5; color: var(--ink-2); max-width: 36em; }
+.muted { color: var(--ink-2); }
+.small { font-size: 14px; }
+.h2 { font: 400 12px/1.3 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--gold-text); }
+.h2.big { font: 400 clamp(26px, 5.5vw, 34px)/1.15 var(--font-display); letter-spacing: -0.01em; text-transform: none; color: var(--ink); text-wrap: balance; }
+
+.btn { appearance: none; border: 1px solid var(--line); background: var(--surface); border-radius: 6px; padding: 12px 20px; min-height: 48px; font-weight: 500; cursor: pointer; color: var(--ink); display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: border-color .15s, background .15s; }
+.btn:hover { border-color: var(--ink-3); }
+.btn.primary { background: var(--gold); border-color: var(--gold); color: var(--gold-ink); }
+.btn.primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
+.btn[disabled] { opacity: .45; cursor: not-allowed; }
+.link-btn { appearance: none; border: 0; background: none; color: var(--accent); font-weight: 500; cursor: pointer; padding: 8px 0; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+
+.hero { background: var(--hero); color: var(--hero-ink); padding: 0 20px; }
+.hero-inner { max-width: var(--col); margin: 0 auto; padding: 44px 0 40px; display: flex; flex-direction: column; gap: 18px; }
+.hero .eyebrow { color: var(--gold-light); }
+.hero .display { color: var(--hero-ink); }
+.hero .tagline { font: italic 400 clamp(22px, 5vw, 30px)/1.25 var(--font-display); color: var(--gold-light); }
+.hero .lede, .hero .summary { color: var(--hero-ink-2); }
+.facts { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; color: var(--hero-ink-2); }
+.facts li { padding-left: 18px; position: relative; }
+.facts li::before { content: ''; position: absolute; left: 0; top: .72em; width: 8px; height: 1px; background: var(--gold); }
+.facts strong { color: var(--hero-ink); font-weight: 600; }
+.path { padding-top: 22px; border-top: 1px solid var(--line); display: grid; gap: 12px; }
+.path-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px 4px; font: 400 18px/1.4 var(--font-display); }
+.path-list li:not(:last-child)::after { content: '\2192'; margin-left: 6px; color: var(--gold-text); font-family: var(--font-body); font-size: 14px; }
+
+/* question */
+.question { gap: 14px; padding-top: 18px; }
+.back { align-self: flex-start; appearance: none; border: 0; background: none; color: var(--ink-2); padding: 8px 0; cursor: pointer; font-size: 15px; }
+.q-section { font: 400 12px/1.3 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--gold-text); }
+.q-prompt { font: 400 clamp(27px, 6.4vw, 36px)/1.18 var(--font-display); letter-spacing: -0.01em; text-wrap: balance; }
+.q-help { color: var(--ink-2); font-size: 16px; }
+.q-body { margin-top: 8px; display: flex; flex-direction: column; gap: 18px; }
+.opts { display: flex; flex-direction: column; gap: 9px; }
+.opt { appearance: none; width: 100%; text-align: left; display: flex; align-items: center; gap: 14px; min-height: 58px; padding: 14px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); cursor: pointer; transition: border-color .15s, background .15s; }
+.opt:hover { border-color: var(--ink-3); }
+.opt[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
+.opt-label { font-weight: 500; }
+.check { flex: none; width: 24px; height: 24px; border-radius: 6px; border: 1.5px solid var(--line); display: grid; place-items: center; font: 600 13px/1 var(--font-body); color: var(--accent-ink); }
+.check.radio { border-radius: 50%; }
+.opt[aria-pressed="true"] .check { background: var(--accent); border-color: var(--accent); }
+.row-label { font-weight: 600; font-size: 16px; margin-bottom: 8px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { appearance: none; border: 1px solid var(--line); background: var(--surface); border-radius: 6px; padding: 10px 14px; min-height: 46px; cursor: pointer; font-size: 15px; text-align: left; }
+.chip[aria-pressed="true"] { border-color: var(--accent); background: var(--accent); color: var(--accent-ink); }
+.stepper { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 12px 10px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.stepper .lbl { font-weight: 500; min-width: 0; }
+.stepper .ctl { display: flex; align-items: center; gap: 10px; flex: none; }
+.stepper button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg); font-size: 22px; cursor: pointer; line-height: 1; }
+.stepper output { min-width: 2.2ch; text-align: center; font: 500 20px/1 var(--font-mono); font-variant-numeric: tabular-nums; }
+.sticky-actions { position: sticky; bottom: 0; padding: 14px 0 calc(14px + env(safe-area-inset-bottom, 0px)); background: linear-gradient(to top, var(--bg) 70%, transparent); display: flex; gap: 10px; }
+.sticky-actions .btn { flex: 1; }
+
+.analyzing { padding-top: 64px; }
+.scan { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 8px; font: 400 20px/1.3 var(--font-display); color: var(--ink-2); }
+.scan li { opacity: .25; animation: scan .5s ease forwards; }
+@keyframes scan { to { opacity: 1; } }
+
+/* report */
+.headline { font: italic 400 clamp(22px, 4.6vw, 28px)/1.3 var(--font-display); color: var(--gold-light); text-wrap: balance; max-width: 30em; }
+.summary { max-width: 36em; }
+.block { margin-top: 22px; display: flex; flex-direction: column; gap: 14px; }
+.quote { margin: 0; padding: 4px 0 4px 16px; border-left: 2px solid var(--gold); font: italic 400 20px/1.4 var(--font-display); }
+.model-name { font: 400 clamp(24px, 5vw, 30px)/1.15 var(--font-display); }
+.formula { font: 400 13px/1.5 var(--font-mono); color: var(--ink-3); }
+.chain { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.chain-item { display: grid; grid-template-columns: 14px minmax(0, 10em) minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--line-2); font-size: 15px; }
+.chain-stage { font-weight: 500; }
+.chain-note { color: var(--ink-2); min-width: 0; }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: var(--na); }
+.s-fix .dot { background: var(--fix); box-shadow: 0 0 0 4px var(--fix-soft); }
+.s-attention .dot { background: var(--improve); }
+.s-healthy .dot { background: var(--healthy); }
+.s-unclear .dot { background: transparent; border: 1.5px dashed var(--ink-3); }
+.output { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; padding: 14px 16px; background: var(--hero); color: var(--hero-ink); border-radius: var(--radius); }
+.output b { font: 400 12px/1.3 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--gold-light); }
+.math { width: 100%; border-collapse: collapse; font-size: 15px; }
+.math th { text-align: left; font-weight: 400; color: var(--ink-2); padding: 9px 12px 9px 0; border-bottom: 1px solid var(--line-2); vertical-align: top; }
+.math th small { display: block; font: 400 12px/1.4 var(--font-mono); color: var(--ink-3); margin-top: 2px; }
+.math td { text-align: right; font: 500 15px/1.3 var(--font-mono); font-variant-numeric: tabular-nums; padding: 9px 0; border-bottom: 1px solid var(--line-2); white-space: nowrap; vertical-align: top; }
+details > summary { cursor: pointer; color: var(--ink-2); font-size: 15px; padding: 8px 0; }
+.note { font-size: 15px; color: var(--ink-2); }
+.flag { padding: 12px 16px; border-radius: var(--radius); background: var(--improve-soft); font-size: 15px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-top: 2px solid var(--gold); border-radius: 14px; padding: 22px 20px; display: flex; flex-direction: column; gap: 18px; }
+.c-fix { border-top-color: var(--fix); }
+.c-ref { border-top-color: var(--accent); }
+.card-head { display: flex; gap: 16px; align-items: flex-start; }
+.rank { font: 400 15px/1.9 var(--font-mono); color: var(--gold-text); min-width: 1.6em; letter-spacing: .05em; }
+.c-fix .rank { color: var(--fix); }
+.card-titles { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.card-title { font: 400 clamp(23px, 5vw, 28px)/1.15 var(--font-display); letter-spacing: -0.01em; text-wrap: balance; }
+.pill { display: inline-block; font: 600 11px/1 var(--font-body); letter-spacing: .08em; text-transform: uppercase; padding: 6px 9px; border-radius: 999px; white-space: nowrap; align-self: flex-start; }
+.p-high { background: var(--fix-soft); color: var(--fix); }
+.p-medium { background: var(--improve-soft); color: var(--improve); }
+.p-lower { background: var(--accent-soft); color: var(--accent); }
+.p-healthy { background: var(--healthy-soft); color: var(--healthy); }
+.p-neutral { background: var(--line-2); color: var(--ink-2); }
+.card-sec { display: flex; flex-direction: column; gap: 8px; }
+.label { font: 400 11px/1.3 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+.evidence, .inv { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; }
+.evidence li::marker { color: var(--accent); }
+.fix { background: var(--bg); border-radius: var(--radius); padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+.fix-name { font: 500 19px/1.3 var(--font-display); }
+.money { border-left: 2px solid var(--gold); padding: 2px 0 2px 14px; display: grid; gap: 4px; }
+.money p { font: italic 400 17px/1.45 var(--font-display); color: var(--ink-2); }
+.money .m { font: 400 13px/1.4 var(--font-mono); color: var(--ink-3); }
+.list { list-style: none; padding: 0; margin: 0; }
+.list > li { padding: 11px 0; border-bottom: 1px solid var(--line-2); display: grid; gap: 2px; font-size: 15px; }
+.ok-list li { grid-template-columns: minmax(0, 11em) minmax(0, 1fr); gap: 4px 16px; }
+.ok-area { font-weight: 500; display: flex; gap: 8px; align-items: baseline; }
+.ok-area::before { content: ''; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--healthy); }
+.dont { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px 20px; display: flex; flex-direction: column; gap: 12px; }
+.dont-list { list-style: none; padding: 0; margin: 4px 0 0; display: grid; gap: 18px; }
+.dont-list li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 12px; }
+.dont-list p { color: var(--ink-2); }
+.dont-title { font-weight: 600; color: var(--ink) !important; margin-bottom: 2px; }
+.dont-mark { width: 18px; height: 18px; margin-top: 3px; border-radius: 50%; border: 1.5px solid var(--ink-3); position: relative; }
+.dont-mark::after { content: ''; position: absolute; left: 2px; right: 2px; top: 50%; height: 1.5px; background: var(--ink-3); transform: rotate(-45deg); }
+.insight { padding: 24px 22px; border-radius: 12px; background: var(--hero); color: var(--hero-ink); display: flex; flex-direction: column; gap: 14px; }
+.insight .eyebrow { color: var(--gold-light); }
+.insight-title { font: italic 400 26px/1.2 var(--font-display); color: var(--gold-light); }
+.insight ol { margin: 0; padding-left: 1.3em; display: grid; gap: 10px; color: var(--hero-ink); }
+.insight ol li::marker { color: var(--gold-light); font-family: var(--font-mono); font-size: 14px; }
+.cta { margin-top: 32px; padding: 28px 22px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 14px; }
+.form { display: flex; flex-direction: column; gap: 14px; }
+.fields { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.fld { display: grid; gap: 6px; font-size: 14px; color: var(--ink-2); }
+.field { width: 100%; border: 1px solid var(--line); background: var(--surface); border-radius: var(--radius); padding: 12px 14px; min-height: 50px; font-size: 16px; color: var(--ink); }
+.done-msg { font: 400 21px/1.4 var(--font-display); }
+.foot { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14px; color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 8px 16px; justify-content: space-between; align-items: center; }
+
+@media (min-width: 720px) {
+  .wrap { padding-top: 40px; }
+  .card, .dont, .cta { padding: 30px 32px; }
+  .fields { grid-template-columns: 1fr 1fr; }
+  .sticky-actions { position: static; background: none; padding-bottom: 0; }
+  .sticky-actions .btn { flex: 0 0 auto; min-width: 200px; }
+}
+@media (max-width: 520px) {
+  .chain-item { grid-template-columns: 14px minmax(0, 1fr) auto; }
+  .chain-note { grid-column: 2 / 4; margin-top: -6px; font-size: 14px; }
+  .ok-list li { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  .scan li { opacity: 1; }
+}
+</style>
+
+<div class="preview-banner" id="banner">
+  <span>Preview — answers stay on this device and aren’t sent anywhere yet.</span>
+  <label for="sample" class="small">Jump to a sample business:</label>
+  <select id="sample"><option value="">Choose…</option></select>
+</div>
+<div id="app"></div>
+
+<script>/*__ENGINE__*/</script>
+<script>
+const SAMPLES = /*__SAMPLES__*/[];
+const E = BD.engine, R = BD.report, TX = BD.taxonomy;
+const $ = (s, el = document) => el.querySelector(s);
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+const app = $('#app');
+
+let answers = {};
+let history = [];      // question ids in the order shown
+let pending = null;    // working value for multi / composite screens
+let cta = { time: null, sent: false };
+
+// ---------------------------------------------------------------- routing (live)
+const personaOf = () => (answers.Q01 ? E.resolvePersona(answers) : null);
+function seq() { return personaOf() === 'SO' ? E.SEQUENCE_SO : E.SEQUENCE_DEFAULT; }
+function askable(id, ans) {
+  const p = ans.Q01 ? E.resolvePersona(ans) : 'IP';
+  const ctx = { persona: p, rawPersona: ans.Q01, get: E.makeGetter(ans, p) };
+  if (id !== 'Q01' && !ans.Q01) return false;
+  return E.shouldAsk(E.QMAP[id], p, ctx);
+}
+function nextId(after) {
+  // the next question on the current path; answers from questions no longer on the path are ignored
+  const live = E.route(answers).answers;
+  const s = seq();
+  const start = after ? s.indexOf(after) + 1 : 0;
+  for (let i = start; i < s.length; i++) if (askable(s[i], live)) return s[i];
+  return null;
+}
+function estimate() {
+  const live = E.route(answers).answers;
+  if (!live.Q01) return 20;
+  let n = 0;
+  for (const id of seq()) if (askable(id, live)) n++;
+  return Math.max(n, history.length + 1);
+}
+const SECTION = (q) => ({
+  'Business model': 'Your business', 'Revenue / income': 'Your business', 'Capacity / schedule': 'Your schedule', 'Client acquisition': 'New clients', 'Local discovery': 'How people find you',
+  'Social media / personal brand': 'How people find you', 'Inquiry → booking': 'Booking', 'Cancellations / no-shows': 'Your schedule', 'Rebooking': 'Clients coming back', 'Client retention': 'Clients coming back',
+  'Client database / reactivation': 'Your client list', 'Client reactivation': 'Your client list', 'Pricing': 'Pricing', 'Average ticket': 'What each visit earns', 'Add-ons / retail': 'What each visit earns',
+  'Service mix': 'What each visit earns', 'Positioning / clientele': 'Your clients', 'Website / booking experience': 'How people find you', 'Referrals': 'New clients', 'Reviews / reputation': 'Reputation',
+  'Automation / follow-up': 'Behind the scenes', 'Financial visibility': 'Your numbers',
+})[q.domain] || (q.personas.length === 1 && q.personas[0] === 'SO' ? 'Your salon' : 'Your business');
+
+// ---------------------------------------------------------------- screens
+function topbar(step, total) {
+  const pct = total ? Math.min(100, Math.round((step / total) * 100)) : 0;
+  return `<div class="topbar"><div class="topbar-inner"><span class="brand"><span class="brand-mark" aria-hidden="true"></span>Hairstylist Tribe</span>${step != null ? `<span class="progress-label">Question <span class="progress-step">${step} of ~${total}</span></span>` : ''}</div>${step != null ? `<div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}"><span style="width:${pct}%"></span></div>` : ''}</div>`;
+}
+
+function welcome() {
+  history = []; answers = {}; pending = null; cta = { time: null, sent: false };
+  app.innerHTML = `${topbar()}
+  <section class="hero"><div class="hero-inner">
+    <p class="eyebrow">Beauty Business Diagnostic</p>
+    <h1 class="display">What’s actually holding your business back?</h1>
+    <p class="tagline">It may not be what you think.</p>
+    <p class="lede">A short set of questions about how you work, how full you are, what you charge and whether clients come back. At the end you’ll see a full written report: where the real opportunity is, what’s already working, and what I wouldn’t spend money on.</p>
+    <ul class="facts">
+      <li><strong>About 20 questions.</strong> Mostly one tap each. About 8 minutes.</li>
+      <li><strong>Your questions depend on how you work.</strong> Commission stylists, renters, suite owners, salon owners and independent pros each get their own.</li>
+      <li><strong>Your full report appears right away.</strong> No call required to see it.</li>
+      <li><strong>Rough answers are fine.</strong> “Not sure” is always an option, and it tells us something too.</li>
+    </ul>
+    <div><button class="btn primary" id="start" type="button">Start the diagnostic</button></div>
+  </div></section>
+  <main class="wrap"><div class="path">
+    <p class="h2">What we’ll look at</p>
+    <ul class="path-list"><li>How you work</li><li>How full you are</li><li>New clients</li><li>Who comes back</li><li>What each visit earns</li><li>Your report</li></ul>
+  </div></main>`;
+  $('#start').addEventListener('click', () => go());
+  window.scrollTo(0, 0);
+}
+
+function go() {
+  const id = nextId();
+  if (!id) return analyzing();
+  show(id);
+}
+
+function show(id) {
+  const q = E.QMAP[id];
+  const p = personaOf() || 'default';
+  if (!history.includes(id)) history.push(id);
+  const step = history.indexOf(id) + 1;
+  const prompt = E.resolveText(q.text, p);
+  const prev = answers[id];
+  let body = '';
+  if (q.type === 'single') {
+    pending = prev ?? null;
+    body = `<div class="opts" role="group">${E.optionsFor(q, p).map((o) => optBtn(o, prev === o.v, 'radio')).join('')}</div>`;
+  } else if (q.type === 'multi') {
+    pending = Array.isArray(prev) ? prev.slice() : [];
+    body = `<div class="opts" role="group">${E.optionsFor(q, p).map((o) => optBtn(o, pending.includes(o.v), 'box')).join('')}</div>`;
+  } else {
+    pending = prev ? { ...prev } : {};
+    body = q.rows.map((r) => {
+      if (r.type === 'count') {
+        if (pending[r.id] == null) pending[r.id] = r.id === 'stations' ? 6 : r.id === 'producing' ? (pending.stations ?? 6) : 0;
+        return `<div class="stepper"><span class="lbl">${esc(E.resolveText(r.label, p))}</span><span class="ctl"><button type="button" data-step="${r.id}" data-d="-1" aria-label="Fewer">−</button><output id="out-${r.id}">${pending[r.id]}</output><button type="button" data-step="${r.id}" data-d="1" aria-label="More">+</button></span></div>`;
+      }
+      return `<div><p class="row-label">${esc(E.resolveText(r.label, p))}</p><div class="chips" role="group">${E.optionsFor(r, p).map((o) => `<button type="button" class="chip" data-row="${r.id}" data-v="${esc(o.v)}" aria-pressed="${pending[r.id] === o.v}">${esc(o.label)}</button>`).join('')}</div></div>`;
+    }).join('');
+  }
+  const needsContinue = q.type !== 'single';
+  app.innerHTML = `${topbar(step, estimate())}
+  <main class="wrap question">
+    <button class="back" type="button" id="back">← ${step > 1 ? 'Back' : 'Start over'}</button>
+    <p class="q-section">${esc(SECTION(q))}</p>
+    <h1 class="q-prompt">${esc(prompt)}</h1>
+    ${q.help ? `<p class="q-help">${esc(q.help)}</p>` : ''}
+    <div class="q-body">${body}</div>
+    ${needsContinue ? `<div class="sticky-actions"><button class="btn primary" type="button" id="cont">Continue</button></div>` : ''}
+  </main>`;
+  const refresh = () => { const b = $('#cont'); if (b) b.disabled = !complete(q, pending); };
+  refresh();
+  $('#back').addEventListener('click', () => {
+    const i = history.indexOf(id);
+    if (i <= 0) return welcome();
+    history = history.slice(0, i);
+    show(history[i - 1]);
+  });
+  app.querySelectorAll('.opt').forEach((b) => b.addEventListener('click', () => {
+    const v = b.dataset.v;
+    if (q.type === 'single') {
+      app.querySelectorAll('.opt').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+      commit(id, v);
+      setTimeout(() => advance(id), 180);
+    } else {
+      const solo = ['none', 'unsure'];
+      if (solo.includes(v)) pending = pending.includes(v) ? [] : [v];
+      else { pending = pending.filter((x) => !solo.includes(x)); pending = pending.includes(v) ? pending.filter((x) => x !== v) : [...pending, v]; }
+      app.querySelectorAll('.opt').forEach((x) => x.setAttribute('aria-pressed', String(pending.includes(x.dataset.v))));
+      refresh();
+    }
+  }));
+  app.querySelectorAll('.chip').forEach((b) => b.addEventListener('click', () => {
+    pending[b.dataset.row] = b.dataset.v;
+    app.querySelectorAll(`.chip[data-row="${b.dataset.row}"]`).forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    refresh();
+  }));
+  app.querySelectorAll('[data-step]').forEach((b) => b.addEventListener('click', () => {
+    const r = q.rows.find((x) => x.id === b.dataset.step);
+    const v = Math.max(r.min ?? 0, Math.min(r.max ?? 40, (pending[r.id] || 0) + Number(b.dataset.d)));
+    pending[r.id] = v; $('#out-' + r.id).textContent = v; refresh();
+  }));
+  const c = $('#cont');
+  if (c) c.addEventListener('click', () => { commit(id, pending); advance(id); });
+  window.scrollTo(0, 0);
+}
+const optBtn = (o, on, kind) => `<button type="button" class="opt" data-v="${esc(o.v)}" aria-pressed="${on}"><span class="check ${kind === 'radio' ? 'radio' : ''}" aria-hidden="true">${kind === 'box' ? '✓' : ''}</span><span class="opt-label">${esc(o.label)}</span></button>`;
+function complete(q, v) {
+  if (q.type === 'multi') return v.length > 0;
+  if (q.type === 'composite') return q.rows.every((r) => v[r.id] != null);
+  return v != null;
+}
+function commit(id, v) { answers[id] = Array.isArray(v) ? v.slice() : typeof v === 'object' && v ? { ...v } : v; }
+function advance(from) {
+  const id = nextId(from);
+  if (!id) return analyzing();
+  const i = history.indexOf(id);
+  if (i >= 0) history = history.slice(0, i);
+  show(id);
+}
+
+function analyzing() {
+  const run = E.run(answers);
+  const rep = R.buildReport(run);
+  app.innerHTML = `${topbar()}<main class="wrap analyzing" aria-live="polite">
+    <p class="eyebrow">Reading your answers</p>
+    <ul class="scan">${['How full your schedule is', 'What each hour earns', 'How many clients come back', 'Where new clients come from', 'Where the real opportunity is'].map((t, i) => `<li style="animation-delay:${i * 0.35}s">${t}</li>`).join('')}</ul>
+  </main>`;
+  window.scrollTo(0, 0);
+  const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  setTimeout(() => report(run, rep), reduce ? 200 : 2100);
+}
+
+// ---------------------------------------------------------------- report
+const PILL = { HIGH_PRIORITY: 'p-high', OPPORTUNITY: 'p-medium', WATCH: 'p-lower', HEALTHY: 'p-healthy', STRONG: 'p-healthy' };
+const DOT = { HIGH_PRIORITY: 's-fix', OPPORTUNITY: 's-attention', WATCH: 's-attention', HEALTHY: 's-healthy', STRONG: 's-healthy', INSUFFICIENT: 's-unclear', NA: 's-na' };
+
+function report(run, r) {
+  const main = r.top.filter((t) => !t.refinement);
+  app.innerHTML = `${topbar()}
+  <section class="hero"><div class="hero-inner">
+    <p class="eyebrow">Your diagnostic · ${esc(r.businessModel.label)}</p>
+    <h1 class="display">${esc(r.title)}</h1>
+    <p class="headline">${esc(r.headline)}</p>
+    ${r.sub ? `<p class="summary">${esc(r.sub)}</p>` : ''}
+    ${r.summary ? `<p class="summary small">${esc(r.summary)}</p>` : ''}
+  </div></section>
+  <main class="wrap">
+    ${r.belief ? `<section class="block"><p class="h2">You told us</p><blockquote class="quote">${esc(r.belief.text)}</blockquote></section>` : ''}
+
+    <section class="block"><p class="h2">Your business model</p>
+      <p class="model-name">${esc(r.businessModel.label)}</p>
+      <p>${esc(r.businessModel.description)}</p>
+      <p class="note">${esc(r.businessModel.equationNote)}</p>
+    </section>
+
+    <section class="block"><p class="h2">Your business as an equation</p>
+      <p class="formula">${esc(r.equation.formula)}</p>
+      <ol class="chain">${r.equation.factors.map((f) => `<li class="chain-item ${DOT[f.status] || 's-na'}"><span class="dot" aria-hidden="true"></span><span class="chain-stage">${esc(f.factor)}</span><span class="chain-note">${esc(f.value)}</span><span class="pill ${PILL[f.status] || 'p-neutral'}">${esc(f.statusLabel)}</span></li>`).join('')}</ol>
+      <p class="output"><b>Output</b> <span>${esc(r.equation.output)}</span></p>
+      ${r.economicModel.flags.map((x) => `<p class="flag">${esc(x)}</p>`).join('')}
+      ${r.economicModel.rows.length ? `<details><summary>Show the arithmetic</summary>
+        <table class="math"><tbody>${r.economicModel.rows.map((x) => `<tr><th>${esc(x.label)}<small>${esc(x.basis)}</small></th><td>${esc(x.value)}</td></tr>`).join('')}</tbody></table>
+        ${r.economicModel.assumptions.map((x) => `<p class="note small" style="margin-top:8px">Assumption: ${esc(x)}</p>`).join('')}
+      </details>` : ''}
+    </section>
+
+    <section class="block"><p class="h2 big">${main.length ? `The ${main.length === 1 ? 'one thing' : main.length === 2 ? 'two things' : 'three things'} I’d look at first` : 'Small refinements, not fixes'}</p>
+      ${r.top.map((t) => card(t)).join('')}
+    </section>
+
+    ${r.working.length ? `<section class="block"><p class="h2">What appears to be working</p>
+      <ul class="list ok-list">${r.working.map((w) => `<li><span class="ok-area">${esc(w.label)}</span><span class="muted">${esc(w.text)}</span></li>`).join('')}</ul></section>` : ''}
+
+    <section class="block"><div class="dont"><p class="h2 big">What I wouldn’t spend money on right now</p><p class="muted small">Just as useful as knowing what to fix.</p>
+      <ul class="dont-list">${r.dontBuy.map((d) => `<li><span class="dont-mark" aria-hidden="true"></span><div><p class="dont-title">${esc(d.title)}</p><p>${esc(d.reason)}</p></div></li>`).join('')}</ul></div></section>
+
+    <section class="block"><div class="insight"><p class="eyebrow">If this were my business</p><p class="insight-title">Here’s the order I’d go in.</p>
+      <ol>${r.ifThisWere.map((s) => `<li>${esc(s)}</li>`).join('')}</ol></div></section>
+
+    <section class="cta" id="cta">${ctaBody(r)}</section>
+
+    <div class="foot"><span>Estimates use your own answers and the assumptions shown. They’re a starting point for a conversation, not a guarantee.</span><button class="link-btn" type="button" id="again">Start over</button></div>
+  </main>`;
+  $('#again').addEventListener('click', welcome);
+  wireCta(r);
+  window.scrollTo(0, 0);
+}
+
+function card(t) {
+  const cls = t.refinement ? 'c-ref' : t.status === 'HIGH_PRIORITY' ? 'c-fix' : '';
+  return `<article class="card ${cls}">
+    <div class="card-head"><span class="rank">${String(t.rank).padStart(2, '0')}</span><div class="card-titles"><h2 class="card-title">${esc(t.label)}</h2><span class="pill ${t.refinement ? 'p-lower' : PILL[t.status]}">${esc(t.statusLabel)}</span></div></div>
+    ${t.noticed.length ? `<div class="card-sec"><p class="label">What we noticed</p><ul class="evidence">${t.noticed.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>` : ''}
+    <div class="card-sec"><p class="label">Why it matters</p><p>${esc(t.whyMatters)}</p></div>
+    ${t.money.map((m) => `<div class="money"><p>${esc(m.text)}${m.caveat ? ' ' + esc(m.caveat) : '.'}</p><span class="m">${esc(m.math)}</span></div>`).join('')}
+    <div class="card-sec"><p class="label">What I’d investigate next</p><ul class="inv">${t.investigate.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+    <div class="fix"><p class="label">Recommended next step</p><p class="fix-name">${esc(t.nextStep)}</p>
+      ${t.interventions.length ? `<p class="small muted">Usually involves: ${t.interventions.map((i) => esc(i.name)).join(' · ')}</p>` : ''}</div>
+  </article>`;
+}
+
+function ctaBody(r) {
+  if (cta.sent) return `<p class="done-msg">Thanks${cta.name ? ', ' + esc(cta.name.split(' ')[0]) : ''}. In the live version, this request goes straight to Ovi with your answers, and you’ll hear back to set a ${esc((cta.time || '').toLowerCase())} time.</p><p class="small muted">Preview mode: nothing was sent.</p>`;
+  return `<p class="h2 big">${esc(r.cta.title)}</p>${r.cta.body.map((b) => `<p class="muted">${esc(b)}</p>`).join('')}
+    <form class="form" id="ctaform" novalidate>
+      <p class="label">Best time for a 20-minute call</p>
+      <div class="chips">${r.cta.options.map((o) => `<button type="button" class="chip" data-time="${esc(o)}" aria-pressed="${cta.time === o}">${esc(o)}</button>`).join('')}</div>
+      <div class="fields">
+        <label class="fld" for="nm">Your name<input class="field" id="nm" autocomplete="name"></label>
+        <label class="fld" for="ph">Mobile number<input class="field" id="ph" type="tel" autocomplete="tel" inputmode="tel"></label>
+      </div>
+      <p class="small" id="ctaerr" style="color:var(--fix);min-height:1.2em"></p>
+      <div><button class="btn primary" type="submit">Request a call</button></div>
+    </form>`;
+}
+function wireCta(r) {
+  const f = $('#ctaform');
+  if (!f) return;
+  f.querySelectorAll('[data-time]').forEach((b) => b.addEventListener('click', () => { cta.time = b.dataset.time; f.querySelectorAll('[data-time]').forEach((x) => x.setAttribute('aria-pressed', String(x === b))); }));
+  f.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = $('#nm').value.trim(), phone = $('#ph').value.trim();
+    if (!cta.time) return ($('#ctaerr').textContent = 'Pick morning or afternoon.');
+    if (!name || phone.replace(/\D/g, '').length < 10) return ($('#ctaerr').textContent = 'Add your name and a 10-digit mobile number.');
+    Object.assign(cta, { sent: true, name, phone });
+    $('#cta').innerHTML = ctaBody(r);
+  });
+}
+
+// ---------------------------------------------------------------- samples
+$('#sample').innerHTML += SAMPLES.map((s, i) => `<option value="${i}">${esc(s.name)}</option>`).join('');
+$('#sample').addEventListener('change', (e) => {
+  if (e.target.value === '') return;
+  const s = SAMPLES[Number(e.target.value)];
+  answers = JSON.parse(JSON.stringify(s.answers));
+  history = E.route(answers).shown.slice();
+  cta = { time: null, sent: false };
+  const run = E.run(answers);
+  report(run, R.buildReport(run));
+  e.target.value = '';
+});
+
+welcome();
+</script>

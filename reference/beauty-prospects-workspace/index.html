@@ -1,0 +1,1334 @@
+<title>All Beauty Prospects</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  /* Civic Tide brand (civictide.us): forest green, warm cream, gold */
+  --bg:oklch(0.978 0.006 85); --surface:oklch(0.993 0.003 85); --surface-2:oklch(0.958 0.008 85); --line:oklch(0.888 0.012 84);
+  --ink:oklch(0.15 0.019 165); --muted:oklch(0.302 0.022 160); --faint:oklch(0.485 0.018 157);
+  --accent:oklch(0.328 0.06 165); --accent-soft:oklch(0.962 0.022 160); --on-accent:oklch(0.978 0.006 85);
+  --gold:oklch(0.7 0.116 82); --gold-light:oklch(0.78 0.112 84); --gold-text:oklch(0.512 0.092 78); --gold-ink:oklch(0.15 0.019 165);
+  --hero:oklch(0.168 0.033 167); --hero-ink:oklch(0.978 0.006 85); --hero-ink-2:oklch(0.978 0.006 85 / 0.72); --hero-line:oklch(0.978 0.006 85 / 0.15);
+  --a:oklch(0.468 0.082 163); --a-soft:oklch(0.912 0.036 160); --b:oklch(0.512 0.092 78); --b-soft:oklch(0.946 0.04 90); --c:oklch(0.485 0.018 157); --c-soft:oklch(0.928 0.01 84);
+  --warn:oklch(0.52 0.13 40); --warn-soft:oklch(0.95 0.03 50); --voip:oklch(0.45 0.07 320); --voip-soft:oklch(0.95 0.02 320);
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --bg:oklch(0.168 0.033 167); --surface:oklch(0.214 0.04 166); --surface-2:oklch(0.25 0.04 166); --line:oklch(0.328 0.04 165);
+  --ink:oklch(0.978 0.006 85); --muted:oklch(0.852 0.012 153); --faint:oklch(0.742 0.014 155);
+  --accent:oklch(0.6 0.086 162); --accent-soft:oklch(0.268 0.05 166); --on-accent:oklch(0.15 0.019 165);
+  --gold-text:oklch(0.78 0.112 84); --hero:oklch(0.15 0.025 167);
+  --a:oklch(0.732 0.076 161); --a-soft:oklch(0.268 0.05 166); --b:oklch(0.78 0.112 84); --b-soft:oklch(0.32 0.05 80); --c:oklch(0.742 0.014 155); --c-soft:oklch(0.268 0.04 166);
+  --warn:oklch(0.72 0.12 45); --warn-soft:oklch(0.3 0.06 40); --voip:oklch(0.78 0.07 320); --voip-soft:oklch(0.3 0.04 320);
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:oklch(0.168 0.033 167); --surface:oklch(0.214 0.04 166); --surface-2:oklch(0.25 0.04 166); --line:oklch(0.328 0.04 165);
+  --ink:oklch(0.978 0.006 85); --muted:oklch(0.852 0.012 153); --faint:oklch(0.742 0.014 155);
+  --accent:oklch(0.6 0.086 162); --accent-soft:oklch(0.268 0.05 166); --on-accent:oklch(0.15 0.019 165);
+  --gold-text:oklch(0.78 0.112 84); --hero:oklch(0.15 0.025 167);
+  --a:oklch(0.732 0.076 161); --a-soft:oklch(0.268 0.05 166); --b:oklch(0.78 0.112 84); --b-soft:oklch(0.32 0.05 80); --c:oklch(0.742 0.014 155); --c-soft:oklch(0.268 0.04 166);
+  --warn:oklch(0.72 0.12 45); --warn-soft:oklch(0.3 0.06 40); --voip:oklch(0.78 0.07 320); --voip-soft:oklch(0.3 0.04 320);
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--body);padding-inline:16px;padding-block:28px 56px}
+.wrap{max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px 32px;background:var(--hero);color:var(--hero-ink);border-radius:12px;padding:30px 26px 28px}
+.eyebrow{font:400 .74rem/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);display:flex;align-items:center;gap:12px;margin:0 0 12px}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor;flex:none}
+h1{font:400 2.7rem/1.05 var(--display);letter-spacing:-.01em;margin:0;text-wrap:balance;color:var(--hero-ink)}
+h1 span{color:var(--gold-light);font-style:italic}
+.sub{margin:10px 0 0;color:var(--hero-ink-2);max-width:64ch}
+.stats{display:flex;flex-wrap:wrap;gap:8px 26px;font:400 .72rem/1.35 var(--mono);letter-spacing:.04em;color:var(--hero-ink-2)}
+.stats b{display:block;font:400 1.9rem/1.1 var(--display);color:var(--gold-light);font-variant-numeric:tabular-nums;letter-spacing:0}
+.views{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface);width:fit-content;max-width:100%}
+.views button{font:600 .9rem var(--body);color:var(--muted);background:transparent;border:0;border-right:1px solid var(--line);padding:9px 16px;cursor:pointer;display:flex;gap:7px;align-items:baseline}
+.views button:last-child{border-right:0}
+.views button small{font:400 .72rem var(--mono);color:var(--gold-text)}
+.views button[aria-selected="true"]{background:var(--accent);color:var(--on-accent)}
+.views button[aria-selected="true"] small{color:var(--gold-light)!important;opacity:1!important}
+.views button[aria-selected="true"] small{color:var(--on-accent);opacity:.8}
+.viewnote{font:italic 400 1.02rem/1.4 var(--display);color:var(--gold-text);margin:-6px 0 0;max-width:90ch}
+.controls{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+input[type=search],select{font:inherit;font-size:.9rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:7px 9px;min-width:0;max-width:100%}
+input[type=search]{flex:1 1 230px}
+label.tog{display:flex;align-items:center;gap:6px;font-size:.88rem;color:var(--muted);cursor:pointer;white-space:nowrap}
+button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.bar-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px}
+.count{font-size:.9rem;color:var(--muted)}
+.count b{color:var(--ink);font-variant-numeric:tabular-nums}
+.actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.btn{font:500 .86rem var(--body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:6px;padding:8px 14px;cursor:pointer}
+.btn.primary{background:var(--gold);border-color:var(--gold);color:var(--gold-ink)}
+.btn.primary:hover{background:var(--gold-light);border-color:var(--gold-light)}
+.tbl{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th{font:400 .68rem var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--gold-text);text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);white-space:nowrap;position:sticky;top:0;background:var(--surface)}
+td{padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+.name{font-weight:600}
+.sm{color:var(--faint);font-size:.78rem}
+.mono{font-family:var(--mono);font-size:.8rem}
+.chip{display:inline-block;font-size:.7rem;font-weight:600;border-radius:4px;padding:1px 6px;white-space:nowrap}
+.chip.cell{background:var(--accent-soft);color:var(--accent)}
+.chip.voip{background:var(--voip-soft);color:var(--voip)}
+.chip.land,.chip.toll,.chip.none{background:var(--surface-2);color:var(--muted)}
+.chip.nopay{background:var(--a-soft);color:var(--a)}
+.chip.pay{background:var(--surface-2);color:var(--muted)}
+.chip.lead{background:var(--warn-soft);color:var(--warn)}
+.chip.chain{background:var(--surface-2);color:var(--muted)}
+.chip.top{background:var(--b-soft);color:var(--b)}
+.flags{display:flex;flex-wrap:wrap;gap:4px;margin-top:3px}
+.phone{display:flex;gap:6px;align-items:center;white-space:nowrap}
+.copy{font:600 .68rem var(--body);border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:5px;padding:1px 6px;cursor:pointer}
+.tier{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:6px;font:500 .95rem var(--display)}
+.tier.A{background:var(--a-soft);color:var(--a)}.tier.B{background:var(--b-soft);color:var(--b)}.tier.C{background:var(--c-soft);color:var(--c)}
+.g{display:flex;gap:8px;align-items:center;white-space:nowrap}
+.g .score{font:600 .9rem var(--mono)}
+td.gc .sm{white-space:nowrap}
+.chip.pay{white-space:normal}
+a{color:var(--accent)}
+.lic a{font-family:var(--mono);font-size:.8rem;text-decoration:none;border-bottom:1px solid var(--gold)}
+.more{display:flex;justify-content:center;padding-top:4px}
+.empty{padding:30px;text-align:center;color:var(--muted)}
+footer{font-size:.8rem;color:var(--faint);display:flex;flex-direction:column;gap:5px;max-width:95ch}
+footer b{color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);font-size:.86rem;padding:8px 14px;border-radius:8px}
+@media (max-width:760px){
+  h1{font-size:2.05rem}
+  header{padding:24px 18px}
+  .hide-sm{display:none}
+  td,th{padding:8px}
+  .views button{padding:8px 11px}
+}
+@media (prefers-reduced-motion:no-preference){.tbl{transition:opacity .15s}}
+
+[hidden]{display:none!important}
+/* ---------- workspace ---------- */
+.loader{position:fixed;inset:0;z-index:80;background:var(--bg);display:grid;place-items:center;padding:24px}
+.loader .in{max-width:460px;width:100%;display:flex;flex-direction:column;gap:12px}
+.loader h2{font:400 2rem/1.1 var(--display);margin:0}
+.loader .pbar{height:8px}
+.srcl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px;font-size:.86rem}
+.srcl li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed var(--line);padding:3px 0}
+.chip.ig{background:var(--voip-soft);color:var(--voip)}
+.chip.biz{background:var(--b-soft);color:var(--b)}
+.phl{display:flex;flex-direction:column;gap:3px}
+.hright{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.bkbox{display:flex;flex-wrap:wrap;align-items:center;gap:8px;justify-content:flex-end}
+header .bkstat{font-size:.78rem;color:var(--hero-ink-2)}
+header .bkstat.warn{color:var(--gold-light);font-weight:600}
+@media (max-width:760px){.hright{align-items:flex-start}.bkbox{justify-content:flex-start}}
+
+.next{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:860px){.next{grid-template-columns:1fr}}
+.ncard{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.ncard.go{border-color:var(--gold);box-shadow:inset 3px 0 0 var(--gold)}
+.ncard.warn .big{color:var(--warn)}
+.lbl2{font:400 .68rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--gold-text)}
+.big{font:400 2.4rem/1 var(--display);font-variant-numeric:tabular-nums}
+.ncard .row2{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:auto}
+.qsel{font:inherit;font-size:.92rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:8px 9px;flex:1 1 220px;min-width:0}
+
+.kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:11px 13px;display:flex;flex-direction:column;gap:2px;min-width:0;text-align:left;font:inherit;color:inherit;cursor:pointer}
+.kpi:hover{border-color:var(--gold)}
+.kpi b{font:400 1.55rem/1.1 var(--display);font-variant-numeric:tabular-nums}
+.kpi span{font:400 .66rem/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.kpi.pos b{color:var(--a)}.kpi.att b{color:var(--b)}.kpi.neg b{color:var(--warn)}
+
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:980px){.trio{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.panel h3{font:500 1.15rem/1.15 var(--display);margin:0;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.panel h3 small{font:400 .72rem var(--mono);color:var(--faint)}
+.pbar{height:10px;border-radius:5px;background:var(--surface-2);overflow:hidden;display:flex}
+.pbar i{display:block;height:100%}
+.pbar .p1{background:var(--accent)}.pbar .p2{background:var(--gold)}
+.plist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 14px;font-size:.86rem}
+.plist div{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dashed var(--line);padding:3px 0}
+.plist b{font-variant-numeric:tabular-nums;font-weight:600}
+.pct{display:flex;flex-direction:column;gap:6px;font-size:.84rem}
+.pct .r{display:grid;grid-template-columns:150px 1fr 48px;gap:8px;align-items:center}
+.pct .t{height:6px;border-radius:3px;background:var(--surface-2);overflow:hidden}
+.pct .t i{display:block;height:100%;background:var(--accent)}
+.pct .v{text-align:right;font:500 .8rem var(--mono)}
+.funnel{display:flex;flex-direction:column;gap:5px;font-size:.84rem}
+.funnel .r{display:grid;grid-template-columns:110px 1fr 64px 52px;gap:8px;align-items:center}
+.funnel .t{height:16px;border-radius:3px;background:var(--surface-2);overflow:hidden}
+.funnel .t i{display:block;height:100%;background:var(--accent);min-width:2px}
+.funnel .n{text-align:right;font:500 .8rem var(--mono);font-variant-numeric:tabular-nums}
+.funnel .c{text-align:right;font:400 .74rem var(--mono);color:var(--faint)}
+
+.segs{display:flex;flex-wrap:wrap;gap:6px}
+.segs button{font:500 .8rem var(--body);border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:999px;padding:5px 11px;cursor:pointer;display:flex;gap:6px;align-items:baseline}
+.segs button b{font:500 .72rem var(--mono);color:var(--gold-text)}
+.segs button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.segs button[aria-pressed="true"] b{color:var(--gold-light)}
+.segs .custom{border-style:dashed}
+.segs .x{font-size:.7rem;margin-left:2px;opacity:.7}
+
+.qf{display:flex;flex-wrap:wrap;gap:6px;width:100%}
+.qf button{font:500 .78rem var(--body);border:1px solid var(--line);background:var(--bg);color:var(--muted);border-radius:6px;padding:4px 9px;cursor:pointer}
+.qf button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--surface)}
+.controls select{flex:0 1 auto}
+.colmenu{position:relative}
+.colpop{position:absolute;right:0;top:calc(100% + 6px);z-index:30;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;box-shadow:0 10px 30px rgba(0,0,0,.14);display:grid;gap:6px;min-width:200px}
+.colpop label{display:flex;gap:8px;align-items:center;font-size:.86rem;cursor:pointer}
+
+/* virtual table */
+.vt{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.vh,.vr{display:grid;align-items:center;gap:0 12px;padding:0 14px}
+.vh{font:400 .66rem var(--mono);text-transform:uppercase;letter-spacing:.11em;color:var(--gold-text);height:36px;border-bottom:1px solid var(--line);background:var(--surface)}
+.vbody{height:min(68vh,760px);overflow:auto;position:relative;overscroll-behavior:contain}
+.vspace{position:relative}
+.vr{position:absolute;left:0;right:0;height:56px;border-bottom:1px solid var(--line);font-size:.86rem;cursor:pointer}
+.vr:hover{background:var(--bg)}
+.vr.sel{background:var(--accent-soft)}
+.vr > div{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vr .nm{font-weight:600}
+.vr .sub2{font-size:.74rem;color:var(--faint);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vr select{font:inherit;font-size:.78rem;padding:3px 4px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--ink);max-width:100%}
+.rowact{display:flex;gap:4px}
+.rowact a,.rowact button{font:600 .7rem var(--body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:5px;padding:3px 7px;cursor:pointer;text-decoration:none}
+.rowact a.pri{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.ve{padding:40px;text-align:center;color:var(--muted)}
+
+.st{display:inline-block;font-size:.7rem;font-weight:700;border-radius:999px;padding:2px 8px;white-space:nowrap;background:var(--surface-2);color:var(--muted)}
+.st.s1,.st.s2{background:var(--voip-soft);color:var(--voip)}
+.st.s3,.st.s4,.st.s6,.st.s7,.st.s8{background:var(--b-soft);color:var(--b)}
+.st.s5{background:var(--a-soft);color:var(--a)}
+.st.s9{background:var(--a);color:var(--surface)}
+.st.s10,.st.s11{background:var(--warn-soft);color:var(--warn)}
+.st.s12{background:var(--warn);color:var(--surface)}
+.pr{font:600 .7rem var(--mono)}
+.pr.p1{color:var(--warn)}.pr.p2{color:var(--b)}.pr.p3{color:var(--faint)}
+.late{color:var(--warn);font-weight:600}
+.due{color:var(--b);font-weight:600}
+.chip.dq{background:var(--warn-soft);color:var(--warn)}
+.chip.shr{background:var(--b-soft);color:var(--b)}
+.chip.edit{background:var(--surface-2);color:var(--muted);font-style:italic}
+
+/* mobile cards */
+@media (max-width:760px){
+  .vh{display:none}
+  .vr{display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:2px;height:96px;padding:8px 14px}
+  .vr > div{white-space:normal}
+  .vr .hide-m{display:none}
+  .vbody{height:72vh}
+}
+
+/* drawer */
+.scrim{position:fixed;inset:0;background:rgba(10,20,15,.38);z-index:40}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(560px,100%);background:var(--bg);border-left:1px solid var(--line);z-index:41;display:flex;flex-direction:column;box-shadow:-10px 0 30px rgba(0,0,0,.15);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.dh{padding:14px 18px 12px;border-bottom:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;gap:8px}
+.dtop{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.dh h2{font:400 1.75rem/1.1 var(--display);margin:0;overflow-wrap:anywhere}
+.x{font:600 1.2rem var(--body);border:0;background:none;color:var(--muted);cursor:pointer;padding:2px 6px}
+.db{padding:14px 18px 40px;overflow:auto;display:flex;flex-direction:column;gap:14px;flex:1}
+.kv{display:grid;grid-template-columns:120px 1fr;gap:5px 10px;font-size:.86rem;margin:0}
+.kv dt{color:var(--faint)}
+.kv dd{margin:0;overflow-wrap:anywhere}
+.field{display:flex;flex-direction:column;gap:5px;min-width:0}
+.field > label,.flabel{font:400 .64rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--gold-text)}
+.field input,.field select,.field textarea{font:inherit;font-size:.92rem;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:7px;padding:8px 9px;width:100%;min-width:0}
+.field textarea{min-height:84px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:520px){.two{grid-template-columns:1fr}}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pills button{font:500 .8rem var(--body);border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:999px;padding:5px 11px;cursor:pointer}
+.pills button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--surface)}
+.pills.out button{border-style:dashed}
+.pills.out button[aria-pressed="true"]{border-style:solid;background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.contact{display:flex;flex-wrap:wrap;gap:8px}
+.contact a,.contact button{flex:1 1 92px;text-align:center;font:600 .88rem var(--body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:9px 10px;cursor:pointer;text-decoration:none}
+.contact a.pri{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.src{background:var(--surface-2);border-radius:10px;padding:10px 12px}
+.src .flabel{display:block;margin-bottom:6px}
+.timeline{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.timeline li{display:grid;grid-template-columns:30px 1fr;gap:10px;padding:9px 0;border-top:1px solid var(--line)}
+.timeline li:first-child{border-top:0}
+.ico{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font:600 .66rem var(--mono);background:var(--surface-2);color:var(--muted)}
+.ico.text{background:var(--accent-soft);color:var(--accent)}
+.ico.call,.ico.voicemail{background:var(--b-soft);color:var(--b)}
+.ico.email{background:var(--voip-soft);color:var(--voip)}
+.ico.sys{background:transparent;border:1px dashed var(--line);color:var(--faint)}
+.ico.in{outline:2px solid var(--a);outline-offset:1px}
+.tl-top{display:flex;flex-wrap:wrap;gap:3px 10px;align-items:baseline}
+.tl-top b{font-size:.88rem}
+.tl-top time{font:400 .72rem var(--mono);color:var(--faint)}
+.tl-body{font-size:.88rem;white-space:pre-wrap;overflow-wrap:anywhere;margin-top:2px}
+.tl-del{font:600 .7rem var(--body);background:none;border:0;color:var(--faint);cursor:pointer;margin-left:auto}
+.tl-del:hover{color:var(--warn)}
+.linked{display:flex;flex-direction:column;gap:4px;font-size:.86rem}
+.linked button{font:inherit;text-align:left;background:none;border:0;padding:3px 0;color:var(--accent);cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+
+/* outreach mode */
+.om{position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.omh{background:var(--hero);color:var(--hero-ink);padding:12px 16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.omh .qt{font:400 1.1rem var(--display)}
+.omh select{font:inherit;font-size:.86rem;background:var(--hero);color:var(--hero-ink);border:1px solid var(--hero-line);border-radius:7px;padding:6px 8px;max-width:100%}
+.omh .btn{background:transparent;color:var(--hero-ink);border-color:var(--hero-line)}
+.omh label.tog{color:var(--hero-ink-2)}
+.ompos{font:400 .78rem var(--mono);color:var(--hero-ink-2)}
+.omb{flex:1;overflow:auto;padding:16px}
+.card{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.card .who{display:flex;flex-direction:column;gap:4px}
+.card h2{font:400 2.2rem/1.05 var(--display);margin:0;overflow-wrap:anywhere}
+.card .bigphone{font:500 1.6rem var(--mono);letter-spacing:.02em}
+.bigbtns{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.bigbtns a,.bigbtns button{display:flex;align-items:center;justify-content:center;min-height:58px;font:600 1.02rem var(--body);border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;cursor:pointer;padding:8px}
+.bigbtns .pri{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.bigbtns .gold{background:var(--gold);border-color:var(--gold);color:var(--gold-ink)}
+.bigbtns [aria-disabled="true"]{opacity:.4;pointer-events:none}
+.msgbox textarea{min-height:76px}
+.navrow{display:grid;grid-template-columns:1fr 2fr;gap:10px}
+.navrow button{min-height:52px;font:600 1rem var(--body);border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.navrow .nx{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.outbar{display:flex;flex-wrap:wrap;gap:8px}
+.outbar button{flex:1 1 30%;min-height:46px;font:600 .9rem var(--body);border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.outbar button.good{border-color:var(--a);color:var(--a)}
+.outbar button.bad{border-color:var(--warn);color:var(--warn)}
+.logged{background:var(--a-soft);color:var(--a);border-radius:10px;padding:8px 12px;font-weight:600;font-size:.9rem}
+.omdone{max-width:560px;margin:60px auto;text-align:center;display:flex;flex-direction:column;gap:12px;align-items:center}
+@media (max-width:520px){.card h2{font-size:1.8rem}.bigbtns{grid-template-columns:1fr 1fr}.bigbtns .wide{grid-column:span 2}}
+.backup{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.82rem;color:var(--muted)}
+input[type=file]{display:none}
+.dqgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px}
+.dqgrid button{font:inherit;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;display:flex;justify-content:space-between;gap:8px}
+.dqgrid button[aria-pressed="true"]{border-color:var(--warn);box-shadow:inset 3px 0 0 var(--warn)}
+.dqgrid b{font-variant-numeric:tabular-nums}
+.ncard.kpi{cursor:pointer;text-align:left}
+.ncard.kpi .big{font:400 2.4rem/1 var(--display);letter-spacing:0;text-transform:none;color:var(--ink)}
+.ncard.kpi.warn .big{color:var(--warn)}
+.ncard.kpi .sm{font:400 .8rem var(--body);letter-spacing:0;text-transform:none;color:var(--faint)}
+
+.vr.m{display:grid;grid-template-rows:auto auto auto;gap:4px;height:112px;padding:9px 14px;align-content:center}
+.vr.m > div{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.vr.m .m1{font-weight:600;font-size:.98rem}
+.vr.m .m2{font-size:.8rem;color:var(--muted);display:flex;gap:6px;align-items:center;flex-wrap:nowrap}
+.vr.m .m3{display:flex;gap:8px;align-items:center;overflow:visible}
+.vr.m .m3 select{flex:0 1 150px}
+.omset{width:100%;font-size:.84rem}
+.omset summary{cursor:pointer;color:var(--hero-ink-2);font:400 .72rem var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.omsetb{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:8px}
+.omsetb label.tog{white-space:normal}
+.vr.m{grid-template-columns:100%;justify-items:start}
+.navrow{position:sticky;bottom:0;background:var(--bg);padding:10px 0 4px;z-index:2}
+
+.two-up{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:860px){.two-up{grid-template-columns:1fr}}
+.tgt{display:flex;flex-direction:column;gap:4px}
+.tgt .pbar{height:8px}
+.linkbtn{font:inherit;background:none;border:0;padding:0;color:var(--accent);cursor:pointer;text-decoration:underline;text-underline-offset:2px;text-align:left}
+.todaylog{list-style:none;margin:0;padding:0;max-height:260px;overflow:auto;display:flex;flex-direction:column}
+.todaylog li{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;align-items:baseline;padding:5px 0;border-bottom:1px dashed var(--line);font-size:.86rem}
+.todaylog li .linkbtn{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.panel .row2{display:flex;flex-wrap:wrap;gap:8px}
+.ver .r{grid-template-columns:110px 1fr 48px;row-gap:0}
+.ver .r .sm{grid-column:1/-1;margin-top:-2px}
+#setPanel summary{cursor:pointer;list-style:none}
+#setPanel summary::-webkit-details-marker{display:none}
+#setPanel summary h3::after{content:" ▾";font-size:.8em;color:var(--faint)}
+.setgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:10px}
+@media (max-width:860px){.setgrid{grid-template-columns:1fr}}
+.seqsteps{display:flex;flex-direction:column;gap:6px}
+.seqrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.seqrow input{width:60px;font:inherit;padding:5px 6px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink)}
+.seqrow select{font:inherit;padding:5px 6px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink)}
+.chip.tag{background:var(--accent-soft);color:var(--accent)}
+.pills.tags button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+textarea.reply{font:inherit;font-size:.92rem;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 9px;min-height:64px;width:100%}
+.outbar button.sug{outline:3px solid var(--gold);outline-offset:1px}
+.toast{display:flex;gap:12px;align-items:center}
+.tundo{font:600 .82rem var(--body);background:transparent;border:1px solid currentColor;color:inherit;border-radius:6px;padding:2px 9px;cursor:pointer}
+.navrow{grid-template-columns:1fr 1fr 2fr}
+
+.setcol{display:flex;flex-direction:column;gap:8px;min-width:0}
+.setcol label.tog{white-space:normal;align-items:flex-start}
+.setcol .quiet input{width:56px;font:inherit;padding:4px 6px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink)}
+.seqrow select{width:auto}
+
+</style>
+
+<div class="wrap" id="app">
+  <header>
+    <div>
+      <p class="eyebrow">Hairstylist Tribe · Prospect workspace</p>
+      <h1>All Beauty <span>Prospects</span></h1>
+      <p class="sub" id="sub">Every beauty prospect list in one place: state board licensees, Texas and Virginia salons, and Instagram stylists. The same person found on several lists is one record, with every source kept. Pick a queue, work through people one at a time, and every text, call, note and follow-up is saved.</p>
+    </div>
+    <div class="hright">
+      <div class="stats" id="stats"></div>
+      <div class="bkbox"><button class="btn primary bkbtn" type="button">Back up my work</button><span class="bkstat" data-bkstat></span></div>
+    </div>
+  </header>
+
+  <section class="next" aria-label="Who to contact next">
+    <div class="ncard go">
+      <span class="lbl2">Who do I contact next?</span>
+      <div class="row2">
+        <select class="qsel" id="queuePick" aria-label="Queue"></select>
+        <button class="btn primary" type="button" id="startOM">Start Outreach Mode</button>
+      </div>
+      <span class="sm" id="resumeLine"></span>
+    </div>
+    <button class="ncard kpi" type="button" data-openq="due"><span class="lbl2">Follow-ups due today</span><span class="big" id="nDue">0</span><span class="sm">Open as a work queue</span></button>
+    <button class="ncard kpi warn" type="button" data-openq="overdue"><span class="lbl2">Overdue follow-ups</span><span class="big" id="nOver">0</span><span class="sm">Open as a work queue</span></button>
+  </section>
+
+  <section class="kpis" id="kpis" aria-label="Totals"></section>
+
+  <section class="trio">
+    <div class="panel">
+      <h3>Database progress <small id="progSmall"></small></h3>
+      <div class="pbar" aria-hidden="true"><i class="p1" id="pbWorked"></i></div>
+      <div class="plist" id="progList"></div>
+      <div class="pct" id="pctList"></div>
+    </div>
+    <div class="panel">
+      <h3>Today <small id="todayDate"></small></h3>
+      <div class="tgt"><div class="pbar"><i class="p2" id="tgtBar"></i></div><span class="sm" id="tgtTxt"></span></div>
+      <div class="plist" id="todayList"></div>
+    </div>
+    <div class="panel">
+      <h3>Funnel <small>from your actual activity</small></h3>
+      <div class="funnel" id="funnel"></div>
+    </div>
+  </section>
+
+  <section class="trio two-up">
+    <div class="panel">
+      <h3>Contacted today <small id="todayLogCount"></small></h3>
+      <ol class="todaylog" id="todayLog"></ol>
+      <div class="row2"><button class="btn" type="button" id="expToday">Export today’s log</button><button class="btn" type="button" id="undoTop">Undo last action</button></div>
+    </div>
+    <div class="panel">
+      <h3>Message versions <small>reply rate by version</small></h3>
+      <div class="pct ver" id="verList"></div>
+      <p class="sm">Each text or email you mark sent records the version used. Edit versions below, or switch versions in Outreach Mode.</p>
+    </div>
+  </section>
+
+  <details class="panel" id="setPanel">
+    <summary><h3 style="display:inline">Follow-up sequence, message versions &amp; settings</h3></summary>
+    <div class="setgrid">
+      <div class="setcol">
+        <span class="flabel">Follow-up sequence</span>
+        <label class="tog"><input type="checkbox" id="seqOn"> Schedule the next step automatically after each outreach, and stop when they reply</label>
+        <div id="seqSteps" class="seqsteps"></div>
+        <button class="btn" type="button" id="seqAdd">Add a step</button>
+        <span class="sm">Days are counted from the first contact. Each step sets the follow-up date, so the “Follow-ups due today” queue always shows who's next.</span>
+        <label class="sm quiet" style="margin-top:8px">Count someone as “gone quiet” after <input type="number" id="quietDays" min="1" max="60" style="width:56px"> days without a reply</label>
+      </div>
+      <div class="field"><span class="flabel">Message versions</span><div id="tplEdit"></div></div>
+    </div>
+  </details>
+
+  <section aria-label="Segments" class="segs" id="segs"></section>
+
+  <section class="controls" aria-label="Filters">
+    <input type="search" id="q" placeholder="Search name, business, license, city, ZIP, phone, email, Instagram or your notes" aria-label="Search">
+    <div class="qf" id="qf"></div>
+    <select id="fState" aria-label="State"></select>
+    <select id="fKind" aria-label="Record type"></select>
+    <select id="fSrc" aria-label="Source list"></select>
+    <select id="fStatus" aria-label="Status"></select>
+    <select id="fPriority" aria-label="Priority"></select>
+    <select id="fLt1" aria-label="Primary line type"></select>
+    <select id="fLt2" aria-label="License type"></select>
+    <select id="fCarrier" aria-label="Carrier"></select>
+    <select id="fTier" aria-label="Contactability"></select>
+    <select id="fLast" aria-label="Last contacted"></select>
+    <select id="fFollow" aria-label="Follow-up"></select>
+    <select id="fResp" aria-label="Response"></select>
+    <select id="fShared" aria-label="Shared contact"></select>
+    <select id="fTag" aria-label="Tag"></select>
+    <button class="btn" type="button" id="clear">Clear filters</button>
+    <button class="btn" type="button" id="saveView">Save this view</button>
+  </section>
+
+  <section id="dqPanel" class="panel" hidden>
+    <h3>Data quality <small>flagged for review, never deleted</small></h3>
+    <div class="dqgrid" id="dqGrid"></div>
+  </section>
+
+  <div class="bar-row">
+    <div class="count" id="count"></div>
+    <div class="actions">
+      <select id="sort" aria-label="Sort">
+        <option value="row">Sort: Original order</option>
+        <option value="name">Sort: Name A–Z</option>
+        <option value="lic">Sort: License type</option>
+        <option value="state">Sort: State</option>
+        <option value="ig">Sort: Instagram followers</option>
+        <option value="last">Sort: Last contact (newest)</option>
+        <option value="follow">Sort: Next follow-up (soonest)</option>
+        <option value="tier">Sort: Contactability</option>
+        <option value="pri">Sort: Priority</option>
+        <option value="worked">Sort: Recently worked</option>
+      </select>
+      <div class="colmenu"><button class="btn" type="button" id="colBtn" aria-expanded="false">Columns</button><div class="colpop" id="colPop" hidden></div></div>
+      <button class="btn" type="button" id="omThese">Work these one by one</button>
+      <button class="btn" type="button" id="copyCsv">Copy CSV</button>
+      <button class="btn primary" type="button" id="dlCsv">Export CSV</button>
+    </div>
+  </div>
+
+  <div class="vt">
+    <div class="vh" id="vh"></div>
+    <div class="vbody" id="vbody"><div class="vspace" id="vspace"></div></div>
+  </div>
+
+  <section class="controls backup" aria-label="Back up your work">
+    <span id="bkNote"><b>Your work is saved in this browser on this computer.</b> “Back up my work” saves a file with every status, note, contact attempt and follow-up. Load it with “Restore from backup” on another computer, or upload it to Claude.</span>
+    <button class="btn bkbtn" type="button">Back up my work</button>
+    <button class="btn" type="button" id="rs">Restore from backup</button>
+    <input type="file" id="rsFile" accept=".json,application/json">
+    <span id="bkMsg"></span>
+  </section>
+
+  <footer>
+    <span><b>Sources.</b> <span id="srcFoot"></span> 610,923 source records were combined into one record per person or business. Records were merged only when they had the same license number in the same state, or the same email or phone <i>and</i> the same first and last name. Instagram accounts were attached to a person only when exactly one person matched the account’s email or phone. Different people who share a phone or email (often a salon front desk) are kept separate and flagged “Shared”, never removed.</span>
+    <span><b>Phone type.</b> “Lookup” means the line type came with the list (a carrier lookup on that number). “By prefix” means it was inferred from the Arkansas, Kansas, Maine and Rhode Island prefix classifications and can be wrong for ported numbers. Most Texas and Michigan numbers have no line type yet and show as Unknown.</span>
+    <span><b>Contactability</b> only measures how many ways you can reach someone, not how likely they are to buy. High = cellphone + email, Medium = cellphone only or landline + email, Low = one landline or email only.</span>
+    <span>Texts and calls are never sent automatically. The TCPA requires prior express consent for autodialed or prerecorded calls and texts to cellphones, and the National Do Not Call Registry applies to personal numbers.</span>
+  </footer>
+</div>
+
+<div id="drawerWrap" hidden><div class="scrim" id="scrim"></div><aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dName"></aside></div>
+<div class="om" id="om" hidden role="dialog" aria-modal="true" aria-label="Outreach Mode"></div>
+<div class="toast" id="toast" hidden></div>
+<div class="loader" id="loader"><div class="in"><p class="eyebrow" style="color:var(--gold-text)">Hairstylist Tribe · Prospect workspace</p><h2>Loading all beauty prospects…</h2><div class="pbar"><i class="p2" id="ldBar" style="width:0%"></i></div><span class="sm" id="ldTxt">Starting</span></div></div>
+
+<script>
+
+const $=id=>document.getElementById(id);
+const fmt=x=>Number(x).toLocaleString('en-US');
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const pad=x=>String(x).padStart(2,'0');
+const dayStr=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+const today=()=>dayStr(new Date());
+const addDays=n=>{const d=new Date();d.setDate(d.getDate()+n);return dayStr(d)};
+const nowLocal=()=>{const d=new Date();return dayStr(d)+'T'+pad(d.getHours())+':'+pad(d.getMinutes())};
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const fmtDate=s=>{if(!s)return '';const d=new Date(s.length===10?s+'T12:00:00':s);return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:d.getFullYear()===new Date().getFullYear()?undefined:'numeric'})};
+const fmtStamp=s=>new Date(s).toLocaleString('en-US',{month:'short',day:'numeric',year:new Date(s).getFullYear()===new Date().getFullYear()?undefined:'numeric',hour:'numeric',minute:'2-digit'});
+function ago(s){if(!s)return '';const m=Math.round((Date.now()-new Date(s))/60000);if(m<1)return 'just now';if(m<60)return m+' min ago';const h=Math.round(m/60);if(h<24)return h+' hr ago';const d=Math.round(h/24);return d<7?d+(d===1?' day ago':' days ago'):fmtDate(s)}
+const isToday=s=>s&&new Date(s).toDateString()===new Date().toDateString();
+const digits=p=>{let d=String(p||'').replace(/\D/g,'');if(d.length===11&&d[0]==='1')d=d.slice(1);return d};
+const telHref=p=>{const d=digits(p);return d.length===10?'tel:+1'+d:''};
+const smsHref=(p,body)=>{const d=digits(p);return d.length===10?'sms:+1'+d+(body?'&body='+encodeURIComponent(body):''):''};
+const IN_FILE=location.protocol==='file:';
+async function loadAll(){
+  const ld=(t,p)=>{document.getElementById('ldTxt').textContent=t;document.getElementById('ldBar').style.width=p+'%'};
+  const get=async f=>{const r=await fetch('data/'+f);if(!r.ok)throw new Error(f+' '+r.status);return r.json()};
+  ld('Loading list details',2);const m=await get('meta.json');let done=0;
+  const parts=await Promise.all(m.files.map(f=>get(f).then(x=>{done++;ld(`Loading prospects · ${done} of ${m.files.length} parts`,Math.round(5+done/m.files.length*85));return x})));
+  ld('Preparing the workspace',95);m.rows=[].concat(...parts);return m}
+async function main(){
+let D;try{D=await loadAll()}catch(e){document.getElementById('ldTxt').textContent='The prospect data didn’t load. Reload the page to try again.';return}
+
+/* ================= source records (never modified) ================= */
+const LT=D.lt, CAR=D.car, LIC=D.lic, KIND=D.kind, SRCS=D.src, TIERS=['High','Medium','Low','None'], FLAGS=D.flags;
+const LTLABEL={cellphone:'Cell',landline:'Landline',voip:'VoIP',unknown:'Unknown',other:'Other',invalid:'Invalid','':'—'};
+const LTCHIP={cellphone:'cell',landline:'land',voip:'voip',unknown:'none',other:'none',invalid:'none','':'none'};
+const FLAGLABEL={missing_phone:'No phone',missing_email:'No email',invalid_phone:'Invalid phone number',no_contact:'No contact info at all',shared_phone:'Phone shared with another prospect',shared_email:'Email shared with another prospect',missing_name:'Missing name',merged:'Merged from several lists'};
+const BSRC=['','lookup','by prefix'];
+const srcNames=b=>SRCS.filter((x,k)=>b&(1<<k)).map(x=>x[1]);
+const rows=new Array(D.rows.length);
+for(let i=0;i<D.rows.length;i++){const a=D.rows[i];
+  const oph=a[14]?a[14].split(';').map(x=>{const k=x.lastIndexOf(':');return {d:x.slice(0,k),t:LT[+x.slice(k+1)]}}):[];
+  const emails=a[15]?a[15].split(' '):[];
+  const r={i,num:a[0],id:'P'+a[0],name:a[1]||a[2]||(a[17]?'@'+a[17]:''),bname:a[1]?a[2]:'',kind:a[3],st:a[4],lic:LIC[a[5]]||'',olic:a[6],licno:a[7],city:a[8],zip:a[9],
+    bestPhone:a[10],bestType:a[10]?LT[a[11]]:'',bestCar:CAR[a[12]]||'',bsrc:a[13],oph,emails,email:emails[0]||'',srcb:a[16],ig:a[17],igf:a[18],igt:a[19],web:a[20],
+    tier:a[21],gsz:a[22],grp:a[23],bsh:a[24],esh:a[25],fl:a[26],student:!!a[27],addr:a[28],county:a[29],exp:a[30],refs:a[31],bio:a[32],active:a[33],ast:a[34]};
+  r.d1=r.bestPhone;r.hasPhone=!!r.bestPhone;r.hasEmail=emails.length>0;
+  const valid=[r.bestPhone&&r.bestType].concat(oph.filter(p=>p.t!=='invalid').map(p=>p.t)).filter(Boolean);
+  r.has2=valid.length>1;r.hasCell=r.bestType==='cellphone';
+  r.allCell=valid.length&&valid.every(t=>t==='cellphone');r.allLand=valid.length&&valid.every(t=>t==='landline');r.allVoip=valid.length&&valid.every(t=>t==='voip');r.unkLt=valid.some(t=>t==='unknown'||t==='other');
+  r.method=r.hasCell?'Text':r.hasPhone?'Call':r.hasEmail?'Email':r.ig?'Instagram DM':'None';
+  r.first=a[1]&&(a[3]!==2||a[19]==='i')?((a[1].trim().split(/\s+/)[0]||'').replace(/[^A-Za-z'-]/g,'')):'';
+  r.loc=[r.city,[r.st,r.zip].filter(Boolean).join(' ')].filter(Boolean).join(', ');
+  rows[i]=r}
+D.rows=null;
+const keyOf=r=>r._k||(r._k=(r.name+' '+r.bname+' '+r.lic+' '+r.olic+' '+r.licno+' '+r.bestPhone+' '+r.oph.map(p=>p.d).join(' ')+' '+r.emails.join(' ')+' '+r.ig+' '+r.web+' '+r.loc+' '+r.county+' '+r.addr).toLowerCase());
+const byId=new Map(rows.map(r=>[r.id,r]));
+const groups=new Map();rows.forEach(r=>{if(r.grp!==''&&r.grp!=null){if(!groups.has(r.grp))groups.set(r.grp,[]);groups.get(r.grp).push(r.id)}});
+const kindChip=r=>r.kind===1?'<span class="chip biz">Business</span>':r.kind===2?'<span class="chip ig">Instagram</span>':r.kind===3?'<span class="chip">Contact</span>':'';
+const igUrl=h=>'https://www.instagram.com/'+encodeURIComponent(h)+'/';
+$('srcFoot').textContent=SRCS.map(x=>x[2]).join(', ')+'.';
+
+/* ================= your work (operational data) ================= */
+const STATUSES=['Not contacted','Attempted','Contacted','Responded','Conversation','Interested','Follow-up','Call scheduled','Proposal / Offer','Client','Not interested','Bad contact','Do not contact'];
+const PRIORITIES=['Unranked','High','Medium','Low'];
+const CHANNELS={text:['Text','T'],call:['Phone call','C'],email:['Email','E'],voicemail:['Voicemail','V'],other:['Other','O']};
+const CH_ALL={...CHANNELS,note:['Note','N']};
+const isTouch=l=>l.ch!=='sys'&&l.ch!=='note';
+const OUTCOMES=['No response','Replied','Connected','Left voicemail','Bad number','Interested','Not interested','Call back','Follow-up required','Other'];
+const RESP=new Set(['Replied','Connected','Interested','Not interested','Call back']);
+let ops={};               // id -> {s,pr,f,qn,n,op,ed:{},log:[],rv,u}
+const SETTINGS_DEF=()=>({msg:'Hi {first_name}, this is Ovi.',fuAfterText:3,auto:true,skipShared:true,cols:null,tpls:null,tplMode:'A',seq:{on:true,steps:[{d:0,ch:'text'},{d:3,ch:'text'},{d:7,ch:'call'},{d:14,ch:'email'}]},target:75,quietDays:5,tagList:null});
+let meta={settings:SETTINGS_DEF(),views:[],last:null,lastbk:''};
+const blankOp=()=>({s:0,pr:0,f:'',fs:false,qn:'',n:'',op:'',ed:{},log:[],tags:[],sq:null,rv:'',u:''});
+const DEFAULT_TAGS=['Salon owner','Suite owner','Booth renter','Independent','Employee','Educator','Referral'];
+function fixSettings(st){const d=SETTINGS_DEF();st={...d,...(st||{})};if(!st.seq||!Array.isArray(st.seq.steps)||!st.seq.steps.length)st.seq=d.seq;
+  if(!Array.isArray(st.tpls)||!st.tpls.length)st.tpls=[{id:'A',name:'Version A',text:st.msg||d.msg},{id:'B',name:'Version B',text:''},{id:'C',name:'Version C',text:''}];
+  if(!Array.isArray(st.tagList))st.tagList=DEFAULT_TAGS.slice();return st}
+const getOp=id=>{const o=ops[id];return o?{...blankOp(),...o,ed:{...(o.ed||{})},log:[...(o.log||[])],tags:[...(o.tags||[])],sq:o.sq?{...o.sq}:null}:blankOp()};
+const S=id=>(ops[id]&&ops[id].s)||0;
+function isContacted(id){const o=ops[id];if(!o)return false;if(o.s>=1&&o.s<=11)return true;return (o.log||[]).some(l=>isTouch(l)&&l.dir==='out')}
+function isResponded(id){const o=ops[id];if(!o)return false;if(o.s>=3&&o.s<=9)return true;return (o.log||[]).some(l=>isTouch(l)&&(l.dir==='in'||RESP.has(l.out)))}
+function isConversation(id){const o=ops[id];if(!o)return false;if(o.s>=4&&o.s<=9&&o.s!==6)return true;return (o.log||[]).some(l=>l.out==='Connected')}
+function isInterested(id){const o=ops[id];if(!o)return false;if([5,7,8,9].includes(o.s))return true;return (o.log||[]).some(l=>l.out==='Interested')&&o.s!==10}
+const isWorked=id=>!!ops[id];
+function lastOut(id){const o=ops[id];if(!o)return null;return (o.log||[]).find(l=>isTouch(l)&&l.dir==='out')||null}
+function isQuiet(id){const o=ops[id];if(!o||!isContacted(id)||isResponded(id)||[9,10,11,12].includes(o.s))return false;const l=lastOut(id);if(!l)return false;
+  if((Date.now()-new Date(l.t))/864e5<(meta.settings.quietDays||5))return false;if(o.f&&o.f>today())return false;return true}
+const lastTouch=id=>{const o=ops[id];if(!o)return null;return (o.log||[]).find(isTouch)||null};
+const attempts=id=>{const o=ops[id];return o?(o.log||[]).filter(l=>isTouch(l)&&l.dir==='out').length:0};
+const fuState=id=>{const o=ops[id];if(!o||!o.f)return '';const t=today();return o.f<t?'overdue':o.f===t?'today':'upcoming'};
+const activeFU=id=>{const o=ops[id];return o&&o.f&&![10,11,12].includes(o.s)};
+const dispName=r=>{const o=ops[r.id];return (o&&o.ed&&o.ed.name)||r.name||'(no name on file)'};
+const fmtPh=p=>{const d=String(p||'');return /^\d{10}$/.test(d)?'('+d.slice(0,3)+') '+d.slice(3,6)+'-'+d.slice(6):d};
+const dispPhone=r=>{const o=ops[r.id];return (o&&o.ed&&o.ed.phone)||fmtPh(r.bestPhone)};
+const dispEmail=r=>{const o=ops[r.id];return (o&&o.ed&&o.ed.email)||r.email};
+
+/* ---------- storage ---------- */
+let mode='local',dbx=null,idb=null,storageOk=true;
+const OPS_KEY='bp-ops-v1',META_KEY='bp-meta-v1',UI_KEY='bp-ui-v1';
+function lsGet(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}}
+function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){return false}}
+function openIDB(){return new Promise(res=>{try{const rq=indexedDB.open('bp-workspace',1);rq.onupgradeneeded=()=>{rq.result.createObjectStore('ops')};rq.onsuccess=()=>res(rq.result);rq.onerror=()=>res(null);rq.onblocked=()=>res(null)}catch(e){res(null)}})}
+function idbAll(db){return new Promise(res=>{try{const out={};const tx=db.transaction('ops','readonly');const st=tx.objectStore('ops');const cur=st.openCursor();cur.onsuccess=()=>{const c=cur.result;if(c){out[c.key]=c.value;c.continue()}else res(out)};cur.onerror=()=>res(null)}catch(e){res(null)}})}
+function idbPut(id,v){try{const tx=idb.transaction('ops','readwrite');const st=tx.objectStore('ops');if(v)st.put(v,id);else st.delete(id);tx.onerror=()=>{storageWarn()}}catch(e){storageWarn()}}
+function storageWarn(){if(storageOk){storageOk=false;toast('Saving was blocked by this browser. Use “Back up my work” now so nothing is lost.')}}
+let lsTimer=null;
+const bucketOf=id=>'b'+(Number(id.slice(1))%256);
+const pendingW={},busyW={},knownBuckets=new Set();
+function queueWrite(path,body){pendingW[path]=body;if(!busyW[path])flushWrite(path)}
+async function flushWrite(path){busyW[path]=true;
+  while(pendingW[path]!==undefined){const body=pendingW[path];delete pendingW[path];
+    try{const ref=dbx.doc(path);
+      if(body.__bucket){const b=body.__bucket;if(knownBuckets.has(b)){await ref.update({leads:body.leads})}else{await ref.set({leads:body.leads});knownBuckets.add(b)}}
+      else await ref.set(body)}
+    catch(e){if(e&&(e.code==='unavailable'||e.code==='invalid_argument')&&!body.__retried){body.__retried=1;if(e.code==='invalid_argument'&&body.__bucket)knownBuckets.delete(body.__bucket);await new Promise(r=>setTimeout(r,700));if(pendingW[path]===undefined)pendingW[path]=body}
+      else{toast(e&&e.code==='quota_exceeded'?'Storage is full. Your latest change was not saved.':'A change could not be saved. Use “Back up my work” to keep a copy.');break}}}
+  busyW[path]=false}
+const bucketPending={};
+function persist(id){
+  const v=ops[id]||null;
+  if(mode==='db'){const b=bucketOf(id);const cur=bucketPending[b]||{};cur[id]=v?{...JSON.parse(JSON.stringify(v)),__deleted:false}:null;bucketPending[b]=cur;
+    clearTimeout(persist.t);persist.t=setTimeout(()=>{for(const b in bucketPending){const leads={};for(const k in bucketPending[b])leads[k]=bucketPending[b][k]===null?{__deleted:true}:bucketPending[b][k];queueWrite('ops/'+b,{__bucket:b,leads})}for(const k in bucketPending)delete bucketPending[k]},250);return}
+  if(mode==='idb'){idbPut(id,v);clearTimeout(lsTimer);lsTimer=setTimeout(()=>{if(!lsSet(OPS_KEY,ops)&&!persist.lsWarned){persist.lsWarned=1;toast('Browser storage is getting full. Use “Back up my work” regularly.')}},400);return}
+  clearTimeout(lsTimer);lsTimer=setTimeout(()=>{if(!lsSet(OPS_KEY,ops))storageWarn()},200);
+}
+function saveMeta(){if(mode==='db')queueWrite('meta/state',JSON.parse(JSON.stringify(meta)));else if(!lsSet(META_KEY,meta))storageWarn()}
+
+const undoStack=[];
+function commit(id,o,sys,noUndo){ // o is a full op object
+  if(!noUndo){const prev=ops[id]?JSON.parse(JSON.stringify(ops[id])):null;const top=undoStack[undoStack.length-1];
+    if(!(top&&top.id===id&&Date.now()-top.at<1500))undoStack.push({id,prev,at:Date.now()});else top.at=Date.now();if(undoStack.length>30)undoStack.shift()}
+  if(sys)o.log.unshift({id:uid(),t:new Date().toISOString(),ch:'sys',...sys});
+  o.u=new Date().toISOString();
+  const empty=!o.s&&!o.pr&&!o.f&&!o.qn&&!o.n&&!o.op&&!o.log.length&&!Object.values(o.ed).some(Boolean)&&!o.rv&&!(o.tags&&o.tags.length);
+  if(empty)delete ops[id];else ops[id]=o;
+  persist(id);scheduleRefresh();
+}
+function setStatus(id,s,o){o=o||getOp(id);if(o.s===s)return o;o.s=s;o.log.unshift({id:uid(),t:new Date().toISOString(),ch:'sys',k:'status',sv:s,x:'Status: '+STATUSES[s]});return o}
+function autoStatus(o,ch,dir,out){
+  if(o.s===9||o.s===12)return;
+  let t=null;
+  if(dir==='in'){t=out==='Interested'?5:out==='Not interested'?10:out==='Call back'?6:out==='Connected'?4:3}
+  else{const sent=(ch==='text'||ch==='email');
+    t={'No response':sent?2:1,'Left voicemail':2,'Replied':3,'Connected':4,'Interested':5,'Not interested':10,'Bad number':11,'Call back':6,'Follow-up required':6,'Other':sent?2:1,'':sent?2:1}[out||'']}
+  if(t==null)return;
+  if(t===11){if(o.s<3)setStatus(null,11,o);return}
+  if(t===10){setStatus(null,10,o);return}
+  if(o.s===10||o.s===11){if(t>=3)setStatus(null,t,o);return}
+  if(t>o.s)setStatus(null,t,o);
+}
+function addNote(id,x){const o=getOp(id);o.log.unshift({id:uid(),t:new Date().toISOString(),ch:'note',dir:'out',out:'',x});if(!o.qn)o.qn=x.split('\n')[0].slice(0,140);o.rv=o.rv||new Date().toISOString();commit(id,o);setLast(id);return o}
+function logInteraction(id,{ch,dir='out',out='',x='',when}){
+  if(ch==='note')return addNote(id,x);
+  const o=getOp(id);const t=when?new Date(when).toISOString():new Date().toISOString();
+  if(o.f&&o.f<=today()){o.log.unshift({id:uid(),t,ch:'sys',k:'fudone',x:'Follow-up done (was due '+fmtDate(o.f)+')'});o.f=''}
+  const entry={id:uid(),t,ch,dir,out,x};if(arguments[1].tpl)entry.tpl=arguments[1].tpl;
+  o.log.unshift(entry);o.log.sort((a,b)=>b.t.localeCompare(a.t));
+  autoStatus(o,ch,dir,out);o.rv=o.rv||t;
+  if(arguments[1].stop&&o.s!==9){setStatus(null,12,o);o.f='';o.fs=false}
+  seqStep(o,ch,dir,out,t);
+  commit(id,o);setLast(id);return o;
+}
+const SEQ_CH={text:'Text',call:'Call',email:'Email'};
+function seqStep(o,ch,dir,out,t){
+  const st=meta.settings.seq;
+  const replied=dir==='in'||RESP.has(out);
+  if(o.sq&&!o.sq.done&&replied){o.sq.done='replied';if(o.fs){o.f='';o.fs=false}o.log.unshift({id:uid(),t,ch:'sys',k:'seq',x:'Sequence stopped: they responded'});return}
+  if(!st||!st.on||dir!=='out'||!['text','call','email','voicemail'].includes(ch)||replied)return;
+  if([3,4,5,7,8,9,10,11,12].includes(o.s))return;
+  if(o.sq&&o.sq.done)return;
+  if(!o.sq){o.sq={i:0,st:t.slice(0,10)}}else o.sq.i=Math.min(o.sq.i+1,st.steps.length-1);
+  const nx=st.steps[o.sq.i+1];
+  if(nx){const d=new Date(o.sq.st+'T12:00:00');d.setDate(d.getDate()+(+nx.d||0));let due=dayStr(d);if(due<=today())due=addDays(1);o.f=due;o.fs=true;o.sq.nx=nx.ch;
+    o.log.unshift({id:uid(),t,ch:'sys',k:'seq',x:`Sequence step ${o.sq.i+1} of ${st.steps.length} done · next: ${SEQ_CH[nx.ch]||nx.ch} on ${fmtDate(due)}`})}
+  else{o.sq.done='finished';o.sq.nx='';if(o.fs){o.f='';o.fs=false}o.log.unshift({id:uid(),t,ch:'sys',k:'seq',x:'Sequence finished with no reply'})}
+}
+const seqNext=id=>{const o=ops[id];if(!o||!o.sq||o.sq.done||!o.sq.nx)return '';const n=meta.settings.seq.steps.length;return `Step ${o.sq.i+2} of ${n}: ${SEQ_CH[o.sq.nx]||o.sq.nx}`};
+function suggestOutcome(txt){const t=(txt||'').toLowerCase();if(!t.trim())return {out:'',stop:false};
+  if(/\b(stop|unsubscribe|remove me|do not (text|contact|call)|don'?t (text|contact|call)|lose (this|my) number|wrong number)\b/.test(t))return {out:'Not interested',stop:/\bwrong number\b/.test(t)?false:true,bad:/\bwrong number\b/.test(t)};
+  if(/\b(not interested|no thanks|no thank you|not for me|i'?m good|no,? thanks|pass)\b/.test(t))return {out:'Not interested',stop:false};
+  if(/\b(call me|give me a call|later|busy|next week|tomorrow|after \d|call back|in a meeting)\b/.test(t))return {out:'Call back',stop:false};
+  if(/\b(yes|interested|sure|tell me more|sounds good|how much|price|pricing|info|details|definitely|absolutely|ok|okay)\b/.test(t))return {out:'Interested',stop:false};
+  return {out:'Replied',stop:false}}
+function setFollow(id,date){const o=getOp(id);o.f=date||'';o.fs=false;commit(id,o,{k:'fu',x:date?'Follow-up set for '+fmtDate(date):'Follow-up cleared'})}
+function markReviewed(id){if(ops[id]&&ops[id].rv)return;const o=getOp(id);o.rv=new Date().toISOString();commit(id,o,null,true)}
+function undo(){const e=undoStack.pop();if(!e){toast('Nothing to undo.');return}
+  if(e.prev)ops[e.id]=e.prev;else delete ops[e.id];persist(e.id);scheduleRefresh();
+  const r=byId.get(e.id);toast('Undone'+(r?' for '+dispName(r):''),false);
+  if(OM&&!$('om').hidden){const i=OM.ids.indexOf(e.id);if(i>=0){if(OM.pos!==i&&OM.pos>=0)OM.hist.push(OM.pos);OM.pos=i;OM.logged='';setTimeout(drawOM,150)}}
+  else if(profId===e.id)setTimeout(drawProfile,150)}
+document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&!e.shiftKey&&e.key.toLowerCase()==='z'){const t=e.target;if(t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.isContentEditable))return;e.preventDefault();undo()}});
+function setLast(id,q){meta.last={id,q:q||(meta.last&&meta.last.q)||'',t:new Date().toISOString()};clearTimeout(setLast.t);setLast.t=setTimeout(saveMeta,400)}
+
+/* ================= filters, segments, views ================= */
+const QF=[['hasCell','Has cell phone'],['hasEmail','Has email'],['cellEmail','Has cell + email'],['hasPhone','Has any phone'],['hasIG','Has Instagram'],['allLand','Landline only'],['unkLt','Unknown line type'],['noPhone','No phone'],['noEmail','No email'],['merged','On several lists'],['shared','Shares phone/email'],['student','Students & apprentices']];
+const QFT={allCell:r=>r.allCell,allLand:r=>r.allLand,allVoip:r=>r.allVoip,hasCell:r=>r.hasCell,hasEmail:r=>r.hasEmail,cellEmail:r=>r.hasCell&&r.hasEmail,hasPhone:r=>r.hasPhone,hasIG:r=>!!r.ig,merged:r=>!!(r.fl&(1<<7)),shared:r=>r.gsz>1,student:r=>r.student,noPhone:r=>!r.hasPhone,noEmail:r=>!r.hasEmail,unkLt:r=>r.unkLt};
+const SEGS=[
+ ['all','All prospects',()=>true],
+ ['best','Best contactability',r=>r.tier===0],
+ ['cellEmail','Cellphone + email',r=>r.hasCell&&r.hasEmail],
+ ['cellOnly','Cellphone, no email',r=>r.hasCell&&!r.hasEmail],
+ ['emailOnly','Email only',r=>r.hasEmail&&!r.hasPhone],
+ ['landOnly','Landline only',r=>r.allLand],
+ ['new','Not contacted',r=>!isContacted(r.id)&&S(r.id)!==12],
+ ['responded','Responded',r=>isResponded(r.id)],
+ ['interested','Interested',r=>isInterested(r.id)],
+ ['fuToday','Follow-up today',r=>activeFU(r.id)&&ops[r.id].f===today()],
+ ['overdue','Overdue',r=>activeFU(r.id)&&ops[r.id].f<today()],
+ ['upcoming','Upcoming follow-ups',r=>activeFU(r.id)&&ops[r.id].f>today()],
+ ['noFU','Contacted, no follow-up',r=>isContacted(r.id)&&!(ops[r.id]&&ops[r.id].f)&&![9,10,11,12].includes(S(r.id))],
+ ['clients','Clients',r=>S(r.id)===9],
+ ['dnc','Do not contact',r=>S(r.id)===12],
+ ['instagram','Instagram stylists',r=>!!r.ig],
+ ['business','Salons & shops',r=>r.kind===1],
+ ['bad','Bad contact info',r=>S(r.id)===11||(r.fl&(1<<2))||(r.fl&(1<<3))||(ops[r.id]&&ops[r.id].log.some(l=>l.out==='Bad number'))],
+ ['quiet','Gone quiet',r=>isQuiet(r.id)],
+ ['tagged','Tagged',r=>!!(ops[r.id]&&ops[r.id].tags&&ops[r.id].tags.length)],
+ ['dq','Data quality',r=>r.fl!==0],
+];
+const SEGT=Object.fromEntries(SEGS.map(s=>[s[0],s[2]]));
+const DEF={seg:'all',view:'',q:'',qf:{},fState:'',fKind:'',fSrc:'',fTag:'',fStatus:'',fPriority:'',fLt1:'',fLt2:'',fCarrier:'',fTier:'',fLast:'',fFollow:'',fResp:'',fShared:'',dq:'',sort:'row'};
+let state={...DEF,...lsGet(UI_KEY,{})};state.qf={...(state.qf||{})};
+function saveUI(){lsSet(UI_KEY,state)}
+
+function fillSel(id,label,opts){$(id).innerHTML=`<option value="">${label}</option>`+opts.map(([v,l])=>`<option value="${esc(v)}">${esc(l)}</option>`).join('')}
+fillSel('fStatus','Any status',STATUSES.map((s,i)=>[String(i),s]));
+fillSel('fPriority','Any priority',PRIORITIES.map((s,i)=>[String(i),s]));
+const ltOpts=[['cellphone','Cell'],['landline','Landline'],['voip','VoIP'],['unknown','Unknown'],['other','Other'],['invalid','Invalid'],['none','None / blank']];
+fillSel('fLt1','Best phone type: any',ltOpts.map(([v,l])=>[v,'Best phone: '+l]));
+{const lc={};rows.forEach(r=>{if(r.lic)lc[r.lic]=(lc[r.lic]||0)+1});fillSel('fLt2','License type: any',Object.keys(lc).sort((a,b)=>lc[b]-lc[a]).map(k=>[k,k+' ('+fmt(lc[k])+')']))}
+{const sc={};rows.forEach(r=>{const k=r.st||'';sc[k]=(sc[k]||0)+1});fillSel('fState','All states',Object.keys(sc).sort((a,b)=>sc[b]-sc[a]).map(k=>[k||'none',(k||'No state')+' ('+fmt(sc[k])+')']))}
+{const kc=[0,0,0,0];rows.forEach(r=>kc[r.kind]++);fillSel('fKind','All record types',KIND.map((k,i)=>[String(i),(k==='Licensee'?'Licensees':k==='Business'?'Salons & shops':k==='Instagram'?'Instagram only':'Other contacts')+' ('+fmt(kc[i])+')']))}
+{const xc=SRCS.map(()=>0);rows.forEach(r=>{for(let k=0;k<SRCS.length;k++)if(r.srcb&(1<<k))xc[k]++});fillSel('fSrc','All source lists',SRCS.map((x,k)=>[String(k),x[1]+' ('+fmt(xc[k])+')']))}
+{const c={};rows.forEach(r=>{if(r.bestCar)c[r.bestCar]=(c[r.bestCar]||0)+1});const top=Object.keys(c).sort((a,b)=>c[b]-c[a]);fillSel('fCarrier','Any carrier',top.map(k=>[k,k.replace(/\s+-\s+[A-Z]{2}$/,'')+' ('+fmt(c[k])+')']))}
+fillSel('fTier','Any contactability',TIERS.map((t,i)=>[String(i),'Contactability: '+t]));
+fillSel('fLast','Last contacted: any',[['today','Contacted today'],['7','In the last 7 days'],['30','In the last 30 days'],['older','More than 30 days ago'],['never','Never contacted']]);
+fillSel('fFollow','Follow-up: any',[['today','Due today'],['overdue','Overdue'],['upcoming','Upcoming'],['none','No follow-up set']]);
+fillSel('fResp','Response: any',[['yes','Responded'],['no','Contacted, no response'],['conv','Had a conversation']]);
+fillSel('fShared','Shared contact: any',[['shared','Shares a phone or email'],['unique','Unique contact info']]);
+function fillTags(){const cur=state.fTag||'';const used=new Set(meta.settings.tagList||DEFAULT_TAGS);for(const id in ops)(ops[id].tags||[]).forEach(t=>used.add(t));fillSel('fTag','Any tag',[...used].map(t=>[t,'Tag: '+t]));$('fTag').value=cur}
+$('qf').innerHTML=QF.map(([k,l])=>`<button type="button" data-qf="${k}" aria-pressed="false">${l}</button>`).join('');
+const SELS=['fState','fKind','fSrc','fStatus','fPriority','fLt1','fLt2','fCarrier','fTier','fLast','fFollow','fResp','fShared','fTag','sort'];
+function syncControls(){SELS.forEach(id=>$(id).value=state[id]||'');if(!state.sort)$('sort').value='row';$('q').value=state.q;$('qf').querySelectorAll('[data-qf]').forEach(b=>b.setAttribute('aria-pressed',!!state.qf[b.dataset.qf]))}
+syncControls();
+SELS.forEach(id=>$(id).addEventListener('change',e=>{state[id]=e.target.value;state.view='';refreshList(true)}));
+$('qf').addEventListener('click',e=>{const b=e.target.closest('[data-qf]');if(!b)return;const k=b.dataset.qf;if(state.qf[k])delete state.qf[k];else state.qf[k]=1;state.view='';syncControls();refreshList(true)});
+let qt;$('q').addEventListener('input',e=>{clearTimeout(qt);qt=setTimeout(()=>{state.q=e.target.value;refreshList(true)},120)});
+$('clear').onclick=()=>{state={...DEF,seg:state.seg,sort:state.sort};state.qf={};syncControls();refreshList(true)};
+function prompt0(label){ // inline prompt (dialogs are unavailable inside Claude)
+  const box=document.createElement('div');box.className='colpop';box.style.cssText='position:fixed;left:50%;top:30%;transform:translateX(-50%);z-index:60;min-width:280px';
+  box.innerHTML=`<label class="flabel">${esc(label)}</label><input id="pIn" style="font:inherit;padding:8px;border:1px solid var(--line);border-radius:7px"><div style="display:flex;gap:8px;justify-content:flex-end"><button class="btn" type="button" id="pNo">Cancel</button><button class="btn primary" type="button" id="pOk">Save</button></div>`;
+  document.body.appendChild(box);const inp=box.querySelector('#pIn');inp.focus();
+  return new Promise(res=>{const done=v=>{box.remove();res(v)};box.querySelector('#pOk').onclick=()=>done(inp.value);box.querySelector('#pNo').onclick=()=>done('');inp.onkeydown=e=>{if(e.key==='Enter')done(inp.value);if(e.key==='Escape')done('')}}).then(v=>v)}
+// prompt0 returns a promise; wrap saveView to await it
+$('saveView').onclick=async()=>{const name=((await prompt0('Name this view'))||'').trim();if(!name)return;const v={id:uid(),name,state:JSON.parse(JSON.stringify({...state,view:''}))};meta.views=[...(meta.views||[]),v];saveMeta();state.view=v.id;drawSegs();toast('Saved view “'+name+'”')};
+
+function passes(r,skipSeg){
+  if(!skipSeg){const t=SEGT[state.seg];if(t&&!t(r))return false}
+  for(const k in state.qf)if(state.qf[k]&&!QFT[k](r))return false;
+  const o=ops[r.id];const s=o?o.s||0:0;
+  if(state.fStatus!==''&&state.fStatus!=null&&String(s)!==state.fStatus)return false;
+  if(state.fPriority&&String(o?o.pr||0:0)!==state.fPriority)return false;
+  if(state.fState){const v=state.fState==='none'?'':state.fState;if(r.st!==v)return false}
+  if(state.fKind&&String(r.kind)!==state.fKind)return false;
+  if(state.fSrc&&!(r.srcb&(1<<+state.fSrc)))return false;
+  if(state.fLt1){const v=state.fLt1==='none'?'':state.fLt1;if(r.bestType!==v)return false}
+  if(state.fLt2&&r.lic!==state.fLt2)return false;
+  if(state.fCarrier&&r.bestCar!==state.fCarrier)return false;
+  if(state.fTier&&String(r.tier)!==state.fTier)return false;
+  if(state.fLast){const l=lastTouch(r.id);const c=isContacted(r.id);
+    if(state.fLast==='never'){if(c)return false}
+    else{if(!l)return false;const days=(Date.now()-new Date(l.t))/864e5;
+      if(state.fLast==='today'&&!isToday(l.t))return false;if(state.fLast==='7'&&days>7)return false;if(state.fLast==='30'&&days>30)return false;if(state.fLast==='older'&&days<=30)return false}}
+  if(state.fFollow){const f=o&&o.f;if(state.fFollow==='none'){if(f)return false}else{if(!activeFU(r.id))return false;const fs=fuState(r.id);if(fs!==state.fFollow)return false}}
+  if(state.fResp){if(state.fResp==='yes'&&!isResponded(r.id))return false;if(state.fResp==='no'&&!(isContacted(r.id)&&!isResponded(r.id)))return false;if(state.fResp==='conv'&&!isConversation(r.id))return false}
+  if(state.fTag&&!(o&&o.tags&&o.tags.includes(state.fTag)))return false;
+  if(state.fShared){const sh=r.gsz>1;if(state.fShared==='shared'&&!sh)return false;if(state.fShared==='unique'&&sh)return false}
+  if(state.seg==='dq'&&state.dq&&!(r.fl&(1<<FLAGS.indexOf(state.dq))))return false;
+  const q=state.q.trim().toLowerCase();
+  if(q){const qd=q.replace(/\D/g,'');
+    if(!keyOf(r).includes(q)&&!(qd.length>=4&&(r.d1.includes(qd)||r.oph.some(p=>p.d.includes(qd))))){
+      if(!o)return false;const blob=(o.qn+' '+o.n+' '+o.op+' '+(o.tags||[]).join(' ')+' '+Object.values(o.ed||{}).join(' ')+' '+(o.log||[]).map(l=>l.x).join(' ')).toLowerCase();if(!blob.includes(q))return false}}
+  return true;
+}
+let current=[];
+const PR_ORDER=[4,1,2,3];
+function sortList(f){
+  const s=state.sort||'row';const by=(a,b)=>a.i-b.i;
+  if(s==='name')f.sort((a,b)=>dispName(a).localeCompare(dispName(b))||by(a,b));
+  else if(s==='lic')f.sort((a,b)=>a.lic.localeCompare(b.lic)||by(a,b));
+  else if(s==='state')f.sort((a,b)=>(a.st||'~').localeCompare(b.st||'~')||by(a,b));
+  else if(s==='ig')f.sort((a,b)=>(+b.igf||0)-(+a.igf||0)||by(a,b));
+  else if(s==='last'){const k=r=>{const l=lastTouch(r.id);return l?l.t:''};f.sort((a,b)=>k(b).localeCompare(k(a))||by(a,b))}
+  else if(s==='follow'){const k=r=>(activeFU(r.id)&&ops[r.id].f)||'9999';f.sort((a,b)=>k(a).localeCompare(k(b))||by(a,b))}
+  else if(s==='tier')f.sort((a,b)=>a.tier-b.tier||b.score-a.score||by(a,b));
+  else if(s==='pri'){const k=r=>PR_ORDER[(ops[r.id]&&ops[r.id].pr)||0];f.sort((a,b)=>k(a)-k(b)||by(a,b))}
+  else if(s==='worked'){const k=r=>(ops[r.id]&&ops[r.id].u)||'';f.sort((a,b)=>k(b).localeCompare(k(a))||by(a,b))}
+  else f.sort(by);
+  return f;
+}
+function computeList(){current=sortList(rows.filter(r=>passes(r)))}
+function drawCount(){let c=0,n=0,e=0;for(const r of current){if(r.hasCell)c++;if(r.hasEmail)e++;if(!isContacted(r.id))n++}$('count').innerHTML=`<b>${fmt(current.length)}</b> matching · ${fmt(c)} with a cellphone · ${fmt(e)} with an email · ${fmt(n)} not contacted`}
+
+/* ---------- dashboard ---------- */
+let counts={};
+function computeStats(){
+  const c={total:rows.length,lic:0,biz:0,igc:0,igonly:0,states:new Set(),contactable:0,cell:0,land:0,voip:0,email:0,multi:0,student:0,phone:0,cellEmail:0,notC:0,contacted:0,responded:0,conv:0,interested:0,fuNeed:0,clients:0,dnc:0,worked:0,due:0,overdue:0};
+  const seg={};SEGS.forEach(s=>seg[s[0]]=0);const dq={};FLAGS.forEach(f=>dq[f]=0);
+  const t=today();
+  for(const r of rows){
+    if(r.tier<3)c.contactable++;if(r.hasCell)c.cell++;if(r.allLand)c.land++;if(r.bestType==='voip')c.voip++;if(r.kind===0)c.lic++;else if(r.kind===1)c.biz++;else if(r.kind===2)c.igonly++;if(r.ig)c.igc++;if(r.st)c.states.add(r.st);
+    if(r.hasEmail)c.email++;if(r.has2)c.multi++;if(r.student)c.student++;if(r.hasPhone)c.phone++;if(r.hasCell&&r.hasEmail)c.cellEmail++;
+    const o=ops[r.id];
+    if(o){c.worked++;const con=isContacted(r.id);if(con)c.contacted++;if(isResponded(r.id))c.responded++;if(isConversation(r.id))c.conv++;if(isInterested(r.id))c.interested++;if(o.s===9)c.clients++;if(o.s===12)c.dnc++;
+      if(activeFU(r.id)){if(o.f<t)c.overdue++;else if(o.f===t)c.due++}
+      if((activeFU(r.id)&&o.f<=t)||(o.s===6&&!o.f))c.fuNeed++;
+      if(!con&&o.s!==12)c.notC++}
+    else c.notC++;
+    for(const s of SEGS)if(s[0]!=='all'&&s[2](r))seg[s[0]]++;
+    if(r.fl)for(let i=0;i<FLAGS.length;i++)if(r.fl&(1<<i))dq[FLAGS[i]]++;
+  }
+  seg.all=rows.length;c.seg=seg;c.dq=dq;
+  // today
+  const td={texts:0,calls:0,emails:0,resp:0,conv:0,fudone:0,newInt:0,clients:0};
+  for(const id in ops)for(const l of ops[id].log||[]){if(!isToday(l.t))continue;
+    if(l.ch==='sys'){if(l.k==='fudone')td.fudone++;if(l.k==='status'&&l.sv===5)td.newInt++;if(l.k==='status'&&l.sv===9)td.clients++;continue}
+    if(l.dir==='out'){if(l.ch==='text')td.texts++;else if(l.ch==='call'||l.ch==='voicemail')td.calls++;else if(l.ch==='email')td.emails++}
+    if(l.dir==='in'||RESP.has(l.out))td.resp++;if(l.out==='Connected')td.conv++}
+  c.today=td;counts=c;
+}
+function kpi(label,v,cls,act){return `<button class="kpi ${cls||''}" type="button" ${act?`data-seg="${act}"`:''}><b>${fmt(v)}</b><span>${label}</span></button>`}
+function drawDash(){
+  const c=counts;
+  $('stats').innerHTML=[[c.total,'prospects'],[c.cell,'with a cellphone'],[c.email,'with an email'],[c.igc,'on Instagram']].map(([v,l])=>`<div><b>${fmt(v)}</b>${l}</div>`).join('');
+  $('kpis').innerHTML=[kpi('Total prospects',c.total,'','all'),kpi('Licensees',c.lic),kpi('Salons & shops',c.biz,'','business'),kpi('On Instagram',c.igc,'','instagram'),kpi('Contactable',c.contactable),kpi('Cellphones',c.cell,'','cellEmail'),kpi('Landline only',c.land,'','landOnly'),kpi('Email available',c.email),kpi('Students & apprentices',c.student),
+    kpi('Not contacted',c.notC,'','new'),kpi('Contacted',c.contacted,'att'),kpi('Responded',c.responded,'pos','responded'),kpi('Interested',c.interested,'pos','interested'),kpi('Follow-up needed',c.fuNeed,'att','overdue'),kpi('Clients',c.clients,'pos','clients'),kpi('Do not contact',c.dnc,'neg','dnc')].join('');
+  $('nDue').textContent=fmt(c.due+c.overdue);$('nOver').textContent=fmt(c.overdue);
+  const pct=(a,b)=>b?Math.round(a/b*1000)/10:0;
+  $('progSmall').textContent=`${fmt(c.worked)} / ${fmt(c.total)} worked`;
+  $('pbWorked').style.width=pct(c.worked,c.total)+'%';
+  $('progList').innerHTML=[['Total',c.total],['Reviewed',c.worked],['Contacted',c.contacted],['Remaining',c.total-c.contacted-c.dnc],['Responded',c.responded],['Conversations',c.conv],['Interested',c.interested],['Clients',c.clients]].map(([l,v])=>`<div><span>${l}</span><b>${fmt(v)}</b></div>`).join('');
+  $('pctList').innerHTML=[['With a phone',c.phone],['With a cellphone',c.cell],['With an email',c.email],['Cellphone + email',c.cellEmail]].map(([l,v])=>`<div class="r"><span>${l}</span><span class="t"><i style="width:${pct(v,c.total)}%"></i></span><span class="v">${pct(v,c.total)}%</span></div>`).join('');
+  $('todayDate').textContent=new Date().toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric'});
+  const td=c.today;
+  drawTodayLog();drawVersions();drawSettings();
+  $('todayList').innerHTML=[['Texts sent',td.texts],['Calls made',td.calls],['Emails sent',td.emails],['Responses',td.resp],['Conversations',td.conv],['Follow-ups done',td.fudone],['New interested',td.newInt],['New clients',td.clients]].map(([l,v])=>`<div><span>${l}</span><b>${fmt(v)}</b></div>`).join('');
+  const F=[['Total',c.total],['Contactable',c.contactable],['Contacted',c.contacted],['Responded',c.responded],['Conversation',c.conv],['Interested',c.interested],['Client',c.clients]];
+  $('funnel').innerHTML=F.map(([l,v],i)=>{const prev=i?F[i-1][1]:0;return `<div class="r"><span>${l}</span><span class="t"><i style="width:${pct(v,c.total)}%"></i></span><span class="n">${fmt(v)}</span><span class="c">${i?(prev?pct(v,prev)+'%':'—'):''}</span></div>`}).join('');
+  drawSegs();drawQueuePick();drawResume();drawDQ();drawBk();
+}
+function todayEntries(){const out=[];for(const id in ops)for(const l of ops[id].log||[])if(isTouch(l)&&isToday(l.t))out.push({id,l});return out.sort((a,b)=>b.l.t.localeCompare(a.l.t))}
+function drawTodayLog(){
+  const td=counts.today;const done=td.texts+td.calls+td.emails;const tg=+meta.settings.target||0;
+  $('tgtBar').style.width=(tg?Math.min(100,done/tg*100):0)+'%';$('tgtTxt').innerHTML=`<b>${fmt(done)}</b> of <button type="button" class="linkbtn" id="tgtEdit">${fmt(tg)} outreach today</button>`;
+  $('tgtEdit').onclick=async()=>{const v=parseInt(await prompt0('Daily target (texts + calls + emails)'),10);if(v>0){meta.settings.target=v;saveMeta();drawTodayLog()}};
+  const es=todayEntries();
+  $('todayLog').innerHTML=es.length?es.slice(0,60).map(({id,l})=>{const r=byId.get(id);return `<li><button type="button" class="linkbtn" data-open2="${id}">${esc(r?dispName(r):id)}</button><span class="sm">${esc((CH_ALL[l.ch]||['Other'])[0])}${l.dir==='in'?' (in)':''}${l.out?' · '+esc(l.out):''}</span><time class="sm">${new Date(l.t).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})}</time></li>`}).join(''):'<li class="sm">No one contacted yet today.</li>';
+  $('todayLogCount').textContent=es.length?fmt(new Set(es.map(e=>e.id)).size)+' people':'';
+}
+function drawVersions(){
+  const stats={};meta.settings.tpls.forEach(t=>stats[t.id]={sent:0,people:new Set(),rep:0});
+  for(const id in ops){const o=ops[id];let ids=new Set();for(const l of o.log||[])if(l.tpl&&l.dir==='out'&&stats[l.tpl]){stats[l.tpl].sent++;ids.add(l.tpl)}
+    ids.forEach(t=>{stats[t].people.add(id);if(isResponded(id))stats[t].rep++})}
+  $('verList').innerHTML=meta.settings.tpls.map(t=>{const st=stats[t.id];const n=st.people.size;const rate=n?Math.round(st.rep/n*1000)/10:0;
+    return `<div class="r"><span>${esc(t.name)}${t.text.trim()?'':' <span class="sm">(empty)</span>'}</span><span class="t"><i style="width:${rate}%"></i></span><span class="v">${n?rate+'%':'—'}</span><span class="sm">${fmt(st.sent)} sent · ${fmt(st.rep)} replied</span></div>`}).join('');
+}
+function drawSettings(){
+  const st=meta.settings;if($('setPanel').dataset.busy)return;
+  $('seqOn').checked=!!st.seq.on;$('quietDays').value=st.quietDays||5;
+  $('seqSteps').innerHTML=st.seq.steps.map((x,i)=>`<div class="seqrow"><span class="sm">Step ${i+1}</span><label class="sm">Day <input type="number" min="0" max="120" value="${+x.d||0}" data-sd="${i}" ${i===0?'disabled':''} aria-label="Day for step ${i+1}"></label><select data-sc="${i}" aria-label="Channel for step ${i+1}">${['text','call','email'].map(c=>`<option value="${c}"${x.ch===c?' selected':''}>${SEQ_CH[c]}</option>`).join('')}</select>${i>0?`<button type="button" class="tl-del" data-sx="${i}">Remove</button>`:''}</div>`).join('');
+  $('tplEdit').innerHTML=st.tpls.map(t=>`<div class="field"><label for="tpl${t.id}">${esc(t.name)}</label><textarea id="tpl${t.id}" data-tpl="${t.id}" placeholder="Leave empty to not use this version">${esc(t.text)}</textarea></div>`).join('');
+}
+function drawSegs(){
+  const s=counts.seg||{};
+  $('segs').innerHTML=SEGS.map(([k,l])=>`<button type="button" data-seg="${k}" aria-pressed="${state.seg===k&&!state.view}">${l}<b>${fmt(s[k]||0)}</b></button>`).join('')+
+    (meta.views||[]).map(v=>`<button type="button" class="custom" data-view="${esc(v.id)}" aria-pressed="${state.view===v.id}">${esc(v.name)}<span class="x" data-delview="${esc(v.id)}" title="Remove this saved view">✕</span></button>`).join('');
+}
+function drawDQ(){
+  $('dqPanel').hidden=state.seg!=='dq';if(state.seg!=='dq')return;
+  $('dqGrid').innerHTML=`<button type="button" data-dq="" aria-pressed="${!state.dq}"><span>All flagged</span><b>${fmt(counts.seg.dq||0)}</b></button>`+FLAGS.map(f=>`<button type="button" data-dq="${f}" aria-pressed="${state.dq===f}"><span>${FLAGLABEL[f]}</span><b>${fmt(counts.dq[f]||0)}</b></button>`).join('');
+}
+document.addEventListener('click',e=>{
+  const dv=e.target.closest('[data-delview]');if(dv){e.stopPropagation();meta.views=(meta.views||[]).filter(v=>v.id!==dv.dataset.delview);if(state.view===dv.dataset.delview)state.view='';saveMeta();drawSegs();return}
+  const sv=e.target.closest('[data-view]');if(sv){const v=(meta.views||[]).find(x=>x.id===sv.dataset.view);if(v){state={...DEF,...JSON.parse(JSON.stringify(v.state)),view:v.id};state.qf={...(state.qf||{})};syncControls();refreshList(true)}return}
+  const sg=e.target.closest('[data-seg]');if(sg){state.seg=sg.dataset.seg;state.view='';if(state.seg!=='dq')state.dq='';refreshList(true);if(sg.classList.contains('kpi'))document.querySelector('.segs').scrollIntoView({block:'start',behavior:'smooth'});return}
+  const dq=e.target.closest('[data-dq]');if(dq){state.dq=dq.dataset.dq;refreshList(true);return}
+  const oq=e.target.closest('[data-openq]');if(oq){openOM(oq.dataset.openq);return}
+});
+
+/* ---------- table (virtualized) ---------- */
+const COLS=[
+ ['name','Name','minmax(170px,1.6fr)',true],['state','State','56px',true],['lic','License / type','150px',true],['phone','Best phone','150px',true],['ptype','Phone type','92px',true],['email','Email','minmax(150px,1.3fr)',true],
+ ['status','Status','150px',true],['last','Last contact','118px',true],['follow','Next follow-up','108px',true],['notes','Notes','minmax(120px,1fr)',true],['act','Actions','128px',true],
+ ['pri','Priority','96px',false],['other','City','140px',false],['ig','Instagram','140px',false],['srcs','Source lists','160px',false],['carrier','Carrier','150px',false],['tier','Contactability','108px',false],['shared','Shared contact','110px',false],['tags','Tags','140px',false],['row','ID','72px',false]];
+let visCols=(meta.settings.cols)||COLS.filter(c=>c[3]).map(c=>c[0]);
+const isMobile=()=>matchMedia('(max-width:760px)').matches;
+function colDefs(){return COLS.filter(c=>visCols.includes(c[0]))}
+function drawHeader(){const cs=colDefs();$('vh').style.gridTemplateColumns=cs.map(c=>c[2]).join(' ');$('vh').innerHTML=cs.map(c=>`<div>${c[1]}</div>`).join('');
+  $('colPop').innerHTML=COLS.map(c=>`<label><input type="checkbox" data-col="${c[0]}" ${visCols.includes(c[0])?'checked':''} ${c[0]==='name'?'disabled':''}> ${c[1]}</label>`).join('')}
+$('colBtn').onclick=e=>{e.stopPropagation();const p=$('colPop');p.hidden=!p.hidden;$('colBtn').setAttribute('aria-expanded',!p.hidden)};
+$('colPop').addEventListener('change',e=>{const k=e.target.dataset.col;if(!k)return;visCols=e.target.checked?COLS.map(c=>c[0]).filter(c=>c===k||visCols.includes(c)):visCols.filter(c=>c!==k);meta.settings.cols=visCols;saveMeta();drawHeader();renderRows(true)});
+document.addEventListener('click',e=>{if(!e.target.closest('.colmenu'))$('colPop').hidden=true});
+function stBadge(s){return `<span class="st s${s}">${STATUSES[s]}</span>`}
+function cell(r,k){
+  const o=ops[r.id];
+  switch(k){
+    case 'name':{const ed=o&&o.ed&&o.ed.name;const fl=[];if(r.gsz>1)fl.push(`<span class="chip shr" title="Shares a phone or email with ${r.gsz-1} other prospect(s)">Shared ×${r.gsz}</span>`);if(r.kind)fl.push(kindChip(r));if(r.ig&&r.kind!==2)fl.push('<span class="chip ig">IG</span>');if(r.bname)fl.push(`<span class="chip biz">${esc(r.bname)}</span>`);if(r.olic)fl.push(`<span class="chip" title="Also holds: ${esc(r.olic)}">+${r.olic.split(' | ').length} license type${r.olic.split(' | ').length>1?'s':''}</span>`);if(o&&o.tags&&o.tags.length)fl.push(...o.tags.slice(0,2).map(t=>`<span class="chip tag">${esc(t)}</span>`));
+      return `<div class="nm">${esc(dispName(r))}${ed?' <span class="chip edit">edited</span>':''}</div><div class="sub2">${isMobile()?esc(r.lic)+' · '+esc(dispPhone(r)||'no phone')+' · ':''}${fl.join(' ')}</div>`}
+    case 'state':return r.st?`<span class="mono">${esc(r.st)}</span>`:'<span class="sm">—</span>';
+    case 'lic':return r.lic?`<span${r.student?' class="sm"':''}>${esc(r.lic)}</span>`:r.ig?`<span class="sm">@${esc(r.ig)}</span>`:'<span class="sm">—</span>';
+    case 'phone':{const p=dispPhone(r);return p?`<span class="mono">${esc(p)}</span>${r.oph.length?`<div class="sub2">+${r.oph.length} more</div>`:''}`:'<span class="sm">No phone</span>'}
+    case 'ptype':return r.bestType?`<span class="chip ${LTCHIP[r.bestType]}">${LTLABEL[r.bestType]}</span>${r.bsrc===2?'<div class="sub2">by prefix</div>':''}`:'<span class="sm">—</span>';
+    case 'email':return dispEmail(r)?esc(dispEmail(r)):'<span class="sm">—</span>';
+    case 'status':return `<select data-rst="${r.id}" aria-label="Status for ${esc(dispName(r))}">${STATUSES.map((s,i)=>`<option value="${i}"${i===(o?o.s||0:0)?' selected':''}>${s}</option>`).join('')}</select>`;
+    case 'last':{const l=lastTouch(r.id);return l?`${fmtDate(l.t)}<div class="sub2">${esc(CHANNELS[l.ch]?CHANNELS[l.ch][0]:l.ch)}${l.out?' · '+esc(l.out):''}</div>`:'<span class="sm">—</span>'}
+    case 'follow':{if(!activeFU(r.id))return '<span class="sm">—</span>';const fs=fuState(r.id);const sq=seqNext(r.id);return `<span class="${fs==='overdue'?'late':fs==='today'?'due':''}">${fs==='today'?'Today':fmtDate(o.f)}</span>${sq&&o.fs?`<div class="sub2">${esc(sq)}</div>`:''}`}
+    case 'pri':return `<select data-rpr="${r.id}" aria-label="Priority for ${esc(dispName(r))}">${PRIORITIES.map((s,i)=>`<option value="${i}"${i===(o?o.pr||0:0)?' selected':''}>${s}</option>`).join('')}</select>`;
+    case 'notes':return o&&(o.qn||o.n)?esc(o.qn||o.n):'<span class="sm">—</span>';
+    case 'act':{const p=dispPhone(r);const t=telHref(p),s=smsHref(p);return `<div class="rowact">${s&&r.hasCell?`<a class="pri" href="${s}" data-ract="text" data-id="${r.id}">Text</a>`:''}${t?`<a href="${t}" data-ract="call" data-id="${r.id}">Call</a>`:''}${p?`<button type="button" data-copy="${esc(p)}">Copy</button>`:''}</div>`}
+    case 'other':return r.city?esc(r.city):'<span class="sm">—</span>';
+    case 'ig':return r.ig?`<a href="${igUrl(r.ig)}" target="_blank" rel="noopener" data-stop="1">@${esc(r.ig)}</a>${r.igf!==''?`<div class="sub2">${fmt(r.igf)} followers</div>`:''}`:'<span class="sm">—</span>';
+    case 'srcs':return `<span class="sm">${esc(SRCS.filter((x,k)=>r.srcb&(1<<k)).map(x=>x[0]).join(' · '))}</span>`;
+    case 'carrier':return esc(r.bestCar||'—');
+    case 'tier':return esc(TIERS[r.tier]);
+    case 'shared':return r.gsz>1?`Shared ×${r.gsz}`:'<span class="sm">—</span>';
+    case 'row':return `<span class="mono">${r.id}</span>`;
+    case 'tags':return o&&o.tags&&o.tags.length?o.tags.map(t=>`<span class="chip tag">${esc(t)}</span>`).join(' '):'<span class="sm">—</span>';
+  }
+}
+const rowH=()=>isMobile()?112:56;
+let selId=null;
+function renderRows(force){
+  const vb=$('vbody'),sp=$('vspace');const h=rowH();sp.style.height=(current.length*h)+'px';
+  if(!current.length){sp.innerHTML='<div class="ve">No prospects match these filters. Clear the search or choose “Clear filters”.</div>';return}
+  const top=vb.scrollTop,vh=vb.clientHeight||600;const a=Math.max(0,Math.floor(top/h)-6),b=Math.min(current.length,Math.ceil((top+vh)/h)+6);
+  if(!force&&renderRows.a===a&&renderRows.b===b&&renderRows.n===current.length)return;
+  renderRows.a=a;renderRows.b=b;renderRows.n=current.length;
+  const cs=colDefs();const gtc=isMobile()?'':cs.map(c=>c[2]).join(' ');
+  let html='';
+  for(let i=a;i<b;i++){const r=current[i];
+    if(isMobile()){const o=ops[r.id];const fs=fuState(r.id);const p=dispPhone(r);
+      html+=`<div class="vr m${r.id===selId?' sel':''}" data-open="${r.id}" style="top:${i*h}px"><div class="m1">${esc(dispName(r))}${r.st?' <span class="sm">'+esc(r.st)+'</span>':''}</div>`+
+        `<div class="m2"><span class="mono">${esc(p||'no phone')}</span> ${r.bestType?`<span class="chip ${LTCHIP[r.bestType]}">${LTLABEL[r.bestType]}</span>`:''} ${r.gsz>1?`<span class="chip shr">Shared ×${r.gsz}</span>`:''} ${activeFU(r.id)?`<span class="${fs==='overdue'?'late':'due'}">FU ${fs==='today'?'today':fmtDate(o.f)}</span>`:''}</div>`+
+        `<div class="m3">${cell(r,'status')}${cell(r,'act')}</div></div>`;continue}
+    html+=`<div class="vr${r.id===selId?' sel':''}" data-open="${r.id}" style="top:${i*h}px;${gtc?'grid-template-columns:'+gtc:''}">`+
+      cs.map(c=>`<div>${cell(r,c[0])}</div>`).join('')+'</div>'}
+  sp.innerHTML=html;
+}
+$('vbody').addEventListener('scroll',()=>renderRows(),{passive:true});
+window.addEventListener('resize',()=>{drawHeader();renderRows(true)});
+$('vspace').addEventListener('change',e=>{
+  const s=e.target.closest('[data-rst]');if(s){const id=s.dataset.rst;const o=setStatus(id,+s.value);commit(id,o);setLast(id);return}
+  const p=e.target.closest('[data-rpr]');if(p){const id=p.dataset.rpr;const o=getOp(id);o.pr=+p.value;commit(id,o,{k:'pri',x:'Priority: '+PRIORITIES[o.pr]});return}
+});
+$('vspace').addEventListener('click',e=>{
+  if(e.target.closest('select')||e.target.closest('[data-stop]'))return;
+  const cp=e.target.closest('[data-copy]');if(cp){e.stopPropagation();copyText(cp.dataset.copy,'Copied '+cp.dataset.copy);return}
+  const ra=e.target.closest('[data-ract]');if(ra){e.stopPropagation();quickAfter(ra.dataset.id,ra.dataset.ract);return}
+  const op=e.target.closest('[data-open]');if(op)openProfile(op.dataset.open);
+});
+function refreshList(resetScroll){
+  saveUI();computeList();drawSegs();drawDQ();
+  drawCount();
+  $('omThese').textContent=`Work these ${fmt(current.length)} one by one`;
+  if(resetScroll)$('vbody').scrollTop=0;renderRows(true);
+}
+let refreshT=null;
+function scheduleRefresh(){clearTimeout(refreshT);refreshT=setTimeout(()=>{computeStats();drawDash();const y=$('vbody').scrollTop;computeList();drawCount();$('vbody').scrollTop=y;renderRows(true);if(profId)refreshProfile()},120)}
+
+/* quick outcome bar after Text/Call from the table */
+function quickAfter(id,kind){
+  const r=byId.get(id);const box=document.createElement('div');box.className='colpop';box.style.cssText='position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:45;max-width:calc(100% - 32px);display:flex;flex-wrap:wrap;gap:6px;align-items:center';
+  const opts=kind==='text'?['Text sent']:['Connected','Left voicemail','No response','Bad number','Call back','Interested','Not interested'];
+  box.innerHTML=`<b style="margin-right:4px">${esc(dispName(r))}:</b>${opts.map(o=>`<button class="btn" type="button" data-o="${esc(o)}">${o==='No response'?'No answer':o}</button>`).join('')}<button class="btn" type="button" data-o="">Skip</button>`;
+  document.querySelectorAll('.quickbar').forEach(x=>x.remove());box.classList.add('quickbar');document.body.appendChild(box);
+  box.onclick=e=>{const b=e.target.closest('[data-o]');if(!b)return;const o=b.dataset.o;box.remove();if(!o)return;
+    if(kind==='text')logInteraction(id,{ch:'text',dir:'out',out:''});else logInteraction(id,{ch:o==='Left voicemail'?'voicemail':'call',dir:'out',out:o});
+    toast('Logged for '+dispName(r))};
+}
+
+/* ================= prospect profile ================= */
+let profId=null,lastFocus=null;
+function openProfile(id){profId=id;selId=id;lastFocus=document.activeElement;markReviewed(id);setLast(id);drawProfile();$('drawerWrap').hidden=false;renderRows(true);setTimeout(()=>{const x=$('pClose');if(x)x.focus()},0)}
+function closeProfile(){$('drawerWrap').hidden=true;profId=null;if(lastFocus&&lastFocus.focus)lastFocus.focus()}
+$('scrim').onclick=closeProfile;
+let pf={ch:'text',dir:'out',out:''};
+function drawProfile(){
+  const r=byId.get(profId);if(!r)return;const o=getOp(profId);
+  const idx=current.findIndex(x=>x.id===profId);
+  const p=dispPhone(r),em=dispEmail(r);const t=telHref(p),s=smsHref(p,fillMsg(r));
+  const linked=r.grp?(groups.get(r.grp)||[]).filter(x=>x!==r.id):[];
+  const flags=FLAGS.filter((f,i)=>r.fl&(1<<i));
+  const resp=o.log.find(l=>isTouch(l)&&(l.dir==='in'||RESP.has(l.out)));
+  $('drawer').innerHTML=`
+  <div class="dh">
+    <div class="dtop"><span class="sm">${idx>=0?`${fmt(idx+1)} of ${fmt(current.length)} in this list`:''}</span>
+      <div style="display:flex;gap:6px">${idx>0?`<button class="btn" type="button" data-pnav="${current[idx-1].id}">← Prev</button>`:''}${idx>=0&&idx<current.length-1?`<button class="btn" type="button" data-pnav="${current[idx+1].id}">Next →</button>`:''}<button class="x" type="button" id="pClose" aria-label="Close">✕</button></div></div>
+    <h2 id="dName">${esc(dispName(r))}</h2>
+    ${r.bname?`<div class="sm">${esc(r.bname)}</div>`:''}
+    <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center"><span>${esc(r.lic||(r.ig?'Instagram account':'—'))}${r.loc?' · '+esc(r.loc):''}</span>${kindChip(r)}${stBadge(o.s)}<span class="chip ${r.tier===0?'cell':'none'}">Contactability: ${TIERS[r.tier]}</span>${r.gsz>1?`<span class="chip shr">Shared contact ×${r.gsz}</span>`:''}</div>
+    <div class="two"><div class="field"><label for="pStatus">Status</label><select id="pStatus">${STATUSES.map((x,i)=>`<option value="${i}"${i===o.s?' selected':''}>${x}</option>`).join('')}</select></div>
+      <div class="field"><label for="pPri">Priority</label><select id="pPri">${PRIORITIES.map((x,i)=>`<option value="${i}"${i===o.pr?' selected':''}>${x}</option>`).join('')}</select></div></div>
+  </div>
+  <div class="db">
+    <div class="contact">${s&&r.hasCell?`<a class="pri" href="${s}" data-pact="text">Text</a>`:''}${t?`<a href="${t}" data-pact="call">Call</a>`:''}${em?`<a href="mailto:${esc(em)}" data-pact="email">Email</a>`:''}${p?`<button type="button" data-copy="${esc(p)}">Copy phone</button>`:''}${em?`<button type="button" data-copy="${esc(em)}">Copy email</button>`:''}${r.ig?`<a href="${igUrl(r.ig)}" target="_blank" rel="noopener">Instagram</a>`:''}</div>
+    <dl class="kv">
+      <dt>Best phone</dt><dd>${p?`<span class="mono">${esc(p)}</span> <span class="chip ${LTCHIP[r.bestType]}">${LTLABEL[r.bestType]||'—'}</span> <span class="sm">${esc(r.bestCar||'')}${r.bsrc?' · '+BSRC[r.bsrc]:''}</span>`:'—'}</dd>
+      ${r.oph.length?`<dt>Other phones</dt><dd class="phl">${r.oph.map(x=>`<span><span class="mono">${esc(fmtPh(x.d))}</span> <span class="chip ${LTCHIP[x.t]}">${LTLABEL[x.t]}</span> <button type="button" class="copy" data-copy="${esc(fmtPh(x.d))}">Copy</button></span>`).join('')}</dd>`:''}
+      ${r.emails.length>1?`<dt>Other emails</dt><dd class="phl">${r.emails.slice(1).map(x=>`<span>${esc(x)} <button type="button" class="copy" data-copy="${esc(x)}">Copy</button></span>`).join('')}</dd>`:''}
+      ${r.ig?`<dt>Instagram</dt><dd><a href="${igUrl(r.ig)}" target="_blank" rel="noopener">@${esc(r.ig)}</a>${r.igf!==''?' · '+fmt(r.igf)+' followers':''}${r.igt?' · '+(r.igt==='b'?'business account':'personal account'):''}</dd>`:''}
+      ${r.web?`<dt>Website</dt><dd><a href="${esc(/^https?:/.test(r.web)?r.web:'https://'+r.web)}" target="_blank" rel="noopener">${esc(r.web.replace(/^https?:\/\//,'').slice(0,60))}</a></dd>`:''}
+      <dt>Location</dt><dd>${r.addr?esc(r.addr)+', ':''}${r.loc?esc(r.loc):'—'}${r.county?' · '+esc(r.county)+' County':''}${r.ast?` <span class="sm">(address in ${esc(r.ast)})</span>`:''}</dd>
+      ${r.licno?`<dt>License number</dt><dd class="mono">${esc(r.licno)}</dd>`:''}
+      ${r.exp?`<dt>License expires</dt><dd>${esc(r.exp)}</dd>`:''}
+      ${r.olic?`<dt>Other licenses</dt><dd>${esc(r.olic)}</dd>`:''}
+      <dt>Best method</dt><dd>${r.method}${r.bsh>1?` <span class="chip shr">this number is listed for ${r.bsh} prospects</span>`:''}</dd>
+      <dt>Last contact</dt><dd>${(()=>{const l=lastTouch(r.id);return l?fmtStamp(l.t)+' · '+(CHANNELS[l.ch]?CHANNELS[l.ch][0]:l.ch)+(l.out?' · '+esc(l.out):''):'Never'})()}</dd>
+      <dt>Response</dt><dd>${resp?esc((resp.dir==='in'?'Inbound ':'')+(resp.out||CHANNELS[resp.ch][0]))+' · '+fmtDate(resp.t):'None yet'}</dd>
+    </dl>
+    <section class="panel"><h3>Log what happened</h3>
+      <div class="pills" id="pCh">${Object.entries(CH_ALL).map(([k,[l]])=>`<button type="button" data-ch="${k}" aria-pressed="${pf.ch===k}">${l}</button>`).join('')}</div>
+      <div class="pills" id="pDir"><button type="button" data-dir="out" aria-pressed="${pf.dir==='out'}">Outbound (I reached out)</button><button type="button" data-dir="in" aria-pressed="${pf.dir==='in'}">Inbound (they reached me)</button></div>
+      <div class="pills out" id="pOut">${OUTCOMES.map(x=>`<button type="button" data-out="${esc(x)}" aria-pressed="${pf.out===x}">${x}</button>`).join('')}</div>
+      <div class="field"><label for="pX">Notes for this entry (or paste their reply)</label><textarea id="pX" placeholder="What was said, what they need, what you promised… For an inbound reply, paste their message and the likely outcome is picked for you."></textarea><span class="sm" id="pSug"></span></div>
+      <div class="two"><div class="field"><label for="pWhen">When</label><input type="datetime-local" id="pWhen" value="${nowLocal()}"></div><div class="field"><label>&nbsp;</label><button class="btn primary" type="button" id="pSave">Save to history</button></div></div>
+    </section>
+    <section class="panel"><h3>Tags</h3><div class="pills tags" id="pTags">${tagButtons(o)}</div></section>
+    <section class="panel"><h3>Follow-up ${activeFU(r.id)?`<small class="${fuState(r.id)==='overdue'?'late':''}">${fuState(r.id)==='today'?'due today':fuState(r.id)==='overdue'?'overdue · '+fmtDate(o.f):fmtDate(o.f)}</small>`:'<small>none set</small>'}</h3>
+      <div class="pills" id="pFu"><button type="button" data-fu="1">Tomorrow</button><button type="button" data-fu="3">In 3 days</button><button type="button" data-fu="7">Next week</button><button type="button" data-fu="30">In 30 days</button><button type="button" data-fu="0">Clear</button></div>
+      ${o.sq?`<p class="sm">Sequence: ${o.sq.done==='replied'?'stopped because they responded':o.sq.done==='finished'?'finished with no reply':esc(seqNext(r.id)||'in progress')+(o.fs&&o.f?' on '+fmtDate(o.f):'')}</p>`:''}
+      <div class="field"><label for="pFuDate">Custom date</label><input type="date" id="pFuDate" value="${esc(o.f||'')}"></div>
+    </section>
+    <section class="panel"><h3>Notes</h3>
+      <div class="field"><label for="pQn">Quick note (shows in the table)</label><input id="pQn" value="${esc(o.qn)}" placeholder="One line, e.g. Owns a suite in Little Rock"></div>
+      <div class="field"><label for="pN">Detailed notes</label><textarea id="pN" placeholder="Anything worth remembering about this person">${esc(o.n)}</textarea></div>
+      <div class="field"><label for="pOp">Opportunity</label><input id="pOp" value="${esc(o.op)}" placeholder="What they might need, estimated value, timing"></div>
+      <span class="sm" id="pSaved" aria-live="polite"></span>
+    </section>
+    <section class="panel"><h3>Outreach history <small>${fmt(o.log.filter(isTouch).length)} interactions</small></h3>
+      <ol class="timeline" id="pTl">${timelineHTML(o)}</ol></section>
+    <section class="src"><span class="flabel">Where this record came from · never changed</span>
+      <ul class="srcl">${r.refs.split(' ').filter(Boolean).map(x=>{const k=x.indexOf(':');const c=x.slice(0,k);const sx=SRCS.find(y=>y[0]===c);return `<li><span>${esc(sx?sx[1]:c)}</span><span class="mono">${c==='IG'?'@'+esc(x.slice(k+1)):'row '+esc(x.slice(k+1))}</span></li>`}).join('')}</ul>
+      ${r.bio?`<p class="sm" style="margin-top:8px">Instagram bio: ${esc(r.bio)}</p>`:''}
+    </section>
+    <details class="panel"><summary class="flabel" style="cursor:pointer">Correct contact info</summary>
+      <p class="sm">Corrections are saved separately. The source record above never changes.</p>
+      <div class="field"><label for="eName">Name</label><input id="eName" value="${esc(o.ed.name||'')}" placeholder="${esc(r.name)}"></div>
+      <div class="field"><label for="ePhone">Phone</label><input id="ePhone" value="${esc(o.ed.phone||'')}" placeholder="${esc(fmtPh(r.bestPhone))}"></div>
+      <div class="field"><label for="eEmail">Email</label><input id="eEmail" value="${esc(o.ed.email||'')}" placeholder="${esc(r.email)}"></div>
+    </details>
+    ${linked.length?`<section class="panel"><h3>Shares a phone or email with <small>${linked.length} other prospect${linked.length>1?'s':''}</small></h3><p class="sm">Often a salon or school front desk. Check before contacting the same number twice.</p><div class="linked">${linked.slice(0,40).map(x=>{const lr=byId.get(x);return `<button type="button" data-pnav="${x}">${esc(dispName(lr))} · ${esc(lr.lic||(lr.ig?'@'+lr.ig:''))}${lr.st?' · '+esc(lr.st):''} · ${STATUSES[S(x)]}</button>`}).join('')}${linked.length>40?`<span class="sm">and ${linked.length-40} more</span>`:''}</div></section>`:''}
+    ${flags.length?`<section class="panel"><h3>Data quality</h3><div class="flags">${flags.map(f=>`<span class="chip dq">${FLAGLABEL[f]}</span>`).join('')}</div></section>`:''}
+  </div>`;
+  wireProfile(r);
+}
+const D_COLS=[['id','id'],['name','name'],['business_name','business_name'],['record_type','record_type'],['state','state'],['license_type','license_type'],['other_license_types','other_license_types'],['license_number','license_number'],['address','address'],['city','city'],['zip','zip'],['county','county'],['best_phone','best_phone'],['best_phone_type','best_phone_type'],['best_phone_carrier','best_phone_carrier'],['phone_type_basis','phone_type_basis'],['other_phones','other_phones'],['email','email'],['other_emails','other_emails'],['instagram','instagram'],['instagram_followers','instagram_followers'],['website','website'],['source_lists','source_lists'],['source_rows','source_rows']];
+function rawVal(r,k){return {id:r.id,name:r.name,business_name:r.bname,record_type:KIND[r.kind],state:r.st,license_type:r.lic,other_license_types:r.olic,license_number:r.licno,address:r.addr,city:r.city,zip:r.zip,county:r.county,best_phone:fmtPh(r.bestPhone),best_phone_type:r.bestType,best_phone_carrier:r.bestCar,phone_type_basis:BSRC[r.bsrc],other_phones:r.oph.map(x=>fmtPh(x.d)+' ('+(LTLABEL[x.t]||'')+')').join('; '),email:r.email,other_emails:r.emails.slice(1).join('; '),instagram:r.ig,instagram_followers:r.igf,website:r.web,source_lists:srcNames(r.srcb).join('; '),source_rows:r.refs}[k]}
+function timelineHTML(o){
+  if(!o.log.length)return '<li class="sm" style="display:block">Nothing logged yet. Every text, call, email and note you save shows up here, newest first.</li>';
+  return o.log.map(l=>{if(l.ch==='sys')return `<li><span class="ico sys" aria-hidden="true">•</span><div><div class="tl-top"><b style="font-weight:500">${esc(l.x)}</b><time>${fmtStamp(l.t)}</time></div></div></li>`;
+    const c=CH_ALL[l.ch]||['Other','O'];return `<li><span class="ico ${l.ch} ${l.dir==='in'?'in':''}" aria-hidden="true">${c[1]}</span><div><div class="tl-top"><b>${esc(c[0])}${l.ch==='note'?'':' · '+(l.dir==='in'?'Inbound':'Outbound')}${l.out?' · '+esc(l.out):''}</b><time>${fmtStamp(l.t)}</time><button class="tl-del" type="button" data-ldel="${l.id}">Delete</button></div>${l.x?`<div class="tl-body">${esc(l.x)}</div>`:''}</div></li>`}).join('');
+}
+function refreshProfile(){if(!profId||$('drawerWrap').hidden)return;const o=getOp(profId);const tl=$('pTl');if(tl)tl.innerHTML=timelineHTML(o);const st=$('pStatus');if(st&&document.activeElement!==st)st.value=String(o.s)}
+function wireProfile(r){
+  const id=r.id;const dr=$('drawer');
+  $('pClose').onclick=closeProfile;
+  dr.querySelectorAll('[data-pnav]').forEach(b=>b.onclick=()=>openProfile(b.dataset.pnav));
+  $('pStatus').onchange=e=>{const o=setStatus(id,+e.target.value);commit(id,o);setLast(id);drawProfile()};
+  $('pPri').onchange=e=>{const o=getOp(id);o.pr=+e.target.value;commit(id,o,{k:'pri',x:'Priority: '+PRIORITIES[o.pr]})};
+  const pills=(box,key)=>$(box).querySelectorAll('button').forEach(b=>b.onclick=()=>{const v=b.dataset[key];pf[key]=pf[key]===v&&key==='out'?'':v;$(box).querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x.dataset[key]===pf[key]))});
+  pills('pCh','ch');pills('pDir','dir');pills('pOut','out');
+  let psug={out:'',stop:false};
+  $('pX').oninput=e=>{if(pf.dir!=='in'){$('pSug').textContent='';return}psug=suggestOutcome(e.target.value);if(psug.out&&!$('pOut').dataset.manual){pf.out=psug.bad?'Bad number':psug.out;$('pOut').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.out===pf.out))}
+    $('pSug').textContent=psug.stop?'Looks like an opt-out. Saving will mark them Do not contact.':psug.out?'Suggested outcome: '+(psug.bad?'Bad number':psug.out):''};
+  $('pOut').addEventListener('click',()=>{$('pOut').dataset.manual='1'});
+  $('pSave').onclick=()=>{const x=$('pX').value.trim();const stop=pf.dir==='in'&&psug.stop&&!!x;logInteraction(id,{ch:pf.ch,dir:pf.dir,out:pf.out,x:pf.dir==='in'&&x?'“'+x+'”':x,when:$('pWhen').value,stop,tpl:pf.dir==='out'&&(pf.ch==='text'||pf.ch==='email')?pickTpl(r).id:undefined});pf.out='';toast(stop?'Saved · marked Do not contact':'Saved to history');drawProfile()};
+  $('pTags').onclick=e=>{const b=e.target.closest('[data-tag]');if(b){toggleTag(id,b.dataset.tag);setTimeout(drawProfile,120);return}const a=e.target.closest('[data-addtag]');if(a)addTagPrompt(id,()=>setTimeout(drawProfile,120))};
+  dr.querySelectorAll('[data-fu]').forEach(b=>b.onclick=()=>{const n=+b.dataset.fu;setFollow(id,n?addDays(n):'');toast(n?'Follow-up set for '+fmtDate(addDays(n)):'Follow-up cleared');drawProfile()});
+  $('pFuDate').onchange=e=>{setFollow(id,e.target.value);drawProfile()};
+  let nt;const saveNotes=()=>{clearTimeout(nt);nt=setTimeout(()=>{const o=getOp(id);o.qn=$('pQn').value;o.n=$('pN').value;o.op=$('pOp').value;commit(id,o);$('pSaved').textContent='Saved';setTimeout(()=>{const x=$('pSaved');if(x)x.textContent=''},1200)},400)};
+  ['pQn','pN','pOp'].forEach(k=>$(k).oninput=saveNotes);
+  let et;const saveEd=()=>{clearTimeout(et);et=setTimeout(()=>{const o=getOp(id);o.ed={name:$('eName').value.trim(),phone:$('ePhone').value.trim(),email:$('eEmail').value.trim()};commit(id,o)},500)};
+  ['eName','ePhone','eEmail'].forEach(k=>$(k).oninput=saveEd);
+  dr.querySelectorAll('[data-copy]').forEach(b=>b.onclick=()=>copyText(b.dataset.copy,'Copied '+b.dataset.copy));
+  dr.querySelectorAll('[data-pact]').forEach(a=>a.addEventListener('click',()=>{const k=a.dataset.pact;pf.ch=k==='text'?'text':k==='call'?'call':'email';pf.dir='out';pf.out='';setTimeout(()=>{$('pCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.ch===pf.ch));$('pDir').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.dir==='out'));$('pX').focus();toast('Pick an outcome, then Save to history.')},300)}));
+  $('pTl').onclick=e=>{const b=e.target.closest('[data-ldel]');if(!b)return;if(b.dataset.armed){const o=getOp(id);o.log=o.log.filter(x=>x.id!==b.dataset.ldel);commit(id,o);drawProfile()}else{b.dataset.armed='1';b.textContent='Click again to delete';setTimeout(()=>{if(b.isConnected){delete b.dataset.armed;b.textContent='Delete'}},2500)}};
+}
+
+/* ---------- tags ---------- */
+function allTags(){const used=new Set(meta.settings.tagList||DEFAULT_TAGS);for(const id in ops)(ops[id].tags||[]).forEach(t=>used.add(t));return [...used]}
+function tagButtons(o){return allTags().map(t=>`<button type="button" data-tag="${esc(t)}" aria-pressed="${(o.tags||[]).includes(t)}">${esc(t)}</button>`).join('')+'<button type="button" data-addtag="1">+ New tag</button>'}
+function toggleTag(id,t){const o=getOp(id);o.tags=o.tags.includes(t)?o.tags.filter(x=>x!==t):[...o.tags,t];commit(id,o,{k:'tag',x:(o.tags.includes(t)?'Tagged: ':'Untagged: ')+t});fillTags()}
+async function addTagPrompt(id,after){const t=((await prompt0('New tag'))||'').trim().slice(0,40);if(!t)return;if(!meta.settings.tagList.includes(t)){meta.settings.tagList.push(t);saveMeta()}const o=getOp(id);if(!o.tags.includes(t)){o.tags.push(t);commit(id,o,{k:'tag',x:'Tagged: '+t})}fillTags();after&&after()}
+
+/* ================= outreach mode ================= */
+const QUEUES=[
+ ['cellNew','Cellphones — not contacted',r=>r.hasCell&&!isContacted(r.id)&&![11,12].includes(S(r.id))],
+ ['cellEmailNew','Cellphones + email — not contacted',r=>r.hasCell&&r.hasEmail&&!isContacted(r.id)&&![11,12].includes(S(r.id))],
+ ['due','Follow-ups due today (and overdue)',r=>activeFU(r.id)&&ops[r.id].f<=today()],
+ ['overdue','Overdue follow-ups',r=>activeFU(r.id)&&ops[r.id].f<today()],
+ ['responded','People who responded',r=>isResponded(r.id)&&[1,2,3,4,6].includes(S(r.id))],
+ ['interested','Interested prospects',r=>[5,7,8].includes(S(r.id))],
+ ['quiet','Gone quiet (contacted, no reply)',r=>isQuiet(r.id)],
+ ['noResp1','No response after first attempt',r=>isContacted(r.id)&&!isResponded(r.id)&&attempts(r.id)===1&&![10,11,12].includes(S(r.id))],
+ ['newAny','Anyone not contacted (any phone)',r=>r.hasPhone&&!isContacted(r.id)&&![11,12].includes(S(r.id))],
+ ['list','The current filtered list',null],
+];
+function drawQueuePick(){const sel=$('queuePick');const v=sel.value||'cellNew';
+  sel.innerHTML=QUEUES.map(([k,l,t])=>`<option value="${k}">${l}${t?' ('+fmt(qCount(k))+')':''}</option>`).join('');sel.value=v}
+const qCountCache={};function qCount(k){const q=QUEUES.find(x=>x[0]===k);if(!q||!q[2])return current.length;let n=0;for(const r of rows)if(q[2](r))n++;return n}
+$('startOM').onclick=()=>openOM($('queuePick').value);
+$('omThese').onclick=()=>openOM('list');
+let OM=null;
+function buildQueue(k){
+  const q=QUEUES.find(x=>x[0]===k)||QUEUES[0];
+  let list=q[2]?rows.filter(q[2]):current.slice();
+  if(k==='due'||k==='overdue')list.sort((a,b)=>ops[a.id].f.localeCompare(ops[b.id].f)||a.i-b.i);
+  return {k,label:q[1],test:q[2]||(()=>true),ids:list.map(r=>r.id)};
+}
+function groupTouched(r){if(!r.grp)return false;return (groups.get(r.grp)||[]).some(x=>x!==r.id&&isContacted(x))}
+function eligible(id){const r=byId.get(id);if(!OM.test(r))return false;if(meta.settings.skipShared&&['cellNew','cellEmailNew','newAny'].includes(OM.k)&&!isContacted(id)&&groupTouched(r))return false;return true}
+function openOM(k,startId){
+  OM=buildQueue(k);OM.hist=[];OM.pos=-1;OM.logged='';OM.callOpen=false;
+  let start=-1;if(startId)start=OM.ids.indexOf(startId);
+  if(start<0){for(let i=0;i<OM.ids.length;i++)if(eligible(OM.ids[i])){start=i;break}}
+  OM.pos=start;$('om').hidden=false;document.body.style.overflow='hidden';drawOM();
+}
+function closeOM(){$('om').hidden=true;document.body.style.overflow='';OM=null;scheduleRefresh()}
+function remaining(){let n=0;for(let i=OM.pos+1;i<OM.ids.length;i++)if(eligible(OM.ids[i]))n++;return n}
+function nextOM(){if(OM.pos>=0)OM.hist.push(OM.pos);let p=-1;for(let i=OM.pos+1;i<OM.ids.length;i++)if(eligible(OM.ids[i])){p=i;break}OM.pos=p;OM.logged='';OM.callOpen=false;drawOM()}
+function prevOM(){if(!OM.hist.length)return;OM.pos=OM.hist.pop();OM.logged='';OM.callOpen=false;drawOM()}
+function pickTpl(r){const ts=meta.settings.tpls.filter(t=>t.text&&t.text.trim());if(!ts.length)return meta.settings.tpls[0];
+  if(meta.settings.tplMode==='rotate')return ts[r.num%ts.length];return meta.settings.tpls.find(t=>t.id===meta.settings.tplMode&&t.text.trim())||ts[0]}
+function fillMsg(r){return (pickTpl(r).text||'').replace(/\{first_name\}/g,r.first?r.first[0].toUpperCase()+r.first.slice(1).toLowerCase():'there').replace(/\{name\}/g,dispName(r))}
+function drawOM(){
+  const st=meta.settings;
+  const head=`<div class="omh"><div style="display:flex;flex-direction:column;gap:2px;min-width:0"><span class="qt">Outreach Mode</span><span class="ompos" id="omPos"></span></div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+      <select id="omQ" aria-label="Queue">${QUEUES.map(([k,l])=>`<option value="${k}"${k===OM.k?' selected':''}>${l}</option>`).join('')}</select>
+      <button class="btn" type="button" id="omExit">Exit</button></div>
+    <details class="omset"><summary>Settings</summary><div class="omsetb">
+      <label class="tog"><input type="checkbox" id="omAuto" ${st.auto?'checked':''}> Move to the next person after logging</label>
+      <label class="tog"><input type="checkbox" id="omSkip" ${st.skipShared?'checked':''}> Skip numbers already contacted through another prospect</label>
+      <label class="tog">After a text, follow up in <select id="omFu"><option value="0">no follow-up</option><option value="1">1 day</option><option value="3">3 days</option><option value="7">1 week</option></select></label></div></details></div>`;
+  if(OM.pos<0){$('om').innerHTML=head+`<div class="omb"><div class="omdone"><h2 style="font:400 2rem var(--display);margin:0">This queue is done.</h2><p class="sm">Nobody else in “${esc(OM.label)}” needs attention right now.</p><div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">${OM.hist.length?'<button class="btn" type="button" id="omPrev2">← Back to the last one</button>':''}<button class="btn primary" type="button" id="omExit2">Back to the workspace</button></div></div></div>`;wireOMHead();if($('omExit2'))$('omExit2').onclick=closeOM;if($('omPrev2'))$('omPrev2').onclick=prevOM;return}
+  const id=OM.ids[OM.pos],r=byId.get(id);const o=getOp(id);markReviewed(id);setLast(id,OM.k);
+  const p=dispPhone(r),em=dispEmail(r),msg=fillMsg(r);const s=smsHref(p,msg),t=telHref(p);
+  const recent=o.log.filter(isTouch).slice(0,3);
+  $('om').innerHTML=head+`<div class="omb"><div class="card">
+    <div class="who"><h2>${esc(dispName(r))}</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center"><span>${esc(r.lic||(r.ig?'Instagram account':'—'))}${r.loc?' · '+esc(r.loc):''}</span>${kindChip(r)}${stBadge(o.s)}${o.pr?`<span class="pr p${o.pr}">${PRIORITIES[o.pr]} priority</span>`:''}${r.bsh>1?`<span class="chip shr">Number listed for ${r.bsh} prospects</span>`:''}${r.esh>1?`<span class="chip shr">Email shared by ${r.esh}</span>`:''}</div></div>
+    <div class="panel" style="gap:6px">
+      ${r.bname?`<div><b>${esc(r.bname)}</b></div>`:''}
+      ${p?`<div class="bigphone">📱 ${esc(p)}</div><div><span class="chip ${LTCHIP[r.bestType]}">${LTLABEL[r.bestType]||'—'}</span> <span class="sm">${esc(r.bestCar||'')}${r.bsrc===2?' · type by prefix':''}</span></div>`:'<div class="sm">No phone on file</div>'}
+      ${r.oph.length?`<div class="sm">Other phone${r.oph.length>1?'s':''}: ${r.oph.slice(0,3).map(x=>`<span class="mono">${esc(fmtPh(x.d))}</span> (${LTLABEL[x.t]})`).join(', ')}</div>`:''}
+      ${r.ig?`<div>📷 <a href="${igUrl(r.ig)}" target="_blank" rel="noopener">@${esc(r.ig)}</a>${r.igf!==''?' <span class="sm">· '+fmt(r.igf)+' followers</span>':''}</div>`:''}
+      ${em?`<div>✉ <a href="mailto:${esc(em)}">${esc(em)}</a></div>`:'<div class="sm">No email on file</div>'}
+      ${r.loc?`<div class="sm">📍 ${esc(r.loc)}</div>`:''}
+      <div class="sm">On: ${esc(srcNames(r.srcb).join(' · '))}</div>
+      ${o.qn?`<div><b>Note:</b> ${esc(o.qn)}</div>`:''}
+      ${activeFU(id)?`<div class="${fuState(id)==='overdue'?'late':'due'}">Follow-up ${fuState(id)==='today'?'due today':fuState(id)==='overdue'?'overdue since '+fmtDate(o.f):'on '+fmtDate(o.f)}${o.fs&&seqNext(id)?' · '+esc(seqNext(id)):''}</div>`:''}
+      ${r.olic?`<div class="sm">Also holds: ${esc(r.olic)}</div>`:''}
+      ${recent.length?`<div class="sm">Last: ${recent.map(l=>esc((CHANNELS[l.ch]||['Other'])[0]+(l.out?' · '+l.out:'')+' · '+ago(l.t))).join(' / ')}</div>`:''}
+    </div>
+    ${OM.logged?`<div class="logged">✓ ${esc(OM.logged)}</div>`:''}
+    <div class="bigbtns">
+      <a class="pri" href="${s||'#'}" id="omText" aria-disabled="${!(s&&r.hasCell)}">Text</a>
+      <a href="${t||'#'}" id="omCall" aria-disabled="${!t}">Call</a>
+      <a href="${em?'mailto:'+esc(em):'#'}" id="omEmail" aria-disabled="${!em}">Email</a>
+      <button type="button" id="omCopyP" aria-disabled="${!p}">Copy phone</button>
+      <button type="button" id="omCopyM">Copy message</button>
+      <button type="button" class="gold" id="omSent" aria-disabled="${!p}">Mark text sent</button>
+      ${em?'<button type="button" id="omEmailSent" class="wide">Mark email sent</button>':''}
+    </div>
+    <div class="outbar" id="omCallOut" ${OM.callOpen?'':'hidden'}><span class="flabel" style="width:100%">How did the call go?</span>${['Connected','Left voicemail','No response','Bad number','Call back','Interested','Not interested'].map(x=>`<button type="button" data-co="${x}" class="${x==='Interested'||x==='Connected'?'good':x==='Bad number'||x==='Not interested'?'bad':''}">${x==='No response'?'No answer':x==='Left voicemail'?'Voicemail':x}</button>`).join('')}</div>
+    <div class="panel" style="gap:8px"><span class="flabel">They responded</span>
+      <textarea id="omReply" class="reply" placeholder="Paste their reply here (optional). It's saved to their history, and the likely outcome is highlighted. STOP or unsubscribe marks them Do not contact."></textarea>
+      <div class="sm" id="omSug"></div>
+      <div class="outbar">${['Replied','Interested','Not interested','Call back','Other'].map(x=>`<button type="button" data-ro="${x}" class="${x==='Interested'?'good':x==='Not interested'?'bad':''}">${x}</button>`).join('')}</div></div>
+    <div class="panel" style="gap:8px"><span class="flabel">Tags</span><div class="pills tags" id="omTags">${tagButtons(o)}</div></div>
+    <div class="panel" style="gap:8px"><span class="flabel">Follow up</span><div class="pills" id="omFuP"><button type="button" data-fu="1">Tomorrow</button><button type="button" data-fu="3">In 3 days</button><button type="button" data-fu="7">Next week</button><button type="button" data-fu="30">In 30 days</button><input type="date" id="omFuDate" value="${esc(o.f||'')}" aria-label="Custom follow-up date" style="font:inherit;border:1px solid var(--line);border-radius:999px;padding:4px 10px;background:var(--surface);color:var(--ink)"></div></div>
+    <div class="field"><label for="omNote">Note (saved with your next action, or press Save note)</label><textarea id="omNote" placeholder="Quick note about this person"></textarea><div style="display:flex;gap:8px;justify-content:flex-end"><button class="btn" type="button" id="omSaveNote">Save note</button></div></div>
+    <details class="field msgbox" ${OM.msgOpen?'open':''} id="omMsgBox"><summary class="flabel" style="cursor:pointer">Message · ${esc(pickTpl(r).name)}${meta.settings.tplMode==='rotate'?' (rotating)':''}</summary>
+      <div class="pills" id="omTplMode">${meta.settings.tpls.map(t=>`<button type="button" data-tm="${t.id}" aria-pressed="${meta.settings.tplMode===t.id}">${esc(t.name)}</button>`).join('')}<button type="button" data-tm="rotate" aria-pressed="${meta.settings.tplMode==='rotate'}">Rotate between versions</button></div>
+      ${(()=>{const et=meta.settings.tplMode==='rotate'?pickTpl(r):(meta.settings.tpls.find(t=>t.id===meta.settings.tplMode)||pickTpl(r));return `<label class="flabel" for="omMsg">Editing ${esc(et.name)}</label><textarea id="omMsg" data-tid="${et.id}" placeholder="Write this version. {first_name} is filled in for each person.">${esc(et.text)}</textarea>`})()}
+      <span class="sm">{first_name} is filled in for each person. Each text you mark sent remembers which version it used, so the dashboard can show which one gets more replies. Nothing is sent automatically.</span></details>
+    <div class="outbar"><button type="button" class="bad" id="omNI">Not interested</button><button type="button" class="bad" id="omDNC">Do not contact</button><button type="button" id="omOpen">Open full profile</button></div>
+    <div class="navrow"><button type="button" id="omPrev" ${OM.hist.length?'':'disabled'}>← Back</button><button type="button" id="omUndo" ${undoStack.length?'':'disabled'}>Undo</button><button type="button" class="nx" id="omNext">${OM.logged?'Next prospect →':'Skip →'}</button></div>
+  </div></div>`;
+  $('omPos').textContent=`${esc(OM.label)} · ${fmt(remaining())} more after this one`;
+  wireOMHead();wireOM(r);
+}
+function wireOMHead(){
+  $('omExit').onclick=closeOM;$('omQ').onchange=e=>openOM(e.target.value);
+  $('omAuto').onchange=e=>{meta.settings.auto=e.target.checked;saveMeta()};
+  $('omSkip').onchange=e=>{meta.settings.skipShared=e.target.checked;saveMeta();if(OM.pos>=0&&!eligible(OM.ids[OM.pos]))nextOM();else drawOM()};
+  $('omFu').value=String(meta.settings.fuAfterText??3);$('omFu').onchange=e=>{meta.settings.fuAfterText=+e.target.value;saveMeta()};
+}
+function omAct(id,entry,label,fuDays){
+  const note=$('omNote')?$('omNote').value.trim():'';if(note)entry.x=(entry.x?entry.x+' — ':'')+note;
+  const o=logInteraction(id,entry);
+  if(fuDays&&!(ops[id]&&ops[id].f)){const oo=getOp(id);oo.f=addDays(fuDays);commit(id,oo,{k:'fu',x:'Follow-up set for '+fmtDate(oo.f)})}
+  OM.logged=label;
+  if(meta.settings.auto){toast(label+' · next prospect');nextOM()}else drawOM();
+}
+function wireOM(r){
+  const id=r.id;
+  $('omNext').onclick=nextOM;$('omPrev').onclick=prevOM;
+  $('omCopyP').onclick=()=>copyText(dispPhone(r),'Copied '+dispPhone(r));
+  $('omCopyM').onclick=()=>copyText(fillMsg(r),'Message copied');
+  $('omSent').onclick=()=>omAct(id,{ch:'text',dir:'out',out:'',tpl:pickTpl(r).id},'Text sent',meta.settings.fuAfterText);
+  if($('omEmailSent'))$('omEmailSent').onclick=()=>omAct(id,{ch:'email',dir:'out',out:'',tpl:pickTpl(r).id},'Email sent',meta.settings.fuAfterText);
+  $('omCall').addEventListener('click',()=>{OM.callOpen=true;$('omCallOut').hidden=false;$('omCallOut').scrollIntoView({block:'nearest'})});
+  $('omText').addEventListener('click',()=>{toast('After you send it, press “Mark text sent”.')});
+  $('omCallOut').querySelectorAll('[data-co]').forEach(b=>b.onclick=()=>{const x=b.dataset.co;omAct(id,{ch:x==='Left voicemail'?'voicemail':'call',dir:'out',out:x},'Call: '+(x==='No response'?'No answer':x),x==='Call back'||x==='Left voicemail'||x==='No response'?(meta.settings.fuAfterText||0):0)});
+  let sug={out:'',stop:false};
+  $('omReply').oninput=e=>{sug=suggestOutcome(e.target.value);$('om').querySelectorAll('[data-ro]').forEach(b=>b.classList.toggle('sug',b.dataset.ro===sug.out));
+    $('omSug').textContent=!e.target.value.trim()?'':sug.stop?'Looks like an opt-out. Saving will mark them Do not contact.':sug.bad?'Looks like a wrong number. Saving will mark this number bad.':sug.out?'Looks like: '+sug.out:''};
+  $('om').querySelectorAll('[data-ro]').forEach(b=>b.onclick=()=>{const x=b.dataset.ro;const reply=$('omReply').value.trim();const note=$('omNote').value.trim();
+    const det=[reply?'“'+reply+'”':'',note].filter(Boolean).join(' — ');const stop=sug.stop&&!!reply;
+    logInteraction(id,{ch:'text',dir:'in',out:sug.bad&&reply?'Bad number':x,x:det,stop});OM.logged=stop?'Opt-out saved · marked Do not contact':'Response: '+x;drawOM();toast(stop?'Marked Do not contact':'Response saved')});
+  $('omTags').onclick=e=>{const b=e.target.closest('[data-tag]');if(b){toggleTag(id,b.dataset.tag);setTimeout(drawOM,120);return}const a=e.target.closest('[data-addtag]');if(a)addTagPrompt(id,()=>setTimeout(drawOM,120))};
+  $('omUndo').onclick=undo;
+  $('omFuP').querySelectorAll('[data-fu]').forEach(b=>b.onclick=()=>{setFollow(id,addDays(+b.dataset.fu));toast('Follow-up set for '+fmtDate(addDays(+b.dataset.fu)));setTimeout(drawOM,150)});
+  $('omFuDate').onchange=e=>{setFollow(id,e.target.value);setTimeout(drawOM,150)};
+  $('omSaveNote').onclick=()=>{const x=$('omNote').value.trim();if(!x)return;addNote(id,x);toast('Note saved');setTimeout(drawOM,150)};
+  $('omMsgBox').ontoggle=e=>{OM.msgOpen=e.target.open};
+  $('omTplMode').querySelectorAll('[data-tm]').forEach(b=>b.onclick=()=>{meta.settings.tplMode=b.dataset.tm;saveMeta();OM.msgOpen=true;drawOM()});
+  $('omMsg').oninput=e=>{const tp=meta.settings.tpls.find(x=>x.id===e.target.dataset.tid);if(tp)tp.text=e.target.value;clearTimeout(wireOM.t);wireOM.t=setTimeout(()=>{saveMeta();const a=$('omText');const s=smsHref(dispPhone(r),fillMsg(r));if(a&&s)a.href=s},400)};
+  $('omNI').onclick=()=>omAct(id,{ch:'other',dir:'out',out:'Not interested'},'Marked not interested',0);
+  $('omDNC').onclick=()=>{const o=setStatus(id,12);commit(id,o);OM.logged='Marked do not contact';if(meta.settings.auto){toast('Do not contact · next prospect');nextOM()}else drawOM()};
+  $('omOpen').onclick=()=>{const keep=id;closeOM();openProfile(keep)};
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!$('drawerWrap').hidden)closeProfile();else if(!$('om').hidden)closeOM()}});
+function wireSettings(){
+  $('seqOn').onchange=e=>{meta.settings.seq.on=e.target.checked;saveMeta()};
+  $('quietDays').onchange=e=>{meta.settings.quietDays=Math.max(1,+e.target.value||5);saveMeta();scheduleRefresh()};
+  $('seqSteps').addEventListener('change',e=>{const i=e.target.dataset.sd??e.target.dataset.sc;if(i==null)return;const s2=meta.settings.seq.steps[+i];if(e.target.dataset.sd!=null)s2.d=Math.max(0,+e.target.value||0);else s2.ch=e.target.value;meta.settings.seq.steps.sort((a,b)=>a.d-b.d);saveMeta();drawSettings()});
+  $('seqSteps').addEventListener('click',e=>{const b=e.target.closest('[data-sx]');if(!b)return;meta.settings.seq.steps.splice(+b.dataset.sx,1);saveMeta();drawSettings()});
+  $('seqAdd').onclick=()=>{const s2=meta.settings.seq.steps;const last=s2[s2.length-1];s2.push({d:(+last.d||0)+7,ch:'text'});saveMeta();drawSettings()};
+  let tt;$('tplEdit').addEventListener('input',e=>{const t=meta.settings.tpls.find(x=>x.id===e.target.dataset.tpl);if(!t)return;t.text=e.target.value;$('setPanel').dataset.busy='1';clearTimeout(tt);tt=setTimeout(()=>{saveMeta();delete $('setPanel').dataset.busy;drawVersions()},500)});
+  $('expToday').onclick=async()=>{const es=todayEntries();const q=v=>{v=String(v??'');return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v};
+    const lines=['time,name,state,license,phone,channel,direction,outcome,message_version,details'].concat(es.map(({id,l})=>{const r=byId.get(id);return [fmtStamp(l.t),r?dispName(r):id,r?r.st:'',r?r.lic:'',r?dispPhone(r):'',(CH_ALL[l.ch]||[l.ch])[0],l.dir==='in'?'inbound':'outbound',l.out,l.tpl||'',l.x].map(q).join(',')}));
+    if(await download(`Beauty-Prospects-today-${today()}.csv`,'\ufeff'+lines.join('\n'),'text/csv;charset=utf-8'))toast(`Exported ${fmt(es.length)} entries from today.`,false)};
+  $('todayLog').onclick=e=>{const b=e.target.closest('[data-open2]');if(b)openProfile(b.dataset.open2)};
+  $('undoTop').onclick=undo;
+}
+function drawResume(){
+  const L=meta.last;const r=L&&byId.get(L.id);
+  $('resumeLine').innerHTML=r?`Where you left off: <b>${esc(dispName(r))}</b> · ${ago(L.t)}${L.q?` · <button class="btn" type="button" id="resumeBtn" style="padding:3px 9px;font-size:.78rem">Resume ${esc((QUEUES.find(q=>q[0]===L.q)||['',''])[1])}</button>`:` · <button class="btn" type="button" id="resumeOpen" style="padding:3px 9px;font-size:.78rem">Open</button>`}`:'Pick a state with the filters, then start with “Cellphones — not contacted”. Everyone you work on is saved as you go.';
+  if($('resumeBtn'))$('resumeBtn').onclick=()=>openOM(L.q,L.id);if($('resumeOpen'))$('resumeOpen').onclick=()=>openProfile(L.id);
+}
+
+/* ================= export, backup ================= */
+function toast(m,withUndo){const t=$('toast');t.innerHTML='';t.append(document.createTextNode(m));
+  if(withUndo!==false&&undoStack.length&&Date.now()-undoStack[undoStack.length-1].at<3000){const b=document.createElement('button');b.type='button';b.className='tundo';b.textContent='Undo';b.onclick=()=>{t.hidden=true;undo()};t.append(b)}
+  t.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>t.hidden=true,3200)}
+function copyText(txt,msg){try{navigator.clipboard.writeText(txt).then(()=>toast(msg),()=>fallbackCopy(txt,msg))}catch(e){fallbackCopy(txt,msg)}}
+function fallbackCopy(txt,msg){const ta=document.createElement('textarea');ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}ta.remove();toast(ok?msg:'Copy was blocked. Select the text and copy it yourself.')}
+async function download(name,text,type){
+  if(!IN_FILE&&window.claude){let dl=null;try{dl=await claude.use('downloads')}catch(e){}
+    if(dl){try{await dl.save({filename:name,data:text});return true}catch(e){toast(e&&e.code==='declined'?'Download cancelled.':'Downloads aren’t available here. Use Copy CSV instead.');return false}}
+    toast('Downloads aren’t available here. Use Copy CSV instead.');return false}
+  const b=new Blob([text],{type});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1500);return true}
+function csv(list){
+  const q=v=>{v=String(v??'');return /[",\n\r]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v};
+  const head=D_COLS.map(c=>c[0]).concat(['best_contact_method','has_phone','has_cellphone','has_email','student_or_apprentice','contactability','shared_group','shared_group_size','dq_flags',
+    'status','priority','last_contact','last_channel','last_outcome','next_follow_up','quick_note','notes','opportunity','edited_name','edited_phone','edited_email','outreach_attempts','responded','tags','sequence','other_license_types','history']);
+  const lines=[head.join(',')];
+  for(const r of list){const o=ops[r.id]?getOp(r.id):blankOp();const l=lastTouch(r.id);
+    lines.push(D_COLS.map(c=>rawVal(r,c[0])).concat([r.method,r.hasPhone,!!r.hasCell,r.hasEmail,r.student,TIERS[r.tier],r.grp===''?'':r.grp,r.gsz,FLAGS.filter((f,i)=>r.fl&(1<<i)).join(' '),
+      STATUSES[o.s],PRIORITIES[o.pr],l?fmtStamp(l.t):'',l?(CHANNELS[l.ch]||[l.ch])[0]:'',l?l.out:'',o.f,o.qn,o.n,o.op,o.ed.name||'',o.ed.phone||'',o.ed.email||'',attempts(r.id),isResponded(r.id),(o.tags||[]).join('; '),o.sq?(o.sq.done?o.sq.done:seqNext(r.id)):'',r.olic,
+      o.log.filter(x=>x.ch!=='sys').map(x=>fmtStamp(x.t)+' | '+(CH_ALL[x.ch]||[x.ch])[0]+' '+(x.dir==='in'?'in':'out')+(x.out?' | '+x.out:'')+(x.tpl?' | msg '+x.tpl:'')+(x.x?' | '+x.x:'')).join(' || ')]).map(q).join(','))}
+  return lines.join('\n');
+}
+$('copyCsv').onclick=()=>{if(current.length>20000){toast('That’s '+fmt(current.length)+' rows, too many to copy. Narrow the filters or use Export CSV.');return}copyText(csv(current),`Copied ${fmt(current.length)} rows. Paste them into a spreadsheet.`)};
+$('dlCsv').onclick=async()=>{if(await download(`Beauty-Prospects-${today()}.csv`,'﻿'+csv(current),'text/csv;charset=utf-8'))toast(`Exported ${fmt(current.length)} rows.`)};
+async function backupNow(){
+  const leads=Object.keys(ops).map(id=>{const r=byId.get(id);const o=getOp(id);return {id,name:r?dispName(r):'',business:r?r.bname:'',state:r?r.st:'',license:r?r.lic:'',instagram:r?r.ig:'',best_phone:r?dispPhone(r):'',email:r?dispEmail(r):'',status:STATUSES[o.s],priority:PRIORITIES[o.pr],follow_up:o.f,tags:o.tags,sequence:o.sq?(o.sq.done||seqNext(id)):'',quick_note:o.qn,notes:o.n,opportunity:o.op,
+    history:o.log.filter(l=>l.ch!=='sys').map(l=>fmtStamp(l.t)+' | '+(CH_ALL[l.ch]||[l.ch])[0]+' '+(l.dir==='in'?'inbound':'outbound')+(l.out?' | '+l.out:'')+(l.x?' | '+l.x:'')),last_updated:o.u}}).sort((a,b)=>(b.last_updated||'').localeCompare(a.last_updated||''));
+  computeStats();const c=counts;
+  const out={app:'beauty-prospects-workspace',v:1,saved:new Date().toISOString(),source:'All beauty prospect lists combined ('+fmt(rows.length)+' people and businesses from 610,923 source records)',
+    readme:'Backup from the All Beauty Prospects workspace. “Restore from backup” loads it. “leads” is a readable copy; “ops” is what the page restores from, keyed by prospect id (P + number).',
+    summary:{worked:c.worked,contacted:c.contacted,responded:c.responded,conversations:c.conv,interested:c.interested,clients:c.clients,do_not_contact:c.dnc,follow_ups_due:c.due,overdue:c.overdue,today:c.today},
+    leads,ops,meta:{views:meta.views,settings:meta.settings}};
+  if(!await download(`Beauty-Prospects-backup-${today()}.json`,JSON.stringify(out,null,1),'application/json'))return;
+  meta.lastbk=new Date().toISOString();saveMeta();drawBk();const m=`Backed up ${fmt(leads.length)} worked prospects.`;$('bkMsg').textContent=m;toast(m);
+}
+function drawBk(){const lb=meta.lastbk;const n=Object.keys(ops).length;const late=n&&(!lb||Date.now()-new Date(lb)>7*864e5);document.querySelectorAll('[data-bkstat]').forEach(el=>{el.textContent=lb?'Last backup '+ago(lb):(n?'Not backed up yet':'');el.classList.toggle('warn',!!late)})}
+document.addEventListener('click',e=>{if(e.target.closest('.bkbtn'))backupNow()});
+$('rs').onclick=()=>$('rsFile').click();
+$('rsFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const rd=new FileReader();
+  rd.onload=async()=>{try{const d=JSON.parse(rd.result);if(!d.ops||d.app!=='beauty-prospects-workspace')throw 0;let k=0;const changed=[];
+      for(const id in d.ops){const a=d.ops[id],b=ops[id];if(!byId.has(id))continue;if(!b||(a.u||'')>(b.u||'')){ops[id]=a;k++;changed.push(id)}}
+      if(d.meta){if(d.meta.views&&!(meta.views||[]).length)meta.views=d.meta.views;if(d.meta.settings)meta.settings={...meta.settings,...d.meta.settings}}saveMeta();
+      for(const id of changed){persist(id);if(mode==='db')await new Promise(r=>setTimeout(r,5))}
+      if(mode==='local')lsSet(OPS_KEY,ops);
+      scheduleRefresh();$('bkMsg').textContent=`Restored ${fmt(k)} prospects. Newer work already here was kept.`}
+    catch(err){$('bkMsg').textContent='That file isn’t a backup from this workspace. Choose the .json file made by “Back up my work”.'}
+    e.target.value=''};rd.readAsText(f)};
+
+/* ================= start ================= */
+async function start(){
+  meta={...meta,...lsGet(META_KEY,{})};meta.settings=fixSettings(meta.settings);
+  if(meta.settings.cols)visCols=meta.settings.cols;
+  if(IN_FILE||!window.claude){
+    idb=await openIDB();
+    if(idb){const all=await idbAll(idb);if(all){mode='idb';ops=all;
+        const legacy=lsGet(OPS_KEY,null);if(legacy&&Object.keys(legacy).length){for(const id in legacy)if(!ops[id]||(legacy[id].u||'')>(ops[id].u||'')){ops[id]=legacy[id];idbPut(id,legacy[id])}}}
+      else idb=null}
+    if(!idb){mode='local';ops=lsGet(OPS_KEY,{})}
+  }
+  boot();
+  if(!IN_FILE&&window.claude){
+    let d=null;try{d=await claude.use('db')}catch(e){}
+    if(!d){idb=await openIDB();if(idb){const all=await idbAll(idb);if(all){mode='idb';ops=all;scheduleRefresh()}}return}
+    dbx=d;mode='db';$('bkNote').innerHTML='<b>Your work is saved with this page in Claude.</b> “Back up my work” saves a copy you can load into the Desktop file with “Restore from backup”, or upload to Claude.';
+        dbx.collection('ops').limit(1000).onSnapshot(snap=>{const next={};snap.docs.forEach(doc=>{knownBuckets.add(doc.id);const b=doc.data();if(b&&b.leads)for(const k in b.leads){const v=b.leads[k];if(v&&!v.__deleted){const c=JSON.parse(JSON.stringify(v));delete c.__deleted;next[k]=c}}});
+      for(const b in bucketPending)for(const k in bucketPending[b]){if(bucketPending[b][k])next[k]=bucketPending[b][k];else delete next[k]}
+      ops=next;scheduleRefresh()},()=>toast('Live saving stopped. Reload the page to reconnect.'));
+    dbx.doc('meta/state').onSnapshot(snap=>{if(snap.exists){const m=snap.data();meta={...meta,...JSON.parse(JSON.stringify(m))};meta.settings=fixSettings(meta.settings);if(meta.settings.cols)visCols=meta.settings.cols;drawHeader();drawResume();drawBk();drawSegs()}},()=>{});
+  }
+}
+function boot(){wireSettings();fillTags();drawHeader();computeStats();drawDash();refreshList(false);$('loader').hidden=true;if(!storageOk)toast('This browser blocks saving. Use “Back up my work”.')}
+start();
+}
+main();
+
+</script>
+

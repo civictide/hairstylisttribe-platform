@@ -407,4 +407,4 @@ function finalizeDontBuy(persona, state, dims, tags) {
   }
 }
 
-module.exports = { run, route, evalCond, followUps, QMAP, VERSION, resolveText, optionsFor };
+module.exports = { run, route, evalCond, followUps, QMAP, VERSION, resolveText, optionsFor, shouldAsk, makeGetter, resolvePersona, SEQUENCE_DEFAULT, SEQUENCE_SO };

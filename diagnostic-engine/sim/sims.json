@@ -188,8 +188,8 @@
      "group": "capacity",
      "status": "OPPORTUNITY",
      "statusLabel": "Opportunity",
-     "concern": 62,
-     "base": 58,
+     "concern": 57,
+     "base": 54,
      "conf": 1,
      "unknown": 0,
      "notes": [
@@ -204,6 +204,16 @@
        "src": "Q09",
        "level": 2,
        "weight": 3
+      },
+      {
+       "src": "Q12",
+       "level": 1,
+       "weight": 0.71
+      },
+      {
+       "src": "Q12",
+       "level": 1,
+       "weight": 0.71
       }
      ]
     },
@@ -821,8 +831,8 @@
    "persona": "Commission stylist",
    "completion": {
     "shown": 26,
-    "answered": 25,
-    "complete": false
+    "answered": 26,
+    "complete": true
    },
    "completedAt": "2026-10-03",
    "callRequested": "Morning",
@@ -900,8 +910,8 @@
      "id": "UTIL",
      "label": "Schedule utilization",
      "status": "Opportunity",
-     "concern": 62,
-     "base": 58,
+     "concern": 57,
+     "base": 54,
      "confidence": 1,
      "notes": [
       "Mostly a result of the demand gap, not how the schedule is built."
@@ -1230,8 +1240,8 @@
      "id": "Q12",
      "domain": "Capacity / schedule",
      "question": "When you have open time, where does it usually fall?",
-     "answer": "—",
-     "answered": false
+     "answer": "Weekday mornings, Weekday afternoons",
+     "answered": true
     },
     {
      "id": "Q13",
@@ -4297,7 +4307,8 @@
    "firedRules": [
     "R01",
     "R14",
-    "R26"
+    "R26",
+    "R28"
    ],
    "dims": {
     "ACQ": {
@@ -4334,11 +4345,24 @@
      "id": "DISC",
      "label": "Local discoverability",
      "group": "demand",
-     "status": "NOT_PROBED",
-     "statusLabel": "Not probed",
-     "concern": null,
-     "conf": 0,
-     "notes": []
+     "status": "HEALTHY",
+     "statusLabel": "Healthy",
+     "concern": 22,
+     "base": 22,
+     "conf": 1,
+     "unknown": 0,
+     "notes": [],
+     "evidence": [],
+     "positives": [
+      "Somewhere on the first page"
+     ],
+     "signals": [
+      {
+       "src": "Q16",
+       "level": 0,
+       "weight": 2
+      }
+     ]
     },
     "BRAND": {
      "id": "BRAND",
@@ -5163,8 +5187,8 @@
    "persona": "Booth renter",
    "completion": {
     "shown": 25,
-    "answered": 24,
-    "complete": false
+    "answered": 25,
+    "complete": true
    },
    "completedAt": "2026-10-03",
    "callRequested": "Morning",
@@ -5232,9 +5256,10 @@
     {
      "id": "DISC",
      "label": "Local discoverability",
-     "status": "Not probed",
-     "concern": null,
-     "confidence": 0,
+     "status": "Healthy",
+     "concern": 22,
+     "base": 22,
+     "confidence": 1,
      "notes": []
     },
     {
@@ -5578,7 +5603,8 @@
    "rulesFired": [
     "R01",
     "R14",
-    "R26"
+    "R26",
+    "R28"
    ],
    "qa": [
     {
@@ -5655,8 +5681,8 @@
      "id": "Q16",
      "domain": "Local discovery",
      "question": "If someone nearby searched Google for your service and your city, where would you show up?",
-     "answer": "—",
-     "answered": false
+     "answer": "Somewhere on the first page",
+     "answered": true
     },
     {
      "id": "Q18",
@@ -7676,7 +7702,8 @@
      "evidence": [],
      "positives": [
       "1–2 years ago",
-      "No"
+      "No",
+      "Only a first-visit offer"
      ],
      "signals": [
       {
@@ -7688,6 +7715,11 @@
        "src": "Q30.fear",
        "level": 0,
        "weight": 1.6
+      },
+      {
+       "src": "Q32",
+       "level": 0,
+       "weight": 1.5
       }
      ]
     },
@@ -8277,8 +8309,8 @@
    "persona": "Independent beauty professional",
    "completion": {
     "shown": 24,
-    "answered": 23,
-    "complete": false
+    "answered": 24,
+    "complete": true
    },
    "completedAt": "2026-10-03",
    "callRequested": "Morning",
@@ -8825,8 +8857,8 @@
      "id": "Q32",
      "domain": "Pricing",
      "question": "How often do you discount?",
-     "answer": "—",
-     "answered": false
+     "answer": "Only a first-visit offer",
+     "answered": true
     },
     {
      "id": "Q33",
@@ -10661,15 +10693,16 @@
      "group": "monetization",
      "status": "HEALTHY",
      "statusLabel": "Healthy",
-     "concern": 22,
-     "base": 22,
+     "concern": 18,
+     "base": 18,
      "conf": 1,
      "unknown": 0,
      "notes": [],
      "evidence": [],
      "positives": [
       "1–2 years ago",
-      "No"
+      "No",
+      "Rarely"
      ],
      "signals": [
       {
@@ -10681,6 +10714,11 @@
        "src": "Q30.fear",
        "level": 0,
        "weight": 1.6
+      },
+      {
+       "src": "Q32",
+       "level": -1,
+       "weight": 1.5
       }
      ]
     },
@@ -11401,8 +11439,8 @@
    "persona": "Salon owner",
    "completion": {
     "shown": 26,
-    "answered": 25,
-    "complete": false
+    "answered": 26,
+    "complete": true
    },
    "completedAt": "2026-10-03",
    "callRequested": "Morning",
@@ -11518,8 +11556,8 @@
      "id": "PRICE",
      "label": "Pricing",
      "status": "Healthy",
-     "concern": 22,
-     "base": 22,
+     "concern": 18,
+     "base": 18,
      "confidence": 1,
      "notes": []
     },
@@ -11969,8 +12007,8 @@
      "id": "Q32",
      "domain": "Pricing",
      "question": "How often do you discount?",
-     "answer": "—",
-     "answered": false
+     "answer": "Rarely",
+     "answered": true
     },
     {
      "id": "Q34",
@@ -12215,8 +12253,8 @@
      "group": "capacity",
      "status": "WATCH",
      "statusLabel": "Watch",
-     "concern": 35,
-     "base": 35,
+     "concern": 34,
+     "base": 34,
      "conf": 1,
      "unknown": 0,
      "notes": [],
@@ -12224,13 +12262,19 @@
       "About 6% of scheduled appointments cancel late or no-show — roughly 1 hours a week that don’t get refilled."
      ],
      "positives": [
-      "About 1"
+      "About 1",
+      "Card on file, and the fee is enforced"
      ],
      "signals": [
       {
        "src": "Q21",
        "level": 0,
        "weight": 2
+      },
+      {
+       "src": "Q22",
+       "level": 0,
+       "weight": 1.5
       },
       {
        "src": "derived:leak_rate",
@@ -12336,7 +12380,8 @@
      "evidence": [],
      "positives": [
       "1–2 years ago",
-      "No"
+      "No",
+      "Only a first-visit offer"
      ],
      "signals": [
       {
@@ -12348,6 +12393,11 @@
        "src": "Q30.fear",
        "level": 0,
        "weight": 1.6
+      },
+      {
+       "src": "Q32",
+       "level": 0,
+       "weight": 1.5
       }
      ]
     },
@@ -12925,8 +12975,8 @@
    "persona": "Independent beauty professional",
    "completion": {
     "shown": 23,
-    "answered": 21,
-    "complete": false
+    "answered": 23,
+    "complete": true
    },
    "completedAt": "2026-10-03",
    "callRequested": "Morning",
@@ -13027,8 +13077,8 @@
      "id": "CXL",
      "label": "Cancellation & no-show leakage",
      "status": "Watch",
-     "concern": 35,
-     "base": 35,
+     "concern": 34,
+     "base": 34,
      "confidence": 1,
      "notes": []
     },
@@ -13406,8 +13456,8 @@
      "id": "Q22",
      "domain": "Cancellations / no-shows",
      "question": "What happens when someone cancels late or no-shows?",
-     "answer": "—",
-     "answered": false
+     "answer": "Card on file, and the fee is enforced",
+     "answered": true
     },
     {
      "id": "Q24",
@@ -13462,8 +13512,8 @@
      "id": "Q32",
      "domain": "Pricing",
      "question": "How often do you discount?",
-     "answer": "—",
-     "answered": false
+     "answer": "Only a first-visit offer",
+     "answered": true
     },
     {
      "id": "Q33",

@@ -4,7 +4,7 @@
 module.exports = [
   {
     id: 'S01', name: 'New commission stylist', brief: 'Low clientele, little personal brand, salon supplies some clients, low request base.',
-    answers: { Q01: 'CS', Q03: 'hair', Q04: 'building', Q05: 'more_new', Q06: 'flat', Q08: 'h3', Q09: 'u2', Q10: 'same', Q11: 'c2', Q13: 'n2', Q14: ['salon', 'ig'], Q15: 'assigned', Q17: 'occasional', Q21: 'x1', Q24: { process: 'ask', pct: 'p40' }, Q25: 'r6', Q26: 'w8', Q28: { where: 'salon_see', count: 'd1' }, Q30: { last: 'never', fear: 'no' }, Q31: 'same', Q33: 't2', Q34: { addon: 'rare', retail: 'r1' }, Q36: 'mixed', Q37: { specialty: 'somewhat', link: 'salon' }, Q38: 'natural', Q41: ['newc'] },
+    answers: { Q01: 'CS', Q03: 'hair', Q04: 'building', Q05: 'more_new', Q06: 'flat', Q08: 'h3', Q09: 'u2', Q10: 'same', Q11: 'c2', Q12: ['wk_morn', 'wk_aft'], Q13: 'n2', Q14: ['salon', 'ig'], Q15: 'assigned', Q17: 'occasional', Q21: 'x1', Q24: { process: 'ask', pct: 'p40' }, Q25: 'r6', Q26: 'w8', Q28: { where: 'salon_see', count: 'd1' }, Q30: { last: 'never', fear: 'no' }, Q31: 'same', Q33: 't2', Q34: { addon: 'rare', retail: 'r1' }, Q36: 'mixed', Q37: { specialty: 'somewhat', link: 'salon' }, Q38: 'natural', Q41: ['newc'] },
     expect: { topAny: ['BRAND', 'ACQ'], topIncludesOneOf: ['REBOOK', 'REF', 'BRAND'], notDims: ['DISC', 'REP', 'CONV'], dontBuy: ['personal_marketing_cs'], interventionsInclude: ['personal_brand_cs'], interventionsExclude: ['gbp_optimization', 'paid_ads'], tags: ['CS_CONTROL', 'CS_BUILDING'] },
   },
   {
@@ -19,7 +19,7 @@ module.exports = [
   },
   {
     id: 'S04', name: 'Busy booth renter', brief: '90% utilization, no price increase, low average ticket, poor add-ons, strong retention.',
-    answers: { Q01: 'BR', Q03: 'hair', Q04: 'full', Q05: 'more_new', Q07: 'r2', Q08: 'h4', Q09: 'u5', Q10: 'four', Q11: 'c4', Q13: 'n3', Q14: ['referral', 'ig'], Q18: 'online', Q21: 'x1', Q24: { process: 'always', pct: 'p60' }, Q25: 'r8', Q26: 'w5', Q30: { last: 'y3', fear: 'often' }, Q31: 'lower', Q32: 'rare', Q33: 't2', Q34: { addon: 'rare', retail: 'r1' }, Q35: 'no', Q36: 'mixed', Q37: { specialty: 'somewhat', link: 'all' }, Q39: { count: 'v3', rating: 's48', ask: 'person' }, Q41: ['rev'] },
+    answers: { Q01: 'BR', Q03: 'hair', Q04: 'full', Q05: 'more_new', Q07: 'r2', Q08: 'h4', Q09: 'u5', Q10: 'four', Q11: 'c4', Q13: 'n3', Q14: ['referral', 'ig'], Q16: 'page1', Q18: 'online', Q21: 'x1', Q24: { process: 'always', pct: 'p60' }, Q25: 'r8', Q26: 'w5', Q30: { last: 'y3', fear: 'often' }, Q31: 'lower', Q32: 'rare', Q33: 't2', Q34: { addon: 'rare', retail: 'r1' }, Q35: 'no', Q36: 'mixed', Q37: { specialty: 'somewhat', link: 'all' }, Q39: { count: 'v3', rating: 's48', ask: 'person' }, Q41: ['rev'] },
     expect: { top1: ['PRICE', 'TICKET', 'MIX'], topIncludes: ['PRICE'], topNot: ['ACQ', 'DISC', 'BRAND'], tags: ['ACQ_NOT_CONSTRAINT', 'UNDERPRICED'], dontBuy: ['ads'], belief: 'challenge', statusIn: { RET: ['STRONG', 'HEALTHY'] } },
   },
   {
@@ -29,7 +29,7 @@ module.exports = [
   },
   {
     id: 'S06', name: 'Independent lash artist', brief: 'Strong acquisition, weak rebooking, high no-shows, no deposit policy, large dormant database.',
-    answers: { Q01: 'IP', Q03: 'lash', Q04: 'plateau', Q05: 'more_new', Q08: 'h4', Q09: 'u3', Q10: 'one', Q11: 'c3', Q12: ['scattered'], Q13: 'n4', Q14: ['ig', 'google', 'referral'], Q16: 'top', Q17: 'works', Q18: 'online', Q20: 'c8', Q21: 'x4', Q22: 'none', Q23: 'empty', Q24: { process: 'own', pct: 'p20' }, Q25: 'r4', Q27: ['no_reason'], Q28: { where: 'software', count: 'd4' }, Q29: 'nothing', Q30: { last: 'y1', fear: 'no' }, Q31: 'same', Q33: 't3', Q34: { addon: 'some', retail: 'r0' }, Q35: 'yes', Q36: 'ideal', Q38: 'ask', Q39: { count: 'v4', rating: 's48', ask: 'auto' }, Q40: { auto: 'some', admin: 'a2' }, Q41: ['rev', 'newc'] },
+    answers: { Q01: 'IP', Q03: 'lash', Q04: 'plateau', Q05: 'more_new', Q08: 'h4', Q09: 'u3', Q10: 'one', Q11: 'c3', Q12: ['scattered'], Q13: 'n4', Q14: ['ig', 'google', 'referral'], Q16: 'top', Q17: 'works', Q18: 'online', Q20: 'c8', Q21: 'x4', Q22: 'none', Q23: 'empty', Q24: { process: 'own', pct: 'p20' }, Q25: 'r4', Q27: ['no_reason'], Q28: { where: 'software', count: 'd4' }, Q29: 'nothing', Q30: { last: 'y1', fear: 'no' }, Q31: 'same', Q32: 'first', Q33: 't3', Q34: { addon: 'some', retail: 'r0' }, Q35: 'yes', Q36: 'ideal', Q38: 'ask', Q39: { count: 'v4', rating: 's48', ask: 'auto' }, Q40: { auto: 'some', admin: 'a2' }, Q41: ['rev', 'newc'] },
     expect: { topIncludes: ['REBOOK', 'CXL'], topIncludesOneOf: ['REACT', 'RET'], topNot: ['ACQ', 'DISC'], statusIn: { ACQ: ['STRONG', 'HEALTHY'], REACT: ['OPPORTUNITY', 'HIGH_PRIORITY'] }, dontBuy: ['ads'], interventionsInclude: ['deposit_policy', 'prebooking_system'], belief: 'challenge' },
   },
   {
@@ -39,12 +39,12 @@ module.exports = [
   },
   {
     id: 'S08', name: 'Successful salon owner', brief: '12 chairs, strong demand and staff, good utilization, poor salon-level retention, weak retail, wants to step away.',
-    answers: { Q01: 'SO', Q04: 'growing', Q05: 'step_back', Q42: { stations: 12, producing: 11, commission: 8, renters: 2 }, Q43: ['left'], Q44: 'quick', Q45: 't2', Q46: 'follow', Q47: { who: 'desk', assign: 'match' }, Q48: 'full', Q49: ['rev', 'ticket'], Q50: { prod: 'p3', rent: 'b3' }, Q51: 'o2', Q52: 'serious', Q53: 'step', Q54: 'fires', Q55: 'rough', Q13: 'n4', Q24: { process: 'ask', pct: 'p40' }, Q25: 'r4', Q27: ['no_reason', 'unknown'], Q28: { where: 'partial', count: 'd5' }, Q29: 'occasional', Q30: { last: 'y1', fear: 'no' }, Q33: 't4', Q34: { addon: 'some', retail: 'r1' }, Q39: { count: 'v3', rating: 's48', ask: 'person' }, Q41: ['rev', 'profit', 'ticket'] },
+    answers: { Q01: 'SO', Q04: 'growing', Q05: 'step_back', Q42: { stations: 12, producing: 11, commission: 8, renters: 2 }, Q43: ['left'], Q44: 'quick', Q45: 't2', Q46: 'follow', Q47: { who: 'desk', assign: 'match' }, Q48: 'full', Q49: ['rev', 'ticket'], Q50: { prod: 'p3', rent: 'b3' }, Q51: 'o2', Q52: 'serious', Q53: 'step', Q54: 'fires', Q55: 'rough', Q13: 'n4', Q24: { process: 'ask', pct: 'p40' }, Q25: 'r4', Q27: ['no_reason', 'unknown'], Q28: { where: 'partial', count: 'd5' }, Q29: 'occasional', Q30: { last: 'y1', fear: 'no' }, Q32: 'rare', Q33: 't4', Q34: { addon: 'some', retail: 'r1' }, Q39: { count: 'v3', rating: 's48', ask: 'person' }, Q41: ['rev', 'profit', 'ticket'] },
     expect: { topIncludes: ['OWNER_DEP', 'RET'], topNot: ['ACQ', 'DISC', 'CHAIR_UTIL'], statusIn: { RETAIL: ['OPPORTUNITY', 'HIGH_PRIORITY', 'WATCH'], ACQ: ['STRONG', 'HEALTHY'] }, tags: ['SUPPLY_CONSTRAINT', 'OWNER_TRAPPED'], dontBuy: ['salon_ads'], belief: 'confirm' },
   },
   {
     id: 'S09', name: 'Thinks they need Instagram', brief: 'Strong Google discovery and referrals, weak rebooking, 50% retention, 65% utilized.',
-    answers: { Q01: 'IP', Q03: 'skin', Q04: 'plateau', Q05: 'social', Q08: 'h3', Q09: 'u3', Q10: 'one', Q11: 'c2', Q12: ['wk_aft', 'scattered'], Q13: 'n3', Q14: ['google', 'referral'], Q16: 'top', Q17: 'occasional', Q18: 'online', Q20: 'c8', Q21: 'x1', Q24: { process: 'own', pct: 'p20' }, Q25: 'r4', Q26: 'w5', Q27: ['no_reason'], Q28: { where: 'software', count: 'd3' }, Q29: 'occasional', Q30: { last: 'y1', fear: 'no' }, Q31: 'same', Q33: 't3', Q34: { addon: 'some', retail: 'r2' }, Q35: 'partly', Q36: 'ideal', Q38: 'ask', Q39: { count: 'v4', rating: 's48', ask: 'auto' }, Q40: { auto: 'some', admin: 'a2' }, Q41: ['rev', 'newc'] },
+    answers: { Q01: 'IP', Q03: 'skin', Q04: 'plateau', Q05: 'social', Q08: 'h3', Q09: 'u3', Q10: 'one', Q11: 'c2', Q12: ['wk_aft', 'scattered'], Q13: 'n3', Q14: ['google', 'referral'], Q16: 'top', Q17: 'occasional', Q18: 'online', Q20: 'c8', Q21: 'x1', Q22: 'card', Q24: { process: 'own', pct: 'p20' }, Q25: 'r4', Q26: 'w5', Q27: ['no_reason'], Q28: { where: 'software', count: 'd3' }, Q29: 'occasional', Q30: { last: 'y1', fear: 'no' }, Q31: 'same', Q32: 'first', Q33: 't3', Q34: { addon: 'some', retail: 'r2' }, Q35: 'partly', Q36: 'ideal', Q38: 'ask', Q39: { count: 'v4', rating: 's48', ask: 'auto' }, Q40: { auto: 'some', admin: 'a2' }, Q41: ['rev', 'newc'] },
     expect: { top1: ['REBOOK', 'RET'], topIncludes: ['REBOOK', 'RET'], topNot: ['ACQ', 'BRAND', 'DISC'], statusIn: { DISC: ['STRONG', 'HEALTHY'] }, dontBuy: ['followers'], belief: 'challenge', interventionsExclude: ['instagram_strategy'] },
   },
   {

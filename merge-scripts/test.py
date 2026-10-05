@@ -1,0 +1,42 @@
+import asyncio, time
+from playwright.async_api import async_playwright
+async def main():
+    async with async_playwright() as p:
+        b = await p.chromium.launch()
+        pg = await b.new_page(viewport={'width':1300,'height':900})
+        errs=[]
+        pg.on('pageerror', lambda e: errs.append(str(e)))
+        pg.on('console', lambda m: m.type=='error' and errs.append(m.text))
+        # wrap like the artifact host: page content inside skeleton
+        html=open('site/index.html').read()
+        open('site/test.html','w').write('<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"></head><body>'+html+'</body></html>')
+        t=time.time()
+        await pg.goto('http://localhost:8765/test.html')
+        await pg.wait_for_selector('#loader', state='hidden', timeout=120000)
+        print('loaded in', round(time.time()-t,1),'s')
+        print('heap MB', await pg.evaluate('performance.memory?Math.round(performance.memory.usedJSHeapSize/1e6):null'))
+        print('stats:', await pg.inner_text('#stats'))
+        print('count:', await pg.inner_text('#count'))
+        await pg.select_option('#fState', 'ME'); await pg.wait_for_timeout(500)
+        print('ME count:', await pg.inner_text('#count'))
+        await pg.select_option('#fState', ''); 
+        await pg.fill('#q','hairbybrandie'); await pg.wait_for_timeout(1500)
+        print('search:', await pg.inner_text('#count'))
+        await pg.click('.vr >> nth=0'); await pg.wait_for_timeout(500)
+        print('profile:', (await pg.inner_text('#drawer'))[:900])
+        await pg.screenshot(path='shot_profile.png')
+        await pg.keyboard.press('Escape')
+        await pg.fill('#q',''); await pg.wait_for_timeout(1200)
+        await pg.click('#startOM'); await pg.wait_for_timeout(800)
+        print('OM:', (await pg.inner_text('#om'))[:500])
+        await pg.screenshot(path='shot_om.png')
+        await pg.keyboard.press('Escape'); await pg.wait_for_timeout(300)
+        await pg.screenshot(path='shot_top.png')
+        m = await b.new_page(viewport={'width':400,'height':860})
+        m.on('pageerror', lambda e: errs.append('mobile '+str(e)))
+        await m.goto('http://localhost:8765/test.html'); await m.wait_for_selector('#loader', state='hidden', timeout=120000)
+        await m.screenshot(path='shot_mobile.png')
+        print('mobile overflow', await m.evaluate('document.documentElement.scrollWidth>window.innerWidth'))
+        print('ERRORS', errs)
+        await b.close()
+asyncio.run(main())
