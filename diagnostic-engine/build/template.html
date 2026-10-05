@@ -1,0 +1,499 @@
+<title>Beauty Growth Diagnostic Matrix</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: an internal spec workbench — sticky view switcher, one column of dense reference views,
+   and a phone-width customer report beside its admin record in Simulations. */
+:root{
+  --bg:oklch(0.972 0.005 330); --surface:oklch(0.995 0.002 330); --sunk:oklch(0.948 0.008 330); --line:oklch(0.882 0.012 330);
+  --ink:oklch(0.21 0.02 320); --muted:oklch(0.42 0.018 320); --faint:oklch(0.55 0.014 320);
+  --accent:oklch(0.39 0.085 320); --accent-ink:oklch(0.985 0.004 330); --accent-soft:oklch(0.935 0.022 320);
+  --s-strong:oklch(0.43 0.08 165); --s-strong-soft:oklch(0.93 0.035 165);
+  --s-healthy:oklch(0.5 0.09 150); --s-healthy-soft:oklch(0.94 0.035 150);
+  --s-watch:oklch(0.52 0.06 95); --s-watch-soft:oklch(0.945 0.035 95);
+  --s-opp:oklch(0.55 0.12 65); --s-opp-soft:oklch(0.945 0.045 70);
+  --s-high:oklch(0.5 0.15 30); --s-high-soft:oklch(0.94 0.04 30);
+  --s-na:oklch(0.55 0.012 320); --s-na-soft:oklch(0.94 0.006 320);
+  --display:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --body:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --bg:oklch(0.185 0.014 320); --surface:oklch(0.225 0.016 320); --sunk:oklch(0.2 0.014 320); --line:oklch(0.33 0.018 320);
+  --ink:oklch(0.95 0.006 330); --muted:oklch(0.8 0.012 330); --faint:oklch(0.68 0.012 330);
+  --accent:oklch(0.78 0.08 320); --accent-ink:oklch(0.2 0.02 320); --accent-soft:oklch(0.3 0.04 320);
+  --s-strong:oklch(0.78 0.09 165); --s-strong-soft:oklch(0.3 0.04 165);
+  --s-healthy:oklch(0.8 0.1 150); --s-healthy-soft:oklch(0.3 0.04 150);
+  --s-watch:oklch(0.83 0.08 95); --s-watch-soft:oklch(0.32 0.035 95);
+  --s-opp:oklch(0.8 0.12 70); --s-opp-soft:oklch(0.33 0.05 65);
+  --s-high:oklch(0.75 0.14 30); --s-high-soft:oklch(0.33 0.06 30);
+  --s-na:oklch(0.7 0.01 320); --s-na-soft:oklch(0.28 0.01 320);
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:oklch(0.185 0.014 320); --surface:oklch(0.225 0.016 320); --sunk:oklch(0.2 0.014 320); --line:oklch(0.33 0.018 320);
+  --ink:oklch(0.95 0.006 330); --muted:oklch(0.8 0.012 330); --faint:oklch(0.68 0.012 330);
+  --accent:oklch(0.78 0.08 320); --accent-ink:oklch(0.2 0.02 320); --accent-soft:oklch(0.3 0.04 320);
+  --s-strong:oklch(0.78 0.09 165); --s-strong-soft:oklch(0.3 0.04 165);
+  --s-healthy:oklch(0.8 0.1 150); --s-healthy-soft:oklch(0.3 0.04 150);
+  --s-watch:oklch(0.83 0.08 95); --s-watch-soft:oklch(0.32 0.035 95);
+  --s-opp:oklch(0.8 0.12 70); --s-opp-soft:oklch(0.33 0.05 65);
+  --s-high:oklch(0.75 0.14 30); --s-high-soft:oklch(0.33 0.06 30);
+  --s-na:oklch(0.7 0.01 320); --s-na-soft:oklch(0.28 0.01 320);
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--body);padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+a{color:var(--accent)}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;letter-spacing:-.005em}
+h2{font-size:2rem;line-height:1.1}
+h3{font-size:1.4rem;line-height:1.15}
+p{margin:0}
+.eyebrow{font:500 .7rem/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.lede{color:var(--muted);max-width:68ch}
+.mono{font-family:var(--mono);font-size:.82em}
+.num{font-variant-numeric:tabular-nums}
+header.top{padding-block:36px 6px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px 32px;align-items:end}
+header.top h1{font-size:clamp(2.2rem,5vw,3.4rem);line-height:1}
+header.top h1 i{color:var(--accent)}
+.stats{display:flex;flex-wrap:wrap;gap:6px 26px}
+.stats div{display:flex;flex-direction:column}
+.stats b{font:400 2rem/1 var(--display);font-variant-numeric:tabular-nums}
+.stats span{font:500 .68rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+@media (max-width:720px){header.top{grid-template-columns:1fr}}
+nav.views{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line);margin-inline:-16px;padding-inline:16px;overflow-x:auto}
+nav.views .in{display:flex;gap:4px;max-width:1180px;margin:0 auto;width:max-content;min-width:100%}
+nav.views a{font:600 .86rem var(--body);color:var(--muted);text-decoration:none;padding:7px 12px;border-radius:999px;white-space:nowrap}
+nav.views a:hover{color:var(--ink);background:var(--sunk)}
+nav.views a[aria-current="page"]{background:var(--ink);color:var(--bg)}
+section.view{display:flex;flex-direction:column;gap:18px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;min-width:0}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px}
+.pill{display:inline-flex;align-items:center;gap:6px;font:600 .72rem/1 var(--body);padding:4px 9px;border-radius:999px;white-space:nowrap;background:var(--s-na-soft);color:var(--s-na)}
+.pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.st-STRONG{background:var(--s-strong-soft);color:var(--s-strong)}
+.st-HEALTHY{background:var(--s-healthy-soft);color:var(--s-healthy)}
+.st-WATCH{background:var(--s-watch-soft);color:var(--s-watch)}
+.st-OPPORTUNITY{background:var(--s-opp-soft);color:var(--s-opp)}
+.st-HIGH_PRIORITY{background:var(--s-high-soft);color:var(--s-high)}
+.chip{display:inline-block;font:500 .72rem/1.3 var(--mono);padding:2px 7px;border-radius:5px;background:var(--sunk);color:var(--muted);border:1px solid var(--line);white-space:nowrap}
+.chip.p{background:var(--accent-soft);color:var(--accent);border-color:transparent}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.muted{color:var(--muted)} .faint{color:var(--faint)}
+.small{font-size:.86rem}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.86rem}
+th{font:500 .66rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--faint);text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);background:var(--surface);position:sticky;top:0;white-space:nowrap}
+td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+select,input[type=search]{font:inherit;font-size:.9rem;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 10px;min-width:0;max-width:100%}
+input[type=search]{flex:1 1 220px}
+button{font:inherit;cursor:pointer}
+.btn{font:600 .84rem var(--body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:7px 12px}
+.btn:hover{border-color:var(--faint)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+/* matrix */
+.q{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.q>summary{list-style:none;cursor:pointer;padding:12px 14px;display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:4px 12px;align-items:baseline}
+.q>summary::-webkit-details-marker{display:none}
+.q>summary .id{font:500 .86rem var(--mono);color:var(--accent)}
+.q>summary .qt{font-weight:600}
+.q>summary .meta{grid-column:2/4;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.q>summary .w{font:500 .72rem var(--mono);color:var(--faint);white-space:nowrap}
+.q[open]>summary{border-bottom:1px solid var(--line)}
+.qbody{padding:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px 22px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:0}
+.field>.k{font:500 .64rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.field.wide{grid-column:1/-1}
+.opts{display:flex;flex-direction:column;gap:3px}
+.opt{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;padding:5px 8px;border-radius:6px;background:var(--sunk);font-size:.86rem}
+.sig{display:flex;flex-wrap:wrap;gap:3px;justify-content:flex-end}
+.sig span{font:500 .66rem/1.5 var(--mono);padding:0 5px;border-radius:4px}
+.lv-m1{background:var(--s-strong-soft);color:var(--s-strong)} .lv-0{background:var(--s-healthy-soft);color:var(--s-healthy)} .lv-1{background:var(--s-watch-soft);color:var(--s-watch)} .lv-2{background:var(--s-opp-soft);color:var(--s-opp)} .lv-3{background:var(--s-high-soft);color:var(--s-high)} .lv-U{background:var(--s-na-soft);color:var(--s-na)}
+.hwc{display:grid;gap:4px;font-size:.86rem}
+.hwc div{display:grid;grid-template-columns:70px minmax(0,1fr);gap:8px}
+.hwc b{font:600 .7rem var(--mono);text-transform:uppercase;letter-spacing:.06em;padding-top:2px}
+.hwc .h b{color:var(--s-healthy)} .hwc .w b{color:var(--s-opp)} .hwc .c b{color:var(--s-high)}
+.rowlabel{font-size:.8rem;color:var(--muted);margin-top:6px;font-weight:600}
+.variant{font-size:.84rem;color:var(--muted)}
+/* routing */
+.rt td.c{text-align:center;font:600 .72rem var(--mono)}
+.rt .core{color:var(--accent-ink);background:var(--accent)}
+.rt .br{color:var(--accent);background:var(--accent-soft)}
+.rt td.c span{display:inline-block;padding:2px 6px;border-radius:4px}
+/* equation */
+.eq{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;font:400 1.35rem/1.2 var(--display)}
+.eq .x{color:var(--faint)}
+.eq .t{padding:4px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+.eq .out{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* report (customer-facing preview) */
+.simgrid{display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:900px){.simgrid{grid-template-columns:1fr}}
+.phone{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:26px 20px;display:flex;flex-direction:column;gap:24px}
+.phone .title{font:400 2.1rem/1.05 var(--display)}
+.phone .headline{font-weight:700;font-size:1.06rem}
+.phone h4{font:500 .66rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 8px}
+.belief{border-left:3px solid var(--accent);padding:4px 0 4px 12px;font-style:italic;font-family:var(--display);font-size:1.15rem;line-height:1.35}
+.factor{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.factor:last-child{border-bottom:0}
+.factor .f{font-weight:600} .factor .v{grid-column:1/2;color:var(--muted);font-size:.88rem}
+.factor .pill{grid-row:1/3;grid-column:2;align-self:center}
+.output{margin-top:8px;padding:10px 12px;background:var(--sunk);border-radius:8px;font-size:.9rem}
+.em{width:100%;font-size:.82rem}
+.em td{padding:6px 4px}
+.em td:first-child{color:var(--muted)}
+.em .basis{display:block;font:400 .72rem var(--mono);color:var(--faint)}
+.opp{border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.opp .hd{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+.opp .hd h3{font-size:1.5rem}
+.opp .rk{font:500 .8rem var(--mono);color:var(--accent);margin-right:6px}
+.opp ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:3px;font-size:.92rem}
+.opp .lbl{font:600 .7rem var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-bottom:3px}
+.money{background:var(--sunk);border-radius:8px;padding:10px 12px;font-size:.88rem;display:flex;flex-direction:column;gap:3px}
+.money .m{font:400 .74rem var(--mono);color:var(--faint)}
+.dont{display:flex;flex-direction:column;gap:10px}
+.dont div{display:grid;grid-template-columns:18px minmax(0,1fr);gap:8px}
+.dont div::before{content:"×";font-weight:700;color:var(--s-high);line-height:1.4}
+.steps{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.cta{background:var(--ink);color:var(--bg);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.cta h3{color:var(--bg)}
+.cta .b{display:flex;gap:8px}
+.cta button{flex:1;min-height:48px;border-radius:10px;border:1px solid var(--bg);background:transparent;color:var(--bg);font-weight:600}
+.cta button[aria-pressed="true"]{background:var(--bg);color:var(--ink)}
+.checks{display:flex;flex-direction:column;gap:3px;font-size:.84rem}
+.checks div::before{content:"✓ ";color:var(--s-strong);font-weight:700}
+.checks div.f::before{content:"✗ ";color:var(--s-high)}
+.scen{display:flex;flex-wrap:wrap;gap:6px}
+.scen button{border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:999px;padding:6px 12px;font-size:.84rem;font-weight:600}
+.scen button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.kv{display:grid;grid-template-columns:130px minmax(0,1fr);gap:6px 12px;font-size:.88rem;margin:0}
+.kv dt{color:var(--faint)} .kv dd{margin:0}
+details.qa>summary{cursor:pointer;font-weight:600;font-size:.9rem}
+.rulecard{display:grid;grid-template-columns:56px minmax(0,1fr);gap:4px 12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.rulecard:last-child{border-bottom:0}
+.rulecard .rid{font:500 .86rem var(--mono);color:var(--accent)}
+.rulecard .eff{font:400 .76rem/1.5 var(--mono);color:var(--muted);overflow-wrap:anywhere}
+.persona-card{display:flex;flex-direction:column;gap:8px}
+.persona-card .code{font:500 .78rem var(--mono);color:var(--accent)}
+ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:3px}
+.note{font-size:.84rem;color:var(--muted);background:var(--sunk);border-radius:8px;padding:10px 12px}
+@media (prefers-reduced-motion:no-preference){.q>summary,.btn,nav.views a{transition:background .15s,color .15s,border-color .15s}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <p class="eyebrow">Diagnostic intelligence · <span id="ver"></span></p>
+      <h1>Beauty Business <i>Growth Diagnostic</i></h1>
+      <p class="lede" style="margin-top:10px">The master matrix, routing, scoring rules and report logic behind the diagnostic — and the ten validation scenarios run through the actual engine.</p>
+    </div>
+    <div class="stats" id="stats"></div>
+  </header>
+  <nav class="views" aria-label="Views"><div class="in" id="nav"></div></nav>
+  <main id="main"></main>
+</div>
+
+<script>
+const DATA = /*__DATA__*/null;
+const $ = (s, el = document) => el.querySelector(s);
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+const P = DATA.personas;
+const PCODES = ['CS', 'BR', 'SR', 'SO', 'IP'];
+const DIM = Object.fromEntries(DATA.dimensions.map((d) => [d.id, d]));
+const INTV = Object.fromEntries(DATA.interventions.map((i) => [i.id, i]));
+const stLabel = { STRONG: 'Strong', HEALTHY: 'Healthy', WATCH: 'Watch', OPPORTUNITY: 'Opportunity', HIGH_PRIORITY: 'High priority', INSUFFICIENT: 'Insufficient information', NOT_PROBED: 'Not probed', NA: 'Salon-controlled' };
+const pill = (st, label) => `<span class="pill st-${esc(st)}">${esc(label || stLabel[st] || st)}</span>`;
+const lvCls = (l) => (l === 'U' ? 'lv-U' : l === -1 ? 'lv-m1' : 'lv-' + l);
+const lvTxt = (l) => (l === 'U' ? '?' : l === -1 ? '−1' : '+' + l);
+const pChips = (ps) => `<span class="chips">${ps.map((p) => `<span class="chip p">${esc(p)}</span>`).join('')}</span>`;
+
+const VIEWS = [
+  ['backbone', 'Backbone'], ['matrix', 'Master matrix'], ['routing', 'Persona routing'], ['dimensions', 'Dimensions'],
+  ['interventions', 'Interventions'], ['scoring', 'Scoring rules'], ['report', 'Report rules'], ['simulations', 'Simulations'],
+];
+$('#ver').textContent = DATA.version + ' · ' + DATA.generated;
+const pass = DATA.sims.reduce((a, s) => a + s.checks.filter((c) => c.ok).length, 0), total = DATA.sims.reduce((a, s) => a + s.checks.length, 0);
+$('#stats').innerHTML = [
+  [DATA.questions.length, 'Questions'], [DATA.dimensions.length, 'Dimensions'], [DATA.interventions.length, 'Interventions'], [DATA.rules.length, 'Reasoning rules'], [`${pass}/${total}`, 'Scenario checks'],
+].map(([b, s]) => `<div><b>${b}</b><span>${s}</span></div>`).join('');
+$('#nav').innerHTML = VIEWS.map(([id, l]) => `<a href="#${id}" data-v="${id}">${l}</a>`).join('');
+
+// ------------------------------------------------------------- views
+function vBackbone() {
+  const lengths = {};
+  DATA.sims.forEach((s) => (lengths[s.persona] = lengths[s.persona] || []).push(s.questionCount));
+  return `
+  <section class="view">
+    <div class="panel" style="display:flex;flex-direction:column;gap:14px">
+      <p class="eyebrow">The intellectual backbone</p>
+      <h2>Every persona runs a version of the same equation.</h2>
+      <div class="eq"><span class="t">Demand</span><span class="x">×</span><span class="t">Conversion</span><span class="x">×</span><span class="t">Capacity utilization</span><span class="x">×</span><span class="t">Revenue per appointment</span><span class="x">×</span><span class="t">Retention</span><span class="x">=</span><span class="t out">Economic output</span></div>
+      <p class="lede">Salon owners add the leverage layer:</p>
+      <div class="eq"><span class="t">People</span><span class="x">×</span><span class="t">Chairs</span><span class="x">×</span><span class="t">Productivity</span><span class="x">×</span><span class="t">Retention</span><span class="x">×</span><span class="t">Systems</span></div>
+      <p class="lede">The diagnostic finds which factor is the binding constraint. A factor that is already strong is never the recommendation, however often the person asks for it. The capacity gate is the central rule: once a schedule is about 82% booked or booked four or more weeks out, acquisition is scored as not the constraint and pricing, ticket and service mix are amplified.</p>
+    </div>
+    <div class="grid2">
+      <div class="panel"><p class="eyebrow">Individual model chain</p><ol class="steps small" style="margin-top:10px">
+        <li>Available appointment hours (Q08)</li><li>× share booked (Q09) → booked hours</li><li>÷ clients per week (Q11) → appointment length</li><li>× average ticket (Q33) → service revenue, revenue per booked and available hour</li><li>− late cancellations after refills (Q21, Q23) → lost hours, effective utilization</li><li>Prebook rate (Q24) and first-visit return (Q25) → new clients becoming regulars</li><li>Visit cycle (Q26 or specialty default) → value of one regular, regulars needed</li><li>90% of hours × revenue per booked hour → practical ceiling at current prices</li><li>Rent (Q07) → appointments per week that go to rent</li></ol></div>
+      <div class="panel"><p class="eyebrow">Salon model chain</p><ol class="steps small" style="margin-top:10px">
+        <li>Stations → producing stations (Q42) → chair utilization</li><li>Commission stylists × busy-stylist weekly services (Q50) × book fullness (Q48) → commission revenue</li><li>Renters × weekly rent → rental income</li><li>Owner share (Q51) → owner chair revenue and total service revenue (sanity-checked: owner chair ≤ 2.5× a busy stylist, else flagged)</li><li>Revenue per station and per producing station</li><li>Value of empty stations under commission vs rental</li><li>Commission + rental → salon-independent revenue share</li><li>Stylist tenure (Q45), client ownership (Q46), first-visit return (Q25) → retention layer</li></ol></div>
+    </div>
+    <div class="grid3">${PCODES.map((c) => { const p = P[c]; return `<div class="panel persona-card"><span class="code">${c}</span><h3>${esc(p.label)}</h3><p class="small muted">${esc(p.objective)}</p><p class="small"><b>Controls:</b> ${esc(p.controls.join(', '))}</p><p class="small"><b>Doesn’t control:</b> ${esc(p.doesNotControl.join(', '))}</p><p class="small faint">Simulated length: ${(lengths[c] || []).join(', ') || '—'} questions</p></div>`; }).join('')}</div>
+    <div class="panel"><p class="eyebrow">Privacy boundary</p><ul class="plain small" style="margin-top:8px">
+      <li>Each prospect gets an opaque random token (128-bit). The token → prospect ID mapping lives only on the server.</li>
+      <li>The diagnostic page receives nothing from the licensee database: no names, no list, no search. It posts answers against its own token and reads back only its own report.</li>
+      <li>No endpoint lists, searches or enumerates prospects; unknown tokens return a generic “link not found”.</li>
+      <li>The admin record (prospect, answers, findings) is visible only on your side.</li>
+    </ul></div>
+  </section>`;
+}
+
+function optRows(opts) {
+  return `<div class="opts">${opts.map((o) => `<div class="opt"><span>${esc(o.label)}${o.n != null ? ` <span class="faint mono">n=${o.n}</span>` : ''}</span><span class="sig">${Object.entries(o.sig || {}).map(([d, l]) => `<span class="${lvCls(l)}" title="${esc(DIM[d] ? DIM[d].label : d)}">${d} ${lvTxt(l)}</span>`).join('')}</span></div>`).join('')}</div>`;
+}
+function qDetail(q) {
+  const variants = Object.entries(q.text).filter(([k]) => k !== 'default').map(([k, v]) => `<div class="variant"><span class="chip p">${k}</span> ${esc(v)}</div>`).join('');
+  let answers = '';
+  if (q.type === 'composite') {
+    answers = q.rows.map((r) => `<div class="rowlabel">${esc(r.label.default)}${r.type === 'count' ? ' <span class="chip">count stepper</span>' : ''}</div>${r.options ? optRows(r.options) : ''}${r.optionsBy ? Object.entries(r.optionsBy).map(([p, os]) => `<div class="rowlabel">${p} version</div>${optRows(os)}`).join('') : ''}`).join('');
+  } else {
+    answers = (q.options ? optRows(q.options) : '') + (q.optionsBy ? Object.entries(q.optionsBy).map(([p, os]) => `<div class="rowlabel">${p} version</div>${optRows(os)}`).join('') : '');
+  }
+  const route = q.core ? `Core for ${q.personas.filter((p) => !(q.coreBy && q.coreBy[p] === false)).join(', ')}${q.coreBy ? '; branch for ' + Object.keys(q.coreBy).join(', ') : ''}` : 'Branch';
+  return `<div class="qbody">
+    ${variants ? `<div class="field wide"><span class="k">Persona wording</span>${variants}</div>` : ''}
+    ${q.help ? `<div class="field wide"><span class="k">Helper text</span><span class="small muted">${esc(q.help)}</span></div>` : ''}
+    <div class="field wide"><span class="k">Answer format · ${esc(q.type)}${q.type === 'composite' ? ' (one screen, several rows)' : q.type === 'multi' ? ' (select all)' : ''}</span>${answers}</div>
+    <div class="field"><span class="k">What this tests</span><span class="small">${esc(q.tests)}</span></div>
+    <div class="field"><span class="k">Interpretation</span><div class="hwc"><div class="h"><b>Healthy</b><span>${esc(q.healthy)}</span></div><div class="w"><b>Warning</b><span>${esc(q.warning)}</span></div><div class="c"><b>Critical</b><span>${esc(q.critical)}</span></div></div></div>
+    <div class="field"><span class="k">Routing</span><span class="small">${esc(route)}</span>${q.trigger ? `<span class="small muted">${esc(q.triggerText || '')}</span><span class="mono faint" style="font-size:.74rem">${esc(q.trigger)}</span>` : ''}</div>
+    <div class="field"><span class="k">Follow-up questions</span><span class="small">${q.followUps.length ? q.followUps.map((f) => `<a href="#matrix" data-jump="${f}" class="mono">${f}</a>`).join(' ') : '—'}</span></div>
+    <div class="field"><span class="k">Dimensions affected</span><span class="chips">${q.dims.map((d) => `<span class="chip" title="${esc(DIM[d].label)}">${d}</span>`).join('') || '—'}</span></div>
+    <div class="field"><span class="k">Interventions affected</span><span class="small">${q.interventions.map((i) => esc(INTV[i].name)).join(' · ') || '—'}</span></div>
+    <div class="field"><span class="k">Weight · confidence contribution</span><span class="mono">${q.weight} · ${q.conf}</span></div>
+    ${q.model ? `<div class="field"><span class="k">Economic model input</span><span class="small">${esc(q.model)}</span></div>` : ''}
+    <div class="field wide"><span class="k">Customer-facing interpretation</span><span class="small">${esc(q.interpretation)}</span></div>
+    <div class="field wide"><span class="k">Internal reasoning</span><span class="small muted">${esc(q.reasoning)}</span></div>
+  </div>`;
+}
+function vMatrix() {
+  const domains = [...new Set(DATA.questions.map((q) => q.domain))];
+  return `<section class="view">
+    <div><p class="eyebrow">55 canonical questions</p><h2>Master diagnostic matrix</h2><p class="lede" style="margin-top:6px">Each person sees 15–26 of these. Signals on every option show what that answer does to each dimension: −1 strong, 0 healthy, +1 watch, +2 warning, +3 critical, ? doesn’t know.</p></div>
+    <div class="controls panel" style="padding:12px">
+      <label class="small" for="fp">Persona</label><select id="fp"><option value="">All personas</option>${PCODES.map((c) => `<option value="${c}">${c} · ${esc(P[c].label)}</option>`).join('')}</select>
+      <label class="small" for="fd">Domain</label><select id="fd"><option value="">All domains</option>${domains.map((d) => `<option>${esc(d)}</option>`).join('')}</select>
+      <input type="search" id="fs" placeholder="Search questions, options, reasoning" aria-label="Search">
+      <button class="btn" id="fx" type="button">Expand all</button>
+      <span class="small muted" id="fc"></span>
+    </div>
+    <div id="qlist" style="display:flex;flex-direction:column;gap:6px"></div>
+  </section>`;
+}
+function renderMatrix() {
+  const p = $('#fp').value, d = $('#fd').value, s = $('#fs').value.toLowerCase().trim();
+  const list = DATA.questions.filter((q) => (!p || q.personas.includes(p) || (q.id === 'Q02' && p)) && (!d || q.domain === d) && (!s || JSON.stringify(q).toLowerCase().includes(s)));
+  $('#fc').textContent = `${list.length} shown`;
+  $('#qlist').innerHTML = list.map((q) => `<details class="q" id="q-${q.id}"><summary>
+      <span class="id">${q.id}</span><span class="qt">${esc(q.text.default)}</span><span class="w">w ${q.weight}</span>
+      <span class="meta"><span class="chip">${esc(q.domain)}</span>${pChips(q.personas)}<span class="chip">${q.core ? 'core' : 'branch'}</span><span class="chip">${q.type}</span>${q.dims.map((x) => `<span class="chip" title="${esc(DIM[x].label)}">${x}</span>`).join('')}</span>
+    </summary>${qDetail(q)}</details>`).join('');
+}
+
+function vRouting() {
+  const lengths = DATA.sims.map((s) => `${s.scenario.name}: ${s.questionCount}`).join(' · ');
+  return `<section class="view">
+    <div><p class="eyebrow">Persona routing map</p><h2>Who sees what</h2><p class="lede" style="margin-top:6px">Q01 sets the business model; “Something else” routes through Q02 to the nearest model. Owners answer the leverage block (Q42–Q55) immediately after Q05. Core questions are always asked for that persona; branch questions appear only when their trigger fires.</p></div>
+    <div class="note">Simulated lengths — ${esc(lengths)}</div>
+    <div class="tbl rt"><table><thead><tr><th>ID</th><th>Question</th>${PCODES.map((c) => `<th style="text-align:center">${c}</th>`).join('')}<th>Branch trigger</th></tr></thead><tbody>
+    ${DATA.questions.map((q) => `<tr><td class="mono">${q.id}</td><td style="min-width:240px">${esc(q.text.default)}</td>${PCODES.map((c) => {
+      if (q.id === 'Q01') return `<td class="c"><span class="core">core</span></td>`;
+      if (q.id === 'Q02') return `<td class="c">${c === 'IP' ? '<span class="br">if OT</span>' : ''}</td>`;
+      if (!q.personas.includes(c)) return '<td class="c"></td>';
+      const core = q.core && !(q.coreBy && q.coreBy[c] === false);
+      return `<td class="c"><span class="${core ? 'core' : 'br'}">${core ? 'core' : 'branch'}</span></td>`;
+    }).join('')}<td class="small muted" style="min-width:260px">${esc(q.triggerText || (q.core ? '' : ''))}</td></tr>`).join('')}
+    </tbody></table></div>
+    <div class="panel"><p class="eyebrow">Never asked</p><ul class="plain small" style="margin-top:8px">
+      <li>Commission stylists never see rent, Google ranking, reviews, booking method, or any salon-operations question — those are the salon’s.</li>
+      <li>Independent and suite professionals never see chair, stylist or recruiting questions.</li>
+      <li>Owners never see personal-book capacity questions (hours, clients per week, cancellations); their capacity is measured in chairs and stylist books.</li>
+      <li>Demand-discovery questions (Google, social) are skipped when Google already brings clients or the book is full: there is no point diagnosing a non-constraint.</li>
+    </ul></div>
+  </section>`;
+}
+
+function vDimensions() {
+  return `<section class="view">
+    <div><p class="eyebrow">Diagnostic dimension map</p><h2>25 dimensions, scored separately</h2><p class="lede" style="margin-top:6px">No composite business score. Each dimension gets its own status: Strong, Healthy, Watch, Opportunity, High priority, or Insufficient information. Owner-only dimensions appear at the end.</p></div>
+    <div class="tbl"><table><thead><tr><th>ID</th><th>Dimension</th><th>Group</th><th>Personas</th><th>Fed by questions</th><th>Derived signal</th><th>Rules</th><th>Ranking weight by persona</th></tr></thead><tbody>
+      ${DATA.dimensions.map((d) => `<tr><td class="mono">${d.id}</td><td style="min-width:220px"><b>${esc(d.label)}</b>${d.labelBy ? `<div class="faint small">${Object.entries(d.labelBy).map(([p, l]) => `${p}: ${esc(l)}`).join(' · ')}</div>` : ''}<div class="small muted">${esc(d.definition)}</div></td><td class="small">${esc(DATA.groups[d.group].label)}</td><td>${pChips(d.personas)}</td><td class="mono small">${d.feeds.join(' ')}</td><td class="small muted" style="min-width:180px">${esc(d.derived || '—')}</td><td class="mono small">${d.rules.join(' ')}</td><td class="mono small num">${PCODES.filter((p) => d.impact[p] != null).map((p) => `${p} ${d.impact[p]}`).join('<br>')}</td></tr>`).join('')}
+    </tbody></table></div>
+  </section>`;
+}
+
+function vInterventions() {
+  const cats = [...new Set(DATA.interventions.map((i) => i.cat))];
+  return `<section class="view">
+    <div><p class="eyebrow">Intervention ontology</p><h2>${DATA.interventions.length} interventions, each tied to a problem</h2><p class="lede" style="margin-top:6px">An intervention is only recommended when its dimension reaches Opportunity or High priority and its own condition holds. Demand-side interventions are withheld whenever a capacity or supply gate fires.</p></div>
+    ${cats.map((c) => `<div class="panel"><h3>${esc(c)}</h3><div class="tbl" style="margin-top:10px;border:0"><table><thead><tr><th>Intervention</th><th>Problem it solves</th><th>Dimensions</th><th>Personas</th><th>Only when</th></tr></thead><tbody>
+      ${DATA.interventions.filter((i) => i.cat === c).map((i) => `<tr><td style="min-width:200px"><b>${esc(i.name)}</b><div class="mono faint" style="font-size:.7rem">${i.id}${i.demandSide ? ' · demand-side' : ''}${i.prereq.length ? ' · after ' + i.prereq.join(', ') : ''}</div><div class="small muted">${esc(i.explain)}</div></td><td class="small" style="min-width:180px">${esc(i.problem)}</td><td class="mono small">${i.dims.join(' ')}</td><td>${pChips(i.personas)}</td><td class="small muted" style="min-width:200px">${esc(i.when || 'Dimension at Opportunity or worse')}</td></tr>`).join('')}
+    </tbody></table></div></div>`).join('')}
+    <div class="panel"><h3>What I wouldn’t spend money on</h3><p class="small muted" style="margin-top:4px">Mandatory report section. Items are added by rules (see Scoring rules); at least one always appears.</p>
+      <div class="tbl" style="margin-top:10px;border:0"><table><thead><tr><th>Item</th><th>Personas</th><th>Added by</th></tr></thead><tbody>
+      ${Object.entries(DATA.dontBuy).map(([id, x]) => `<tr><td><b>${esc(x.title)}</b> <span class="mono faint" style="font-size:.7rem">${id}</span></td><td>${pChips(x.personas)}</td><td class="mono small">${DATA.rules.filter((r) => (r.effects.dontBuy || []).some((y) => y.id === id)).map((r) => r.id).join(' ') || (id === 'marketing_overhaul' ? 'R08 healthy' : '')}</td></tr>`).join('')}
+      </tbody></table></div></div>
+  </section>`;
+}
+
+function vScoring() {
+  const L = DATA.levels;
+  return `<section class="view">
+    <div><p class="eyebrow">Scoring rules</p><h2>From answers to statuses</h2></div>
+    <div class="grid2">
+      <div class="panel"><h3>1 · Signals</h3><p class="small" style="margin-top:6px">Each answer option carries a signal level per dimension. Levels map to concern:</p>
+        <div class="chips" style="margin-top:8px">${Object.entries(L).map(([k, v]) => `<span class="sig"><span class="${lvCls(k === 'U' ? 'U' : Number(k))}">${k === 'U' ? '?' : lvTxt(Number(k))} ${esc(v.label)} ${v.concern != null ? '= ' + v.concern : ''}</span></span>`).join('')}</div>
+        <p class="small muted" style="margin-top:8px">Composite rows weigh question weight × row weight; multi-select signals are divided by √(selections). Derived signals from the economic model are added (leakage rate, revenue per booked hour, demand vs open capacity, chair utilization, retail share, visibility).</p></div>
+      <div class="panel"><h3>2 · Concern and confidence</h3><p class="small" style="margin-top:6px"><span class="mono">concern = 0.65 × weighted mean + 0.35 × worst signal</span></p><p class="small" style="margin-top:6px"><span class="mono">confidence = min(1, Σ weight × confidence contribution ÷ dimension requirement)</span></p><p class="small muted" style="margin-top:6px">Blending in the worst signal stops one critical answer from being averaged away. “Not sure” adds no evidence, lowers confidence and counts toward the measurement gap rule (R17).</p></div>
+      <div class="panel"><h3>3 · Status bands</h3><div style="display:flex;flex-direction:column;gap:6px;margin-top:8px">${DATA.statuses.map((s, i) => `<div style="display:flex;gap:10px;align-items:center">${pill(s.key)}<span class="mono small">${i ? DATA.statuses[i - 1].max + 1 : 0}–${s.max > 100 ? 100 : s.max}</span></div>`).join('')}<div style="display:flex;gap:10px;align-items:center">${pill('INSUFFICIENT')}<span class="small">confidence &lt; ${DATA.minConfidence}</span></div><div style="display:flex;gap:10px;align-items:center">${pill('NOT_PROBED')}<span class="small">skipped by routing (admin only)</span></div></div></div>
+      <div class="panel"><h3>4 · Top three</h3><ul class="plain small" style="margin-top:8px"><li>Candidates: Opportunity or High priority with confidence ≥ ${DATA.minConfidence}.</li><li><span class="mono">priority = concern × persona weight × rule impact × (0.55 + 0.45 × confidence)</span></li><li>Each pick from the same group is discounted 0.8×; near-duplicate pairs (ACQ/UTIL, CXL/UTIL, DISC/REP, CONV/DIGITAL, CHAIR_UTIL/RECRUIT) 0.75×.</li><li>Symptoms are demoted (low utilization explained by a demand gap).</li><li>Fewer than three? Fill with Watch items labeled “Refinement”. A healthy business gets up to two refinements from its weakest healthy areas — never a manufactured crisis.</li></ul></div>
+    </div>
+    <div class="panel"><h3>Cross-answer reasoning rules</h3><p class="small muted" style="margin-top:4px">Rules run in two passes: first on answers and economic metrics, then on provisional dimension scores. They scale or floor concern, change ranking weight, demote symptoms, withhold demand-side interventions, and write the “wouldn’t spend money on” items.</p>
+      <div style="margin-top:6px">${DATA.rules.map((r) => `<div class="rulecard"><span class="rid">${r.id}</span><div><b>${esc(r.name)}</b> <span class="chip">${r.pass === 'dims' ? 'pass 2' : 'pass 1'}</span><p class="small muted">${esc(r.why || '')}</p><p class="small"><span class="faint">When</span> ${esc(r.when)}</p><p class="eff">${esc(effText(r.effects))}</p></div></div>`).join('')}</div></div>
+  </section>`;
+}
+function effText(e) {
+  const out = [];
+  const kv = (o) => Object.entries(o).map(([k, v]) => `${k} ${v}`).join(', ');
+  if (e.scale) out.push('scale ' + kv(e.scale));
+  if (e.floor) out.push('floor ' + kv(e.floor));
+  if (e.impact) out.push('rank ' + kv(e.impact));
+  if (e.demote) out.push('demote ' + e.demote.join(', '));
+  if (e.gateDemand) out.push('withhold demand-side interventions');
+  if (e.suppress) out.push('suppress ' + e.suppress.join(', '));
+  if (e.tag) out.push('tag ' + e.tag);
+  if (e.dontBuy) out.push('wouldn’t buy: ' + e.dontBuy.map((x) => x.id).join(', '));
+  if (e.note) out.push('note on ' + Object.keys(e.note).join(', '));
+  return out.join(' · ');
+}
+
+function vReport() {
+  return `<section class="view">
+    <div><p class="eyebrow">Final report rules</p><h2>A miniature consulting engagement</h2><p class="lede" style="margin-top:6px">The full report is shown before any call to action. Sections always appear in this order.</p></div>
+    <div class="grid2">
+      <div class="panel"><ol class="steps small">
+        <li><b>Here’s what I would look at first.</b> (“Here’s what I found.” when nothing needs fixing.) Headline chosen by the top finding and tags: not-an-acquisition-problem, stylists-not-customers, salon runs through your chair, earning first visits but not second, schedule loses time after booking, inquiries don’t book, genuinely need demand, fundamentals strong.</li>
+        <li><b>Belief check.</b> Q05 goal is compared with the findings. Confirm when the goal maps to a top finding; otherwise say plainly where the evidence points, using the person’s own numbers.</li>
+        <li><b>Your business model.</b> Persona description, what you control and don’t.</li>
+        <li><b>Your business as an equation.</b> Each factor with its value and status, the output, then the economic model rows with the arithmetic shown, assumptions listed, and any inconsistencies flagged instead of computed.</li>
+        <li><b>Top three opportunities.</b> What we noticed (evidence from answers, never repeated across cards) · why it matters (persona-specific) · what I’d investigate next · recommended next step · interventions · money scenario.</li>
+        <li><b>What appears to be working.</b> Up to four Strong/Healthy dimensions. “Not your primary constraint” notes appear here.</li>
+        <li><b>What I wouldn’t spend money on right now.</b> One to three items from rules, each with the reason in the person’s numbers. Never empty.</li>
+        <li><b>If this were my business…</b> The top-three next steps in order, then a closing gate (“Only then evaluate acquisition”, “Only then revisit customer marketing”, “Keep measuring”).</li>
+        <li><b>Want to walk through this together?</b> Morning / Afternoon.</li>
+      </ol></div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div class="panel"><h3>Money rules</h3><ul class="plain small" style="margin-top:8px"><li>Only calculated when the inputs exist. The math is printed beside the result.</li><li>Phrased as “would represent approximately $X … before considering changes in client behavior, costs or capacity.” Never “you’re losing”.</li><li>Scenarios are fixed and modest: +8% price (with the visits you could lose and break even), +10% ticket, half of unfilled late cancellations, a quarter of open hours, one more regular, 5% of past clients rebooking once, one in five clients buying a $28 product, empty chairs under commission vs rent.</li><li>Revenue-per-hour thresholds are calibration placeholders to tune against real Kansas results.</li></ul></div>
+        <div class="panel"><h3>Tone</h3><ul class="plain small" style="margin-top:8px"><li>Businesspeople, not “boss babes”. Plain, warm, specific, respectful.</li><li>Every sentence of evidence uses the person’s own answer.</li><li>Commission stylists are never told to buy what the salon controls; those items become “bring your numbers to a conversation with your salon”.</li><li>Owners who want to stay behind the chair get owner dependence framed as a risk, not a goal.</li></ul></div>
+        <div class="panel"><h3>Admin record</h3><p class="small" style="margin-top:6px">Prospect, persona, completion, date, call requested, headline, belief check, top findings with evidence, every dimension with concern and confidence, recommended interventions, healthy areas, what not to recommend (with the rule that added it), economic model, tags, rules fired, and every question shown with its answer.</p></div>
+      </div>
+    </div>
+  </section>`;
+}
+
+// ------------------------------------------------------------- simulations
+let simIdx = 0;
+function vSim() {
+  return `<section class="view">
+    <div><p class="eyebrow">Simulation / validation</p><h2>Ten scenarios through the real engine</h2><p class="lede" style="margin-top:6px">Each scenario is a full answer set; the router decides which questions are asked. Left: the customer report as it would render on a phone. Right: the expectations checked and the admin record you’d open before the call.</p></div>
+    <div class="scen" id="scen">${DATA.sims.map((s, i) => `<button type="button" data-i="${i}" aria-pressed="${i === simIdx}">${s.scenario.id.replace('S', '')} · ${esc(s.scenario.name)}</button>`).join('')}</div>
+    <div id="simbody"></div>
+  </section>`;
+}
+function renderSim() {
+  const s = DATA.sims[simIdx], r = s.report, a = s.admin;
+  document.querySelectorAll('#scen button').forEach((b) => b.setAttribute('aria-pressed', String(Number(b.dataset.i) === simIdx)));
+  const eq = r.equation;
+  $('#simbody').innerHTML = `<div class="simgrid">
+  <article class="phone" aria-label="Customer report preview">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <p class="eyebrow">Your diagnostic · ${esc(r.businessModel.label)}</p>
+      <p class="title">${esc(r.title)}</p>
+      <p class="headline">${esc(r.headline)}</p>
+      ${r.sub ? `<p class="muted">${esc(r.sub)}</p>` : ''}
+      ${r.summary ? `<p class="small muted">${esc(r.summary)}</p>` : ''}
+    </div>
+    ${r.belief ? `<p class="belief">${esc(r.belief.text)}</p>` : ''}
+    <div><h4>Your business model</h4><h3 style="margin-bottom:6px">${esc(r.businessModel.label)}</h3><p class="small">${esc(r.businessModel.description)}</p></div>
+    <div><h4>Your business as an equation</h4><p class="small faint" style="margin-bottom:6px">${esc(eq.formula)}</p>
+      ${eq.factors.map((f) => `<div class="factor"><span class="f">${esc(f.factor)}</span>${pill(f.status, f.statusLabel)}<span class="v">${esc(f.value)}</span></div>`).join('')}
+      <div class="output"><b>Output</b> ${esc(eq.output)}</div>
+      <details style="margin-top:10px"><summary class="small" style="cursor:pointer;font-weight:600">The arithmetic</summary>
+        <table class="em" style="margin-top:6px"><tbody>${r.economicModel.rows.map((x) => `<tr><td>${esc(x.label)}<span class="basis">${esc(x.basis)}</span></td><td class="num" style="text-align:right;white-space:nowrap">${esc(x.value)}</td></tr>`).join('')}</tbody></table>
+        ${r.economicModel.assumptions.map((x) => `<p class="small faint" style="margin-top:4px">Assumption: ${esc(x)}</p>`).join('')}
+      </details>
+      ${r.economicModel.flags.map((x) => `<p class="note" style="margin-top:8px">${esc(x)}</p>`).join('')}
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px"><h4>${r.top.some((t) => !t.refinement) ? 'Top opportunities' : 'Secondary refinements'}</h4>
+      ${r.top.map((t) => `<div class="opp"><div class="hd"><h3><span class="rk">#${t.rank}</span>${esc(t.label)}</h3>${pill(t.refinement ? 'WATCH' : t.status, t.statusLabel)}</div>
+        ${t.noticed.length ? `<div><p class="lbl">What we noticed</p><ul>${t.noticed.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>` : ''}
+        <div><p class="lbl">Why it matters</p><p class="small">${esc(t.whyMatters)}</p></div>
+        <div><p class="lbl">What I’d investigate next</p><ul>${t.investigate.map((n) => `<li>${esc(n)}</li>`).join('')}</ul></div>
+        <div><p class="lbl">Recommended next step</p><p class="small"><b>${esc(t.nextStep)}</b></p></div>
+        ${t.money.map((m) => `<div class="money"><span>${esc(m.text)} ${esc(m.caveat)}</span><span class="m">${esc(m.math)}</span></div>`).join('')}
+      </div>`).join('') || '<p class="small muted">Nothing here needs fixing.</p>'}
+    </div>
+    ${r.working.length ? `<div><h4>What appears to be working</h4>${r.working.map((w) => `<div class="factor"><span class="f">${esc(w.label)}</span>${pill(w.status, w.statusLabel)}<span class="v">${esc(w.text)}</span></div>`).join('')}</div>` : ''}
+    <div><h4>What I wouldn’t spend money on right now</h4><div class="dont">${r.dontBuy.map((d) => `<div><span><b>${esc(d.title)}</b><br><span class="small muted">${esc(d.reason)}</span></span></div>`).join('')}</div></div>
+    <div><h4>If this were my business…</h4><ol class="steps small">${r.ifThisWere.map((x) => `<li>${esc(x)}</li>`).join('')}</ol></div>
+    <div class="cta"><h3>${esc(r.cta.title)}</h3>${r.cta.body.map((b) => `<p class="small">${esc(b)}</p>`).join('')}<div class="b">${r.cta.options.map((o) => `<button type="button" class="slot">${esc(o)}</button>`).join('')}</div></div>
+  </article>
+  <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+    <div class="panel"><p class="eyebrow">Scenario</p><h3 style="margin:4px 0 6px">${esc(s.scenario.name)}</h3><p class="small muted">${esc(s.scenario.brief)}</p>
+      <div class="checks" style="margin-top:10px">${s.checks.map((c) => `<div class="${c.ok ? '' : 'f'}">${esc(c.msg)}</div>`).join('')}</div></div>
+    <div class="panel"><p class="eyebrow">Admin record</p>
+      <dl class="kv" style="margin-top:8px">
+        <dt>Prospect</dt><dd class="mono">${esc(a.prospect.id)}</dd>
+        <dt>Persona</dt><dd>${esc(a.persona)}</dd>
+        <dt>Completion</dt><dd>${a.completion.answered}/${a.completion.shown} answered${a.completion.complete ? ' · complete' : ''}</dd>
+        <dt>Completed</dt><dd>${esc(a.completedAt)}</dd>
+        <dt>Call requested</dt><dd>${esc(a.callRequested || '—')}</dd>
+        <dt>Headline</dt><dd>${esc(a.headline)}</dd>
+        <dt>Belief check</dt><dd>${esc(a.belief ? a.belief.kind : '—')}</dd>
+        <dt>Tags</dt><dd><span class="chips">${a.tags.map((t) => `<span class="chip">${esc(t)}</span>`).join('')}</span></dd>
+        <dt>Rules fired</dt><dd class="mono small">${a.rulesFired.join(' ')}</dd>
+      </dl></div>
+    <div class="panel"><p class="eyebrow">Recommended interventions</p><ul class="plain small" style="margin-top:8px">${a.recommendedInterventions.map((i) => `<li><b>${esc(i.name)}</b> <span class="faint">for ${esc(i.dimension)}</span></li>`).join('') || '<li>None — secondary refinements only.</li>'}</ul>
+      <p class="eyebrow" style="margin-top:14px">Do not recommend</p><ul class="plain small" style="margin-top:8px">${a.doNotRecommend.map((d) => `<li><b>${esc(d.title)}</b> <span class="mono faint">${esc(d.rule)}</span></li>`).join('')}</ul></div>
+    <div class="tbl"><table><thead><tr><th>Dimension</th><th>Status</th><th>Concern</th><th>Conf.</th></tr></thead><tbody>
+      ${a.dimensions.map((d) => `<tr><td>${esc(d.label)}${d.notes.length ? `<div class="faint small">${esc(d.notes.join(' '))}</div>` : ''}</td><td>${pill(Object.keys(stLabel).find((k) => stLabel[k] === d.status) || 'NA', d.status)}</td><td class="num mono">${d.concern ?? '—'}${d.base != null && d.base !== d.concern ? ` <span class="faint">(${d.base})</span>` : ''}</td><td class="num mono">${d.confidence || '—'}</td></tr>`).join('')}
+    </tbody></table></div>
+    <details class="panel qa"><summary>Every question shown and answered (${a.qa.length})</summary>
+      <div class="tbl" style="margin-top:10px;border:0"><table><tbody>${a.qa.map((x) => `<tr><td class="mono">${x.id}</td><td><div class="small">${esc(x.question)}</div><div class="small muted"><b>${esc(x.answer)}</b></div></td></tr>`).join('')}</tbody></table></div>
+    </details>
+  </div></div>`;
+}
+
+// ------------------------------------------------------------- router
+const RENDER = { backbone: vBackbone, matrix: vMatrix, routing: vRouting, dimensions: vDimensions, interventions: vInterventions, scoring: vScoring, report: vReport, simulations: vSim };
+function show(v) {
+  if (!RENDER[v]) v = 'backbone';
+  document.querySelectorAll('#nav a').forEach((a) => a.setAttribute('aria-current', a.dataset.v === v ? 'page' : 'false'));
+  $('#main').innerHTML = RENDER[v]();
+  if (v === 'matrix') { renderMatrix(); ['fp', 'fd', 'fs'].forEach((id) => $('#' + id).addEventListener('input', renderMatrix)); $('#fx').addEventListener('click', (e) => { const open = e.target.textContent === 'Expand all'; document.querySelectorAll('.q').forEach((d) => (d.open = open)); e.target.textContent = open ? 'Collapse all' : 'Expand all'; }); }
+  if (v === 'simulations') { renderSim(); $('#scen').addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) { simIdx = Number(b.dataset.i); renderSim(); } }); }
+}
+document.addEventListener('click', (e) => {
+  const j = e.target.closest('[data-jump]');
+  if (j) { e.preventDefault(); if (!$('#fp')) show('matrix'); $('#fp').value = ''; $('#fd').value = ''; $('#fs').value = ''; renderMatrix(); const el = $('#q-' + j.dataset.jump); if (el) { el.open = true; el.scrollIntoView({ block: 'start' }); } }
+  const s = e.target.closest('.slot');
+  if (s) { s.parentElement.querySelectorAll('.slot').forEach((b) => b.setAttribute('aria-pressed', String(b === s))); }
+});
+window.addEventListener('hashchange', () => show(location.hash.slice(1)));
+show(location.hash.slice(1) || 'backbone');
+</script>

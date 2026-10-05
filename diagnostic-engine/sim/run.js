@@ -1,0 +1,51 @@
+// Runs the 10 scenarios through the engine, checks expectations, writes sims.json.
+const fs = require('fs');
+const path = require('path');
+const { run } = require('../engine/engine');
+const { buildReport, buildAdmin } = require('../engine/report');
+const SC = require('./scenarios');
+
+const out = [];
+let failures = 0;
+for (const s of SC) {
+  const r = run(s.answers, { prospectId: 'KS-demo-' + s.id });
+  const rep = buildReport(r);
+  const adm = buildAdmin(r, rep, { prospectId: 'KS-demo-' + s.id, prospectName: s.name, completedAt: '2026-10-03', callRequested: 'Morning' });
+  const e = s.expect;
+  const main = r.top.filter((t) => !t.refinement).map((t) => t.id);
+  const topIds = r.top.map((t) => t.id);
+  const ivs = r.interventions.flatMap((x) => x.items.map((i) => i.id));
+  const db = r.dontBuy.map((x) => x.id);
+  const checks = [];
+  const ck = (ok, msg) => checks.push({ ok: !!ok, msg });
+  if (e.top1) ck(e.top1.includes(main[0]), `#1 is one of ${e.top1} (got ${main[0]})`);
+  (e.topIncludes || []).forEach((d) => ck(main.includes(d), `top includes ${d}`));
+  if (e.topIncludesOneOf) ck(e.topIncludesOneOf.some((d) => main.includes(d)), `top includes one of ${e.topIncludesOneOf}`);
+  if (e.topIncludesOneOf2) ck(e.topIncludesOneOf2.some((d) => main.includes(d)), `top includes one of ${e.topIncludesOneOf2}`);
+  if (e.topAny) ck(e.topAny.some((d) => main.includes(d)), `top includes one of ${e.topAny}`);
+  (e.topNot || []).forEach((d) => ck(!topIds.includes(d), `top excludes ${d}`));
+  (e.notDims || []).forEach((d) => ck(!r.dims[d], `${d} not applicable to persona`));
+  Object.entries(e.statusIn || {}).forEach(([d, sts]) => ck(r.dims[d] && sts.includes(r.dims[d].status), `${d} status in ${sts} (got ${r.dims[d] && r.dims[d].status})`));
+  (e.tags || []).forEach((t) => ck(r.tags.includes(t), `tag ${t}`));
+  (e.dontBuy || []).forEach((d) => ck(db.includes(d), `wouldn't-buy includes ${d} (got ${db})`));
+  (e.interventionsInclude || []).forEach((d) => ck(ivs.includes(d), `intervention ${d}`));
+  (e.interventionsExclude || []).forEach((d) => ck(!ivs.includes(d), `no intervention ${d}`));
+  if (e.belief) ck(rep.belief && rep.belief.kind === e.belief, `belief check = ${e.belief} (got ${rep.belief && rep.belief.kind})`);
+  if (e.noMainTop) ck(main.length === 0, `no opportunity/high-priority findings (got ${main})`);
+  if (e.headline) ck(rep.headline.toLowerCase().includes(e.headline), `headline mentions "${e.headline}"`);
+  ck(r.questionCount >= 12 && r.questionCount <= 28, `question count in range (${r.questionCount})`);
+  ck(rep.dontBuy.length >= 1, 'wouldn’t-buy section is not empty');
+  const failed = checks.filter((c) => !c.ok);
+  failures += failed.length;
+  console.log(`\n${failed.length ? '✗' : '✓'} ${s.id} ${s.name} — ${r.persona}, ${r.questionCount} questions`);
+  console.log(`   headline: ${rep.headline}`);
+  console.log(`   top: ${r.top.map((t) => `${t.id}:${t.status}${t.refinement ? '(ref)' : ''}`).join(' | ')}`);
+  console.log(`   dims: ${Object.values(r.dims).filter((d) => d.status !== 'NOT_PROBED').map((d) => `${d.id}=${d.status[0]}${d.status === 'HIGH_PRIORITY' ? 'P' : ''}${d.concern ?? ''}`).join(' ')}`);
+  console.log(`   don't buy: ${db.join(', ')} · tags: ${r.tags.join(', ')}`);
+  console.log(`   belief: ${rep.belief && rep.belief.kind} · rules: ${r.firedRules.join(',')}`);
+  failed.forEach((c) => console.log('   FAIL ' + c.msg));
+  out.push({ scenario: { id: s.id, name: s.name, brief: s.brief, expect: s.expect }, checks, result: { persona: r.persona, questionCount: r.questionCount, tags: r.tags, firedRules: r.firedRules, dims: r.dims, metrics: r.metrics }, report: rep, admin: adm });
+}
+fs.writeFileSync(path.join(__dirname, 'sims.json'), JSON.stringify(out, null, 1));
+console.log(`\n${failures ? failures + ' check(s) failed' : 'All scenario checks pass.'}`);
+process.exit(failures ? 1 : 0);
