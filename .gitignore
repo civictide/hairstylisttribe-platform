@@ -1,0 +1,16 @@
+# Data never goes in git
+*.csv
+*.xlsx
+*.xls
+*.zip
+data/
+
+# Build output and secrets
+node_modules/
+.next/
+out/
+dist/
+.env
+.env.*
+!.env.example
+.DS_Store
